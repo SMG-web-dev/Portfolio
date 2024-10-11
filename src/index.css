@@ -1,0 +1,36 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  --color-timberwolf: #dad7cd;
+  --color-sage: #a3b18a;
+  --color-fern-green: #588157;
+  --color-hunter-green: #3a5a40;
+  --color-brunswick-green: #344e41;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased bg-timberwolf text-brunswick-green;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md transition duration-300;
+  }
+  .btn-primary {
+    @apply bg-fern-green text-timberwolf hover:bg-hunter-green;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}

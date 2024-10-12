@@ -105,15 +105,8 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-3xl mb-8 text-shadow"
         >
-          A passionate Web Developer
+          A Passionate Web Developer
         </motion.p>
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-brunswick-green text-timberwolf px-8 py-4 rounded-full text-xl font-semibold shadow-lg hover:bg-hunter-green transition duration-300"
-        >
-          View My Work
-        </motion.button>
       </div>
     </section>
   );

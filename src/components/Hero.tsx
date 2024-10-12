@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     canvas.width = window.innerWidth;
@@ -77,15 +77,18 @@ const Hero: React.FC = () => {
       canvas.height = window.innerHeight;
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-sage to-fern-green overflow-hidden">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-sage to-fern-green overflow-hidden"
+    >
       <canvas ref={canvasRef} className="absolute inset-0" />
       <div className="text-center text-brunswick-green z-10">
         <motion.h1
@@ -94,7 +97,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-6xl font-bold mb-4 text-shadow"
         >
-          Hi, I'm YourName
+          Hi, I'm Sergio
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 50 }}
@@ -102,7 +105,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-3xl mb-8 text-shadow"
         >
-          A passionate Full Stack Developer
+          A passionate Web Developer
         </motion.p>
         <motion.button
           whileHover={{ scale: 1.05 }}

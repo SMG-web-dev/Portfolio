@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 const About: React.FC = () => {
   return (
@@ -33,13 +33,23 @@ const About: React.FC = () => {
             className="md:w-1/2 md:pl-8"
           >
             <p className="text-lg mb-4 text-brunswick-green dark:text-timberwolf">
-              I'm a passionate full stack developer with a keen eye for creating beautiful and functional web applications. With expertise in both front-end and back-end technologies, I strive to build seamless user experiences that solve real-world problems.
+              I'm a passionate full stack developer with a keen eye for creating
+              beautiful and functional web applications. With expertise in both
+              front-end and back-end technologies, I strive to build seamless
+              user experiences that solve real-world problems.
             </p>
             <p className="text-lg mb-4 text-brunswick-green dark:text-timberwolf">
-              My journey in web development started [X] years ago, and since then, I've worked on a variety of projects ranging from small business websites to complex enterprise applications. I'm always excited to learn new technologies and stay up-to-date with the latest industry trends.
+              My journey in web development started [X] years ago, and since
+              then, I've worked on a variety of projects ranging from small
+              business websites to complex enterprise applications. I'm always
+              excited to learn new technologies and stay up-to-date with the
+              latest industry trends.
             </p>
             <p className="text-lg text-brunswick-green dark:text-timberwolf">
-              When I'm not coding, you can find me [Your Hobbies/Interests]. I believe in continuous learning and giving back to the community through open-source contributions and mentoring aspiring developers.
+              When I'm not coding, you can find me [Your Hobbies/Interests]. I
+              believe in continuous learning and giving back to the community
+              through open-source contributions and mentoring aspiring
+              developers.
             </p>
           </motion.div>
         </div>

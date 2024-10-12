@@ -1,18 +1,25 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 const skills = [
-  { name: 'JavaScript', level: 90 },
-  { name: 'React', level: 85 },
-  { name: 'Node.js', level: 80 },
-  { name: 'TypeScript', level: 75 },
-  { name: 'Python', level: 70 },
-  { name: 'SQL', level: 75 },
+  { name: "HTML5", level: 100 },
+  { name: "CSS3", level: 100 },
+  { name: "JavaScript", level: 90 },
+  { name: "SQL", level: 75 },
+  { name: "Java", level: 70 },
+  { name: "Node.js", level: 50 },
+  { name: "AWS", level: 50 },
+  { name: "React", level: 30 },
+  { name: "TypeScript", level: 30 },
+  { name: "PHP", level: 30 },
 ];
 
 const Skills: React.FC = () => {
   return (
-    <section id="skills" className="py-20 bg-gradient-to-br from-sage to-fern-green">
+    <section
+      id="skills"
+      className="py-20 bg-gradient-to-br from-sage to-fern-green"
+    >
       <div className="container mx-auto px-6">
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
@@ -32,7 +39,9 @@ const Skills: React.FC = () => {
               className="bg-timberwolf rounded-lg shadow-lg p-6"
             >
               <div className="mb-4 flex justify-between items-center">
-                <span className="font-semibold text-lg text-brunswick-green">{skill.name}</span>
+                <span className="font-semibold text-lg text-brunswick-green">
+                  {skill.name}
+                </span>
                 <span className="text-hunter-green">{skill.level}%</span>
               </div>
               <div className="relative pt-1">

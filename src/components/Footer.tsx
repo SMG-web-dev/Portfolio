@@ -54,7 +54,7 @@ export default function Footer() {
                 <Github size={24} />
               </a>
               <a
-                href="www.linkedin.com/in/smg-web-dev"
+                href="https://www.linkedin.com/in/smg-web-dev/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-sage transition-colors duration-300"

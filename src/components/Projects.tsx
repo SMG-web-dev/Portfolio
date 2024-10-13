@@ -4,19 +4,11 @@ import { Github, ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: "Project 1",
-    description: "A brief description of Project 1 and its key features.",
-    image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    github: "https://github.com/yourusername/project1",
-    live: "https://project1-demo.com",
-  },
-  {
     title: "DAW Promo Web",
     description:
       "A promocional website work for my academic module 'UI/UX design'",
     image: "/dawPromo.png",
-    github: "https://https://github.com/SMG-hash/WebPromocionDAW",
+    github: "https://github.com/SMG-hash/WebPromocionDAW",
     live: "https://ies-tetuan-daw.netlify.app",
   },
 ];

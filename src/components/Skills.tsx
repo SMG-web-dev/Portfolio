@@ -1,63 +1,101 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaDatabase,
+  FaJava,
+  FaNodeJs,
+  FaAws,
+  FaReact,
+  FaPhp,
+} from "react-icons/fa";
+import { SiTypescript } from "react-icons/si";
 
 const skills = [
-  { name: "HTML5", level: 100 },
-  { name: "CSS3", level: 100 },
-  { name: "JavaScript", level: 90 },
-  { name: "SQL", level: 75 },
-  { name: "Java", level: 70 },
-  { name: "Node.js", level: 50 },
-  { name: "AWS", level: 50 },
-  { name: "React", level: 30 },
-  { name: "TypeScript", level: 30 },
-  { name: "PHP", level: 30 },
+  { icon: FaHtml5, name: "HTML5", color: "from-orange-400 to-orange-600" },
+  { icon: FaCss3Alt, name: "CSS3", color: "from-blue-400 to-blue-600" },
+  { icon: FaReact, name: "React", color: "from-cyan-400 to-cyan-600" },
+  { icon: FaJs, name: "JavaScript", color: "from-yellow-400 to-yellow-600" },
+  {
+    icon: SiTypescript,
+    name: "TypeScript",
+    color: "from-blue-500 to-blue-700",
+  },
+  { icon: FaJava, name: "Java", color: "from-red-400 to-red-600" },
+  { icon: FaPhp, name: "PHP", color: "from-purple-400 to-purple-600" },
+  { icon: FaNodeJs, name: "Node.js", color: "from-green-400 to-green-600" },
+  { icon: FaAws, name: "AWS", color: "from-yellow-500 to-yellow-700" },
+  { icon: FaDatabase, name: "MySQL", color: "from-blue-300 to-blue-500" },
 ];
+
+const SkillIcon: React.FC<{ skill: (typeof skills)[0] }> = ({ skill }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div className="relative flex flex-col items-center justify-center h-32">
+      <motion.div
+        className="cursor-pointer"
+        onHoverStart={() => setIsHovered(true)}
+        onHoverEnd={() => setIsHovered(false)}
+        whileHover={{ scale: 1.2 }}
+        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+      >
+        <skill.icon className="w-16 h-16 text-brunswick-green transition-all duration-300 ease-in-out" />
+      </motion.div>
+      <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.8 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.8 }}
+            transition={{ duration: 0.2 }}
+            className={`absolute top-full mt-4 px-4 py-2 rounded-lg shadow-lg bg-gradient-to-r ${skill.color}`}
+            style={{ pointerEvents: "none" }}
+          >
+            <p className="text-lg font-bold text-white whitespace-nowrap">
+              {skill.name}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
 
 const Skills: React.FC = () => {
   return (
     <section
       id="skills"
-      className="py-20 bg-gradient-to-br from-sage to-fern-green"
+      className="py-24 bg-gradient-to-br from-sage to-fern-green"
     >
       <div className="container mx-auto px-6">
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl font-bold text-center mb-12 text-brunswick-green"
+          className="text-4xl font-bold text-center mb-16 text-brunswick-green"
         >
           My Skills
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {skills.map((skill, index) => (
+        <motion.div
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-16"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, staggerChildren: 0.1 }}
+        >
+          {skills.map((skill) => (
             <motion.div
               key={skill.name}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-timberwolf rounded-lg shadow-lg p-6"
+              transition={{ duration: 0.5 }}
             >
-              <div className="mb-4 flex justify-between items-center">
-                <span className="font-semibold text-lg text-brunswick-green">
-                  {skill.name}
-                </span>
-                <span className="text-hunter-green">{skill.level}%</span>
-              </div>
-              <div className="relative pt-1">
-                <div className="overflow-hidden h-2 text-xs flex rounded bg-sage">
-                  <motion.div
-                    style={{ width: `${skill.level}%` }}
-                    className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-fern-green"
-                    initial={{ width: 0 }}
-                    animate={{ width: `${skill.level}%` }}
-                    transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
-                  />
-                </div>
-              </div>
+              <SkillIcon skill={skill} />
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

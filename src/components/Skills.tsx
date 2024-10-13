@@ -26,8 +26,16 @@ const skills = [
   { icon: FaJava, name: "Java", color: "from-red-400 to-red-600" },
   { icon: FaPhp, name: "PHP", color: "from-purple-400 to-purple-600" },
   { icon: FaNodeJs, name: "Node.js", color: "from-green-400 to-green-600" },
-  { icon: FaAws, name: "AWS", color: "from-yellow-500 to-yellow-700" },
-  { icon: FaDatabase, name: "MySQL", color: "from-blue-300 to-blue-500" },
+  {
+    icon: FaAws,
+    name: "Amazon Web Services",
+    color: "from-yellow-500 to-yellow-700",
+  },
+  {
+    icon: FaDatabase,
+    name: "MySQL / Oracle",
+    color: "from-blue-300 to-blue-500",
+  },
 ];
 
 const SkillIcon: React.FC<{ skill: (typeof skills)[0] }> = ({ skill }) => {
@@ -77,7 +85,7 @@ const Skills: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="text-4xl font-bold text-center mb-16 text-brunswick-green"
         >
-          My Skills
+          Tech Skills
         </motion.h2>
         <motion.div
           className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-16"

@@ -44,14 +44,13 @@ const About: React.FC = () => {
               such as TDD and Agile development methodlogies. I am currently at
               a point where I have to decide how I want to focus my professional
               career, but I know that with my ambition I will go far regardless
-              of the branch of development I choose. I am always excited to
-              learn new technologies and keep up to date with the latest in the
-              industry.
+              of the branch of development I choose.
             </p>
             <p className="text-lg text-brunswick-green dark:text-timberwolf">
-              When I'm not coding, you can find me training soccer or at the
-              gym. I believe in continuous learning and in the great
-              capabilities of a healthy human mind.
+              I am always excited to learn new technologies and keep up to date
+              with the latest in the industry. When I'm not coding, you can find
+              me training soccer or at the gym. I believe in continuous learning
+              and in the great capabilities of a healthy human mind.
             </p>
           </motion.div>
         </div>

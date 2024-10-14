@@ -11,68 +11,39 @@ const Header: React.FC = () => {
           <img
             src="/logo.png"
             alt="SMG Dev Logo"
-            className="w-10 h-10 rounded-sm"
+            className="w-8 h-8 sm:w-10 sm:h-10 rounded-sm"
           />
           <Link
             to="hero"
             smooth={true}
             duration={500}
-            className="text-xl md:text-2xl font-bold cursor-pointer text-brunswick-green"
+            className="text-lg sm:text-xl md:text-2xl font-bold cursor-pointer text-brunswick-green"
           >
             smg-dev
           </Link>
         </div>
         <nav className={`md:block ${isMenuOpen ? "block" : "hidden"}`}>
-          <ul className="flex flex-col md:flex-row md:space-x-6">
-            <li>
-              <Link
-                to="about"
-                smooth={true}
-                duration={500}
-                className="block py-2 md:py-0 hover:text-fern-green cursor-pointer transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="skills"
-                smooth={true}
-                duration={500}
-                className="block py-2 md:py-0 hover:text-fern-green cursor-pointer transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Skills
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="projects"
-                smooth={true}
-                duration={500}
-                className="block py-2 md:py-0 hover:text-fern-green cursor-pointer transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="contact"
-                smooth={true}
-                duration={500}
-                className="block py-2 md:py-0 hover:text-fern-green cursor-pointer transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact
-              </Link>
-            </li>
+          <ul className="flex flex-col md:flex-row md:space-x-6 absolute md:relative left-0 right-0 md:left-auto md:right-auto top-full md:top-auto bg-sage md:bg-transparent shadow-md md:shadow-none">
+            {["about", "skills", "projects", "contact"].map((item) => (
+              <li key={item}>
+                <Link
+                  to={item}
+                  smooth={true}
+                  duration={500}
+                  className="block py-2 px-4 md:px-0 md:py-0 hover:text-fern-green cursor-pointer transition-colors duration-350 capitalize"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
         <button
-          className="md:hidden"
+          className="md:hidden p-2 rounded-md hover:bg-fern-green hover:bg-opacity-20 transition-colors duration-300"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-expanded={isMenuOpen}
+          aria-label="Toggle menu"
         >
           <svg
             className="w-6 h-6"

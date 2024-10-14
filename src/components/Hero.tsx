@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { useSpring, useSprings, animated, config } from "react-spring";
 
@@ -92,6 +93,21 @@ const Hero: React.FC = () => {
           >
             A Web Developer Student
           </motion.p>
+        </FloatingText>
+        <FloatingText delay={800}>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <a
+              href=""
+              download
+              className="inline-block px-6 py-3 text-lg font-semibold text-white bg-fern-green rounded-full shadow-lg transition-all duration-300 ease-in-out hover:bg-brunswick-green hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-fern-green focus:ring-opacity-50"
+            >
+              Download CV
+            </a>
+          </motion.div>
         </FloatingText>
       </div>
     </section>

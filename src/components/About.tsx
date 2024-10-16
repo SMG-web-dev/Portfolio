@@ -32,13 +32,13 @@ const About: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="md:w-1/2 md:pl-8"
           >
-            <p className="text-lg mb-4 text-brunswick-green dark:text-timberwolf">
+            <p className="text-xl mb-6 text-brunswick-green dark:text-timberwolf">
               I'm a passionate and hardworker web developer with a keen eye for
               creating beautiful and functional web applications. With expertise
               in both front-end and back-end technologies, I strive to build
               seamless user experiences that solve real-world problems.
             </p>
-            <p className="text-lg mb-4 text-brunswick-green dark:text-timberwolf">
+            <p className="text-xl mb-6 text-brunswick-green dark:text-timberwolf">
               My journey in web development started four years ago and since
               then I have learned a lot about advanced development techniques
               such as TDD and Agile development methodlogies. I am currently at
@@ -46,7 +46,7 @@ const About: React.FC = () => {
               career, but I know that with my ambition I will go far regardless
               of the branch of development I choose.
             </p>
-            <p className="text-lg text-brunswick-green dark:text-timberwolf">
+            <p className="text-xl text-brunswick-green dark:text-timberwolf">
               I am always excited to learn new technologies and keep up to date
               with the latest in the industry. When I'm not coding, you can find
               me training soccer or at the gym. I believe in continuous learning

@@ -85,7 +85,7 @@ const Skills: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="text-4xl font-bold text-center mb-16 text-brunswick-green"
         >
-          Tech Skills
+          Tech Stack
         </motion.h2>
         <motion.div
           className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-16"

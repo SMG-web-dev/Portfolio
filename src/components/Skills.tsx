@@ -16,6 +16,7 @@ import {
   FaDocker,
   FaAngular,
   FaMicrosoft,
+  FaRobot,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -30,6 +31,11 @@ import {
   SiJquery,
   SiTailwindcss,
   SiBootstrap,
+  SiOpenai,
+  SiVercel,
+  SiGooglecloud,
+  SiMidjourney,
+  SiStabilityai,
 } from "react-icons/si";
 
 const skillCategories = [
@@ -49,16 +55,16 @@ const skillCategories = [
         name: "Frameworks & Libraries",
         skills: [
           { icon: FaReact, name: "React", color: "from-cyan-400 to-cyan-600" },
-          { icon: FaAngular, name: "Angular (Básico)", color: "from-red-500 to-red-700" },
-          { icon: SiNextdotjs, name: "Next.js (Básico)", color: "from-gray-600 to-gray-800" },
-          { icon: SiJquery, name: "jQuery (Básico)", color: "from-blue-600 to-blue-800" },
+          { icon: FaAngular, name: "Angular", color: "from-red-500 to-red-700" },
+          { icon: SiNextdotjs, name: "Next.js", color: "from-gray-600 to-gray-800" },
+          { icon: SiJquery, name: "jQuery", color: "from-blue-600 to-blue-800" },
         ],
       },
       {
         name: "Styling",
         skills: [
-          { icon: SiTailwindcss, name: "TailwindCSS (Básico)", color: "from-teal-400 to-teal-600" },
-          { icon: SiBootstrap, name: "Bootstrap5 (Básico)", color: "from-purple-500 to-purple-700" },
+          { icon: SiTailwindcss, name: "TailwindCSS", color: "from-teal-400 to-teal-600" },
+          { icon: SiBootstrap, name: "Bootstrap5", color: "from-purple-500 to-purple-700" },
         ],
       },
     ],
@@ -77,8 +83,8 @@ const skillCategories = [
       {
         name: "Databases",
         skills: [
-          { icon: SiMysql, name: "MySQL (Alto)", color: "from-blue-300 to-blue-500" },
-          { icon: SiOracle, name: "OracleDB (Medio)", color: "from-red-300 to-red-500" },
+          { icon: SiMysql, name: "MySQL", color: "from-blue-300 to-blue-500" },
+          { icon: SiOracle, name: "OracleDB", color: "from-red-300 to-red-500" },
         ],
       },
     ],
@@ -98,7 +104,7 @@ const skillCategories = [
       {
         name: "Version Control & Deployment",
         skills: [
-          { icon: FaGitAlt, name: "Git (Medio)", color: "from-orange-500 to-orange-700" },
+          { icon: FaGitAlt, name: "Git", color: "from-orange-500 to-orange-700" },
           { icon: FaDocker, name: "Docker", color: "from-blue-400 to-blue-600" },
         ],
       },
@@ -135,21 +141,37 @@ const skillCategories = [
       },
     ],
   },
+  {
+    name: "AI Tools",
+    subCategories: [
+      {
+        name: "AI Assistants & Generators",
+        skills: [
+          { icon: SiOpenai, name: "ChatGPT", color: "from-green-400 to-green-600" },
+          { icon: FaRobot, name: "bolt.new", color: "from-blue-400 to-blue-600" },
+          { icon: SiVercel, name: "v0.dev", color: "from-gray-600 to-gray-800" },
+          { icon: FaRobot, name: "blackbox.ai", color: "from-purple-400 to-purple-600" },
+        ],
+      },
+    ],
+  },
 ];
 
 const SkillIcon: React.FC<{ skill: { icon: React.ElementType; name: string; color: string } }> = ({ skill }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="relative flex flex-col items-center justify-center h-32">
+    <div 
+      className="relative flex flex-col items-center justify-center h-24"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <motion.div
         className="cursor-pointer"
-        onHoverStart={() => setIsHovered(true)}
-        onHoverEnd={() => setIsHovered(false)}
         whileHover={{ scale: 1.2 }}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
       >
-        <skill.icon className="w-12 h-12 md:w-16 md:h-16 text-brunswick-green transition-all duration-300 ease-in-out" />
+        <skill.icon className="w-10 h-10 md:w-12 md:h-12 text-brunswick-green transition-all duration-300 ease-in-out" />
       </motion.div>
       <AnimatePresence>
         {isHovered && (
@@ -161,7 +183,7 @@ const SkillIcon: React.FC<{ skill: { icon: React.ElementType; name: string; colo
             className={`absolute top-full mt-2 px-2 py-1 rounded-lg shadow-lg bg-gradient-to-r ${skill.color}`}
             style={{ pointerEvents: "none" }}
           >
-            <p className="text-sm md:text-base font-bold text-white whitespace-nowrap">
+            <p className="text-xs md:text-sm font-bold text-white whitespace-nowrap">
               {skill.name}
             </p>
           </motion.div>
@@ -186,15 +208,15 @@ const Skills: React.FC = () => {
         >
           Tech Stack
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
           {skillCategories.map((category) => (
-            <div key={category.name} className="mb-8 md:mb-0">
-              <h3 className="text-xl md:text-2xl font-semibold text-brunswick-green mb-4 md:mb-6">{category.name}</h3>
+            <div key={category.name} className="bg-white bg-opacity-10 rounded-lg p-6 shadow-lg">
+              <h3 className="text-xl md:text-2xl font-semibold text-brunswick-green mb-4">{category.name}</h3>
               {category.subCategories.map((subCategory) => (
                 <div key={subCategory.name} className="mb-6">
-                  <h4 className="text-lg md:text-xl font-medium text-brunswick-green mb-2 md:mb-4">{subCategory.name}</h4>
+                  <h4 className="text-lg font-medium text-brunswick-green mb-3">{subCategory.name}</h4>
                   <motion.div
-                    className="grid grid-cols-3 sm:grid-cols-4 gap-4 md:gap-6"
+                    className="grid grid-cols-3 sm:grid-cols-4 gap-4"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, staggerChildren: 0.1 }}

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -96,7 +97,7 @@ const skillCategories = [
         name: "IDEs & Editors",
         skills: [
           { icon: SiVisualstudiocode, name: "VS Code", color: "from-blue-500 to-blue-700" },
-          { icon: SiEclipseide, name: "Eclipse EE", color: "from-purple-400 to-purple-600" },
+          { icon: SiEclipseide, name: "Eclipse", color: "from-purple-400 to-purple-600" },
           { icon: SiIntellijidea, name: "IntelliJ IDEA", color: "from-pink-500 to-pink-700" },
           { icon: SiStackblitz, name: "StackBlitz", color: "from-blue-400 to-blue-600" },
         ],
@@ -157,19 +158,41 @@ const skillCategories = [
   },
 ];
 
-const SkillIcon: React.FC<{ skill: { icon: React.ElementType; name: string; color: string } }> = ({ skill }) => {
+const SkillIcon: React.FC<{ skill: { icon: React.ElementType; name: string; color: string }; index: number }> = ({ skill, index }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
 
   return (
-    <div 
+    <motion.div
+      ref={ref}
       className="relative flex flex-col items-center justify-center h-24"
+      initial="hidden"
+      animate={controls}
+      variants={{
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.6, delay: index * 0.1 },
+        },
+      }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <motion.div
         className="cursor-pointer"
-        whileHover={{ scale: 1.2 }}
-        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+        whileHover={{ scale: 1.2, rotate: 360 }}
+        transition={{ type: "spring", stiffness: 300, damping: 10 }}
       >
         <skill.icon className="w-10 h-10 md:w-12 md:h-12 text-brunswick-green transition-all duration-300 ease-in-out" />
       </motion.div>
@@ -180,7 +203,7 @@ const SkillIcon: React.FC<{ skill: { icon: React.ElementType; name: string; colo
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.8 }}
             transition={{ duration: 0.2 }}
-            className={`absolute top-full mt-2 px-2 py-1 rounded-lg shadow-lg bg-gradient-to-r ${skill.color}`}
+            className={`absolute top-full mt-2 px-2 py-1 rounded-lg shadow-lg bg-gradient-to-r ${skill.color} z-10`}
             style={{ pointerEvents: "none" }}
           >
             <p className="text-xs md:text-sm font-bold text-white whitespace-nowrap">
@@ -189,7 +212,61 @@ const SkillIcon: React.FC<{ skill: { icon: React.ElementType; name: string; colo
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
+  );
+};
+
+const CategoryCard: React.FC<{ category: any; index: number }> = ({ category, index }) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={{
+        hidden: { opacity: 0, scale: 0.8 },
+        visible: {
+          opacity: 1,
+          scale: 1,
+          transition: { duration: 0.6, delay: index * 0.2 },
+        },
+      }}
+      className="bg-white bg-opacity-10 rounded-lg p-6 shadow-lg backdrop-blur-sm hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+    >
+      <h3 className="text-xl md:text-2xl font-semibold text-brunswick-green mb-4">{category.name}</h3>
+      {category.subCategories.map((subCategory: any, subIndex: number) => (
+        <div key={subCategory.name} className="mb-6">
+          <h4 className="text-lg font-medium text-brunswick-green mb-3">{subCategory.name}</h4>
+          <motion.div
+            className="grid grid-cols-3 sm:grid-cols-4 gap-4"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.1,
+                },
+              },
+            }}
+          >
+            {subCategory.skills.map((skill: any, skillIndex: number) => (
+              <SkillIcon key={skill.name} skill={skill} index={skillIndex} />
+            ))}
+          </motion.div>
+        </div>
+      ))}
+    </motion.div>
   );
 };
 
@@ -197,44 +274,20 @@ const Skills: React.FC = () => {
   return (
     <section
       id="skills"
-      className="py-12 md:py-24 bg-gradient-to-br from-sage to-fern-green"
+      className="py-16 md:py-24 bg-gradient-to-br from-sage to-fern-green overflow-hidden"
     >
       <div className="container mx-auto px-4 md:px-6">
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-16 text-brunswick-green"
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-4xl md:text-5xl font-bold text-center mb-12 md:mb-20 text-brunswick-green"
         >
           Tech Stack
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-          {skillCategories.map((category) => (
-            <div key={category.name} className="bg-white bg-opacity-10 rounded-lg p-6 shadow-lg">
-              <h3 className="text-xl md:text-2xl font-semibold text-brunswick-green mb-4">{category.name}</h3>
-              {category.subCategories.map((subCategory) => (
-                <div key={subCategory.name} className="mb-6">
-                  <h4 className="text-lg font-medium text-brunswick-green mb-3">{subCategory.name}</h4>
-                  <motion.div
-                    className="grid grid-cols-3 sm:grid-cols-4 gap-4"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.5, staggerChildren: 0.1 }}
-                  >
-                    {subCategory.skills.map((skill) => (
-                      <motion.div
-                        key={skill.name}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                      >
-                        <SkillIcon skill={skill} />
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                </div>
-              ))}
-            </div>
+          {skillCategories.map((category, index) => (
+            <CategoryCard key={category.name} category={category} index={index} />
           ))}
         </div>
       </div>

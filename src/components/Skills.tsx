@@ -64,7 +64,7 @@ const skillCategories = [
       { icon: SiNextdotjs, name: "Next.js", color: "from-gray-600 to-gray-800" },
       { icon: SiJquery, name: "jQuery", color: "from-blue-600 to-blue-800" },
       { icon: FaNodeJs, name: "Node.js", color: "from-green-400 to-green-600" },
-      { icon: SiSpring, name: "Spring Boot", color: "from-green-400 to-green-600" },
+      { icon: SiSpring, name: "Spring", color: "from-green-400 to-green-600" },
       { icon: SiTailwindcss, name: "TailwindCSS", color: "from-teal-400 to-teal-600" },
       { icon: SiBootstrap, name: "Bootstrap5", color: "from-purple-500 to-purple-700" },
     ],

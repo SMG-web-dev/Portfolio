@@ -33,10 +33,7 @@ import {
   SiTailwindcss,
   SiBootstrap,
   SiOpenai,
-  SiVercel,
-  SiGooglecloud,
-  SiMidjourney,
-  SiStabilityai,
+  SiVercel
 } from "react-icons/si";
 
 const skillCategories = [

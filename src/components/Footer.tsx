@@ -1,11 +1,10 @@
-import React from "react";
 import { Github, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
     <footer className="bg-brunswick-green text-timberwolf py-16">
-      <div className="container mx-auto px-6">
+      <div id="contact" className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

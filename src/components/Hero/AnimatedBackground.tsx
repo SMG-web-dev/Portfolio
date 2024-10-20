@@ -1,12 +1,8 @@
 import React from "react";
+import "./AnimatedBackground.css";
 
 const AnimatedBackground: React.FC = () => {
-    // Implement your animated background here
-    return (
-        <div className="absolute inset-0" aria-hidden="true">
-            {/* Your animated background content */}
-        </div>
-    );
+  return <div className="animated-background" aria-hidden="true"></div>;
 };
 
 export default AnimatedBackground;

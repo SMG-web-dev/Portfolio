@@ -7,11 +7,10 @@ const projects = [
     title: "DAW Promo Web",
     description:
       "A promotional website work for my academic module 'UI/UX design'",
-    image: "/dawPromo.png",
+    image: "/dawPromo.webp",
     github: "https://github.com/SMG-hash/WebPromocionDAW",
     live: "https://ies-tetuan-daw.netlify.app",
   },
-  // Add more projects here
 ];
 
 const Projects: React.FC = () => {

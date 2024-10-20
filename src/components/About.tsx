@@ -21,7 +21,7 @@ const About: React.FC = () => {
             className="md:w-1/2 mb-8 md:mb-0 flex justify-center"
           >
             <img
-              src="../public/cv2.jpg"
+              src="/cv2.webp"
               alt="Sergio"
               className="rounded-full w-60 h-60 md:w-80 md:h-80 object-cover shadow-2xl"
             />

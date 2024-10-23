@@ -45,7 +45,7 @@ export default function Footer() {
             </h3>
             <div className="flex space-x-4">
               <a
-                href="https://github.com/SMG-hash"
+                href="https://github.com/SMG-web-dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-sage transition-colors duration-300"

@@ -6,10 +6,18 @@ const projects = [
   {
     title: "DAW Promo Web",
     description:
-      "A promotional website work for my academic module 'UI/UX design'",
+      "A promotional website work for my academic module 'UI/UX design' created with React",
     image: "/dawPromo.webp",
-    github: "https://github.com/SMG-hash/WebPromocionDAW",
+    github: "https://github.com/SMG-web-dev/WebPromocionDAW",
     live: "https://ies-tetuan-daw.netlify.app",
+  },
+  {
+    title: "AWS Buckets Manager",
+    description:
+      "A management website for AWS S3 buckets created with Java+Spring and Tailwind.css'",
+    image: "/s3man.webp",
+    github: "https://github.com/SMG-web-dev/S3BucketManager",
+    live: "",
   },
 ];
 

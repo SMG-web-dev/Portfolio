@@ -6,7 +6,7 @@ const projects = [
   {
     title: "DAW Promo Web",
     description:
-      "A promotional website work for my academic module 'UI/UX design' created with React",
+      "A promotional website work for my academic module 'UI/UX design' created with Vite+React",
     image: "/dawPromo.webp",
     github: "https://github.com/SMG-web-dev/WebPromocionDAW",
     live: "https://ies-tetuan-daw.netlify.app",
@@ -14,10 +14,18 @@ const projects = [
   {
     title: "AWS Buckets Manager",
     description:
-      "A management website for AWS S3 buckets created with Java+Spring and Tailwind.css'",
+      "AWS S3 buckets management website.  created with Java+Spring and Tailwind.css'",
     image: "/s3man.webp",
     github: "https://github.com/SMG-web-dev/S3BucketManager",
     live: "",
+  },
+  {
+    title: "W3School Spain",
+    description:
+      "This is a W3Schools CSS learning page in Spanish, make with vite+react",
+    image: "/w3schools.webp",
+    github: "https://github.com/SMG-web-dev/W3Schools",
+    live: "https://smg-dev-w3schools-spain.netlify.app/",
   },
 ];
 

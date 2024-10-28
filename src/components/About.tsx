@@ -33,7 +33,7 @@ const About: React.FC = () => {
             className="md:w-1/2 md:pl-8"
           >
             <p className="text-xl mb-6 text-brunswick-green dark:text-timberwolf">
-              I'm web developer with four years of experience as a student. I
+              I’m web developer with four years of experience as a student. I
               specialize in creating elegant, functional applications that
               provide seamless user experiences using both front-end and
               back-end technologies.
@@ -45,7 +45,7 @@ const About: React.FC = () => {
               development.
             </p>
             <p className="text-xl mb-6 text-brunswick-green dark:text-timberwolf">
-              When I'm not coding, I'm either working out, training for soccer,
+              When I’m not coding, I’m either working out, training for soccer,
               or exploring the endless possibilities of the human mind. I
               believe in lifelong learning and in combining the power of
               technology with creativity to build amazing digital experiences.
@@ -53,26 +53,6 @@ const About: React.FC = () => {
           </motion.div>
         </div>
       </div>
-      <style jsx global>{`
-        @media not all and (min-resolution: 0.001dpcm) {
-          @supports (-webkit-appearance: none) {
-            #about {
-              background-color: #e5e1d6;
-            }
-            .dark #about {
-              background-color: #2c3e2f;
-            }
-            #about h2,
-            #about p {
-              color: #1f4d36;
-            }
-            .dark #about h2,
-            .dark #about p {
-              color: #e5e1d6;
-            }
-          }
-        }
-      `}</style>
     </section>
   );
 };

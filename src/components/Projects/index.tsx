@@ -12,6 +12,7 @@ const projects: ProjectProps[] = [
     live: "https://ies-tetuan-daw.netlify.app",
     technologies: ["React", "Vite", "TypeScript", "Tailwind"],
   },
+
   {
     title: "W3School Spain",
     description:
@@ -49,24 +50,6 @@ const Projects: React.FC = () => {
           ))}
         </div>
       </div>
-      <style jsx global>{`
-        @media not all and (min-resolution: 0.001dpcm) {
-          @supports (-webkit-appearance: none) {
-            #projects {
-              background-color: #c8c4b7;
-            }
-            .dark #projects {
-              background-color: #2c3e2f;
-            }
-            #projects h2 {
-              color: #1f4d36;
-            }
-            .dark #projects h2 {
-              color: #e5e1d6;
-            }
-          }
-        }
-      `}</style>
     </section>
   );
 };

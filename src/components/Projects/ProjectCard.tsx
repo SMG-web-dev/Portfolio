@@ -1,8 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ProjectLinks from "./ProjectLinks";
-import { FaReact, FaJava, FaAws } from "react-icons/fa";
-import { SiVite, SiTailwindcss, SiSpring, SiTypescript } from "react-icons/si";
+import {
+  ReactOriginal,
+  VitejsOriginal,
+  JavaOriginal,
+  TailwindcssOriginal,
+  SpringOriginal,
+  AmazonwebservicesOriginalWordmark,
+  TypescriptOriginal,
+} from "devicons-react";
 
 export interface ProjectProps {
   title: string;
@@ -19,13 +26,13 @@ interface ProjectCardProps {
 }
 
 const technologyIcons: { [key: string]: React.ReactNode } = {
-  React: <FaReact className="w-5 h-5 text-[#61DAFB]" />,
-  Vite: <SiVite className="w-5 h-5 text-[#646CFF]" />,
-  Java: <FaJava className="w-5 h-5 text-[#007396]" />,
-  Tailwind: <SiTailwindcss className="w-5 h-5 text-[#06B6D4]" />,
-  Spring: <SiSpring className="w-5 h-5 text-[#6DB33F]" />,
-  AWS: <FaAws className="w-5 h-5 text-[#FF9900]" />,
-  TypeScript: <SiTypescript className="w-5 h-5 text-[#3178C6]" />,
+  React: <ReactOriginal size="30" />,
+  Vite: <VitejsOriginal size="30" />,
+  Java: <JavaOriginal size="30" />,
+  Tailwind: <TailwindcssOriginal size="30" />,
+  Spring: <SpringOriginal size="30" />,
+  AWS: <AmazonwebservicesOriginalWordmark size="30" />,
+  TypeScript: <TypescriptOriginal size="30" />,
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
@@ -50,14 +57,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         <p className="text-hunter-green dark:text-sage mb-4">
           {project.description}
         </p>
-        <div className="flex flex-wrap gap-2 mt-2">
+        <div className="flex flex-wrap gap-3 mt-2">
           {project.technologies.map((tech) => (
             <div
               key={tech}
-              className="flex items-center bg-white dark:bg-hunter-green rounded-full px-3 py-1 shadow-sm"
+              className="flex items-center bg-white dark:bg-hunter-green rounded-lg px-3 py-2 shadow-md"
             >
-              {technologyIcons[tech]}
-              <span className="ml-2 text-sm text-brunswick-green dark:text-timberwolf">
+              <span className="mr-2">{technologyIcons[tech]}</span>
+              <span className="text-sm font-medium text-brunswick-green dark:text-timberwolf">
                 {tech}
               </span>
             </div>

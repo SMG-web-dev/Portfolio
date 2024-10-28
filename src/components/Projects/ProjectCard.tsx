@@ -9,6 +9,7 @@ import {
   SpringOriginal,
   AmazonwebservicesOriginalWordmark,
   TypescriptOriginal,
+  Html5Original,
 } from "devicons-react";
 
 export interface ProjectProps {
@@ -26,6 +27,7 @@ interface ProjectCardProps {
 }
 
 const technologyIcons: { [key: string]: React.ReactNode } = {
+  HTML: <Html5Original size="30" />,
   React: <ReactOriginal size="30" />,
   Vite: <VitejsOriginal size="30" />,
   Java: <JavaOriginal size="30" />,

@@ -10,7 +10,7 @@ const projects: ProjectProps[] = [
     image: "/dawPromo.webp",
     github: "https://github.com/SMG-web-dev/WebPromocionDAW",
     live: "https://ies-tetuan-daw.netlify.app",
-    technologies: ["React", "Vite", "TypeScript"],
+    technologies: ["React", "Vite", "TypeScript", "Tailwind"],
   },
 
   {
@@ -20,7 +20,7 @@ const projects: ProjectProps[] = [
     image: "/w3schools.webp",
     github: "https://github.com/SMG-web-dev/W3Schools",
     live: "https://smg-dev-w3schools-spain.netlify.app/",
-    technologies: ["React", "Vite", "TypeScript"],
+    technologies: ["React", "Vite", "TypeScript", "Tailwind"],
   },
   {
     title: "AWS Buckets Manager",
@@ -28,7 +28,7 @@ const projects: ProjectProps[] = [
     image: "/s3man.webp",
     github: "https://github.com/SMG-web-dev/S3BucketManager",
     live: "",
-    technologies: ["Java", "Spring", "Tailwind", "AWS"],
+    technologies: ["Java", "Spring", "HTML", "Tailwind", "AWS"],
   },
 ];
 

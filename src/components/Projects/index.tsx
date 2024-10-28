@@ -6,7 +6,7 @@ const projects: ProjectProps[] = [
   {
     title: "DAW Promotional Web",
     description:
-      "A promotional website for web development degree. Work for my academic module 'UI/UX design'.",
+      "A promotional website for my institute, desktop first designed and full devices responsive.",
     image: "/dawPromo.webp",
     github: "https://github.com/SMG-web-dev/WebPromocionDAW",
     live: "https://ies-tetuan-daw.netlify.app",
@@ -16,7 +16,7 @@ const projects: ProjectProps[] = [
   {
     title: "W3School Spain",
     description:
-      "This is a W3Schools CSS learning page in Spanish, work for my academic module 'UI/UX design'.",
+      "This is a W3Schools CSS learning page in Spanish, mobile first designed and full devices responsive.",
     image: "/w3schools.webp",
     github: "https://github.com/SMG-web-dev/W3Schools",
     live: "https://smg-dev-w3schools-spain.netlify.app/",
@@ -24,7 +24,7 @@ const projects: ProjectProps[] = [
   },
   {
     title: "AWS Buckets Manager",
-    description: "Fullstack APP for AWS S3 Buckets management.",
+    description: "Fullstack app for AWS S3 Buckets management.",
     image: "/s3man.webp",
     github: "https://github.com/SMG-web-dev/S3BucketManager",
     live: "",

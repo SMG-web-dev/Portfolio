@@ -74,6 +74,33 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         </div>
       </div>
       <ProjectLinks github={project.github} live={project.live} />
+      <style jsx global>{`
+        @media not all and (min-resolution: 0.001dpcm) {
+          @supports (-webkit-appearance: none) {
+            .bg-timberwolf {
+              background-color: #e5e1d6;
+            }
+            .dark .bg-brunswick-green {
+              background-color: #1f4d36;
+            }
+            .text-brunswick-green {
+              color: #1f4d36;
+            }
+            .dark .text-timberwolf {
+              color: #e5e1d6;
+            }
+            .text-hunter-green {
+              color: #2c3e2f;
+            }
+            .dark .text-sage {
+              color: #c8c4b7;
+            }
+            .dark .bg-hunter-green {
+              background-color: #2c3e2f;
+            }
+          }
+        }
+      `}</style>
     </motion.div>
   );
 };

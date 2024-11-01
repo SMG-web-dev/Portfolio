@@ -27,7 +27,7 @@ const projects: ProjectProps[] = [
     description: "Fullstack app for AWS S3 Buckets management.",
     image: "/s3man.webp",
     github: "https://github.com/SMG-web-dev/S3BucketManager",
-    live: "",
+    live: "http://13.38.125.216:8081/",
     technologies: ["Java", "Spring", "HTML", "Tailwind", "AWS"],
   },
 ];

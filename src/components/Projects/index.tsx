@@ -4,9 +4,14 @@ import ProjectCard, { ProjectProps } from "./ProjectCard";
 
 const projects: ProjectProps[] = [
   {
+    title: "AWS S3 Bucket Manager",
+    image: "/s3man.webp",
+    github: "https://github.com/SMG-web-dev/S3BucketManager",
+    live: "http://35.180.186.243:8081/",
+    technologies: ["Java", "Spring", "AWS", "Docker", "HTML", "CSS", "Tailwind"],
+  },
+  {
     title: "DAW Promotional Web",
-    description:
-      "",
     image: "/dawPromo.webp",
     github: "https://github.com/SMG-web-dev/WebPromocionDAW",
     live: "https://ies-tetuan-daw.netlify.app",
@@ -15,20 +20,10 @@ const projects: ProjectProps[] = [
 
   {
     title: "W3School Spain",
-    description:
-      "",
     image: "/w3schools.webp",
     github: "https://github.com/SMG-web-dev/W3Schools",
     live: "https://smg-dev-w3schools-spain.netlify.app/",
     technologies: ["React", "Vite", "TypeScript", "Tailwind"],
-  },
-  {
-    title: "AWS S3 Bucket Manager",
-    description: "",
-    image: "/s3man.webp",
-    github: "https://github.com/SMG-web-dev/S3BucketManager",
-    live: "http://35.180.186.243:8081/",
-    technologies: ["Java", "Spring", "AWS", "Docker", "HTML", "CSS", "Tailwind"],
   },
 ];
 

@@ -45,7 +45,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="bg-timberwolf dark:bg-brunswick-green rounded-lg shadow-lg overflow-hidden flex flex-col"
+      className="bg-brunswick-green rounded-lg shadow-lg overflow-hidden flex flex-col"
     >
       <div className="relative pt-[56.25%] overflow-hidden">
         <a href={project.live} target="_blank" rel="noopener noreferrer">
@@ -57,14 +57,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         </a>
       </div>
       <div className="p-6 flex-grow">
-        <h3 className="text-xl font-semibold mb-2 text-brunswick-green dark:text-timberwolf mb-3">
+        <h3 className="text-xl font-semibold mb-2 text-timberwolf mb-3">
           {project.title}
         </h3>
         <div className="flex flex-wrap gap-3 mt-2">
           {project.technologies.map((tech) => (
             <div
               key={tech}
-              className="flex items-center justify-center bg-white dark:bg-hunter-green rounded-lg w-12 h-12 shadow-md"
+              className="flex items-center justify-center bg-hunter-green rounded-lg w-12 h-12 shadow-md"
               title={tech}
             >
               {technologyIcons[tech]}

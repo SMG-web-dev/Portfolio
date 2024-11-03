@@ -14,7 +14,7 @@ const ProjectLinks: React.FC<ProjectLinksProps> = ({ github, live }) => {
         href={github}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center text-fern-green hover:text-hunter-green dark:text-sage dark:hover:text-timberwolf transition-colors duration-300"
+        className="flex items-center text-sage hover:text-timberwolf transition-colors duration-300"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -26,7 +26,7 @@ const ProjectLinks: React.FC<ProjectLinksProps> = ({ github, live }) => {
           href={live}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center text-fern-green hover:text-hunter-green dark:text-sage dark:hover:text-timberwolf transition-colors duration-300"
+          className="flex items-center text-sage hover:text-timberwolf transition-colors duration-300"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >

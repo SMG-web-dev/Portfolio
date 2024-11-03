@@ -34,3 +34,13 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Ocultar scrollbar en navegadores WebKit (Chrome, Safari) */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ocultar scrollbar en Firefox */
+* {
+  scrollbar-width: none;
+}

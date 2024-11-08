@@ -7,7 +7,7 @@ const projects: ProjectProps[] = [
     title: "AWS S3 Bucket Manager",
     image: "/s3man.webp",
     github: "https://github.com/SMG-web-dev/S3BucketManager",
-    live: "http://51.44.17.211:8081/",
+    live: "http://15.237.117.225:8081/",
     technologies: ["Java", "Spring", "AWS", "Docker", "HTML", "CSS", "Tailwind"],
   },
   {

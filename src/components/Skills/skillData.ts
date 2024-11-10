@@ -15,6 +15,7 @@ import {
   FaAngular,
   FaMicrosoft,
   FaRobot,
+  FaSass,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -33,7 +34,6 @@ import {
   SiVercel,
   SiSpring,
   SiMariadb,
-  SiXampp,
   SiVite,
 } from "react-icons/si";
 import { TbBrandWindows } from "react-icons/tb";
@@ -57,6 +57,7 @@ export const skillCategories = [
       },
       { icon: FaJava, name: "Java", color: "from-red-400 to-red-600" },
       { icon: FaPhp, name: "PHP", color: "from-purple-400 to-purple-600" },
+      { icon: FaSass, name: "SASS", color: "from-red-200 to-red-400" },
       {
         icon: DiDatabase,
         name: "PL/SQL",
@@ -90,19 +91,7 @@ export const skillCategories = [
       { icon: SiVite, name: "Vite", color: "from-purple-400 to-purple-600" },
     ],
   },
-  {
-    name: "Databases & Cloud",
-    skills: [
-      { icon: SiMysql, name: "MySQL", color: "from-blue-300 to-blue-500" },
-      { icon: SiOracle, name: "OracleDB", color: "from-red-300 to-red-500" },
-      {
-        icon: SiMariadb,
-        name: "MariaDB",
-        color: "from-brown-400 to-brown-600",
-      },
-      { icon: FaAws, name: "AWS", color: "from-yellow-500 to-yellow-700" },
-    ],
-  },
+
   {
     name: "Development Tools",
     skills: [
@@ -139,6 +128,18 @@ export const skillCategories = [
         color: "from-red-500 to-red-700",
       },
     ],
+  }, {
+    name: "Databases & Cloud",
+    skills: [
+      { icon: SiMysql, name: "MySQL", color: "from-blue-300 to-blue-500" },
+      { icon: SiOracle, name: "OracleDB", color: "from-red-300 to-red-500" },
+      {
+        icon: SiMariadb,
+        name: "MariaDB",
+        color: "from-brown-400 to-brown-600",
+      },
+      { icon: FaAws, name: "AWS", color: "from-yellow-500 to-yellow-700" },
+    ],
   },
   {
     name: "Operating Systems & Servers",
@@ -151,7 +152,6 @@ export const skillCategories = [
         color: "from-indigo-400 to-indigo-600",
       },
       { icon: SiApache, name: "Apache", color: "from-red-500 to-red-700" },
-      { icon: SiXampp, name: "XAMPP", color: "from-orange-400 to-orange-600" },
     ],
   },
   {

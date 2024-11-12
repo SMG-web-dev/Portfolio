@@ -34,7 +34,6 @@ import {
   SiVercel,
   SiSpring,
   SiMariadb,
-  SiVite,
 } from "react-icons/si";
 import { TbBrandWindows } from "react-icons/tb";
 import { DiDatabase } from "react-icons/di";
@@ -88,7 +87,6 @@ export const skillCategories = [
         name: "Bootstrap5",
         color: "from-purple-500 to-purple-700",
       },
-      { icon: SiVite, name: "Vite", color: "from-purple-400 to-purple-600" },
     ],
   },
 

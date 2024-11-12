@@ -17,6 +17,7 @@ const ProjectLinks: React.FC<ProjectLinksProps> = ({ github, live }) => {
         className="flex items-center text-sage hover:text-timberwolf transition-colors duration-300"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
+        aria-label="View source code on GitHub"
       >
         <Github size={20} className="mr-1" aria-hidden="true" />
         <span>Source</span>
@@ -29,6 +30,7 @@ const ProjectLinks: React.FC<ProjectLinksProps> = ({ github, live }) => {
           className="flex items-center text-sage hover:text-timberwolf transition-colors duration-300"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          aria-label="View live demo"
         >
           <ExternalLink size={20} className="mr-1" aria-hidden="true" />
           <span>Live Demo</span>

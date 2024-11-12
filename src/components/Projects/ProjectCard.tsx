@@ -45,30 +45,44 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileHover={{ scale: 1.03 }}
       className="bg-brunswick-green rounded-lg shadow-lg overflow-hidden flex flex-col"
     >
       <div className="relative pt-[56.25%] overflow-hidden">
-        <a href={project.live} target="_blank" rel="noopener noreferrer">
-          <img
+        <motion.a
+          href={project.live}
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.3 }}
+        >
+          <motion.img
             src={project.image}
             alt={project.title}
             className="absolute top-0 left-0 w-full h-full object-contain"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
           />
-        </a>
+        </motion.a>
       </div>
       <div className="p-6 flex-grow">
         <h3 className="text-xl font-semibold mb-2 text-timberwolf mb-3">
           {project.title}
         </h3>
         <div className="flex flex-wrap gap-3 mt-2">
-          {project.technologies.map((tech) => (
-            <div
+          {project.technologies.map((tech, index) => (
+            <motion.div
               key={tech}
               className="flex items-center justify-center bg-hunter-green rounded-lg w-12 h-12 shadow-md"
               title={tech}
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
+              whileHover={{ scale: 1.1 }}
             >
               {technologyIcons[tech]}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

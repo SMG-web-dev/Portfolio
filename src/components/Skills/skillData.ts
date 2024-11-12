@@ -69,7 +69,7 @@ export const skillCategories = [
     name: "Frameworks & Libraries",
     skills: [
       { icon: FaReact, name: "React", color: "from-cyan-400 to-cyan-600" },
-      { icon: FaAngular, name: "Angular", color: "from-red-500 to-red-700" },
+      { icon: FaAngular, name: "Angular", color: "from-red-700 to-red-900" },
       {
         icon: SiNextdotjs,
         name: "Next.js",

@@ -17,7 +17,6 @@ const projects: ProjectProps[] = [
     live: "https://ies-tetuan-daw.netlify.app",
     technologies: ["React", "Vite", "TypeScript", "Tailwind"],
   },
-
   {
     title: "W3School Spain",
     image: "/w3schools.webp",
@@ -39,11 +38,16 @@ const Projects: React.FC = () => {
         >
           My Projects
         </motion.h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 [&:has(:last-child:nth-child(3n-2))]:last:justify-self-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           {projects.map((project, index) => (
             <ProjectCard key={project.title} project={project} index={index} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

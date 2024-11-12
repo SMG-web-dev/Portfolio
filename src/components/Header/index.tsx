@@ -43,7 +43,7 @@ const Header: React.FC = () => {
               <img
                 src="/logo.webp"
                 alt="SMG Dev Logo"
-                className="w-8 h-8 sm:w-10 sm:h-10 rounded-sm"
+                className="w-9 h-9 sm:w-12 sm:h-12 rounded-sm"
               />
             </motion.div>
             <Link

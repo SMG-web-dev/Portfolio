@@ -9,6 +9,7 @@ const projects: ProjectProps[] = [
     github: "https://github.com/SMG-web-dev/S3BucketManager",
     live: "",
     technologies: ["Java", "Spring", "AWS", "Docker", "HTML", "CSS", "Tailwind"],
+    category: "Full-Stack",
   },
   {
     title: "DAW Promotional Web",
@@ -16,13 +17,15 @@ const projects: ProjectProps[] = [
     github: "https://github.com/SMG-web-dev/WebPromocionDAW",
     live: "https://ies-tetuan-daw.netlify.app",
     technologies: ["React", "Vite", "TypeScript", "Tailwind"],
+    category: "Frontend",
   },
   {
-    title: "W3School Spain",
-    image: "/w3schools.webp",
-    github: "https://github.com/SMG-web-dev/W3Schools",
-    live: "https://smg-dev-w3schools-spain.netlify.app/",
-    technologies: ["React", "Vite", "TypeScript", "Tailwind"],
+    title: "SuRótulo Website",
+    image: "/suRotulo.webp",
+    github: "https://github.com/SMG-web-dev/SuRotulo",
+    live: "https://surotulo.netlify.app/",
+    technologies: ["HTML", "JavaScript", "SASS"],
+    category: "Frontend",
   },
 ];
 
@@ -36,7 +39,7 @@ const Projects: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="text-3xl font-bold text-center mb-8 text-timberwolf"
         >
-          My Projects
+          Featured Projects
         </motion.h2>
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 [&:has(:last-child:nth-child(3n-2))]:last:justify-self-center"

@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import ProjectLinks from "./ProjectLinks";
 import {
   ReactOriginal,
   VitejsOriginal,
@@ -9,9 +8,14 @@ import {
   SpringOriginal,
   AmazonwebservicesOriginalWordmark,
   TypescriptOriginal,
+  JavascriptOriginal,
+  SassOriginal,
   Html5Original, Css3Original,
   DockerOriginal
 } from "devicons-react";
+import { Github } from "lucide-react";
+
+export type ProjectCategory = "Frontend" | "Backend" | "Full-Stack";
 
 export interface ProjectProps {
   title: string;
@@ -19,6 +23,7 @@ export interface ProjectProps {
   github: string;
   live: string;
   technologies: string[];
+  category: ProjectCategory;
 }
 
 interface ProjectCardProps {
@@ -29,6 +34,8 @@ interface ProjectCardProps {
 const technologyIcons: { [key: string]: React.ReactNode } = {
   HTML: <Html5Original size="38" />,
   CSS: <Css3Original size="38" />,
+  SASS: <SassOriginal size="40" />,
+  JavaScript: <JavascriptOriginal size="38" />,
   React: <ReactOriginal size="38" />,
   Vite: <VitejsOriginal size="38" />,
   Java: <JavaOriginal size="38" />,
@@ -39,6 +46,13 @@ const technologyIcons: { [key: string]: React.ReactNode } = {
   Docker: <DockerOriginal size="43" />
 };
 
+
+const categoryColors: { [key in ProjectCategory]: { bg: string; text: string } } = {
+  "Frontend": { bg: "bg-fern-green", text: "text-white" },
+  "Backend": { bg: "bg-sage", text: "text-brunswick-green" },
+  "Full-Stack": { bg: "bg-timberwolf", text: "text-brunswick-green" }
+};
+
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
   return (
     <motion.div
@@ -46,28 +60,28 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ scale: 1.03 }}
-      className="bg-brunswick-green rounded-lg shadow-lg overflow-hidden flex flex-col"
+      className="bg-brunswick-green rounded-lg shadow-lg overflow-hidden flex flex-col group transition-all duration-200 ease-in-out"
     >
-      <div className="relative pt-[56.25%] overflow-hidden">
+      <div className="relative pt-[60%] overflow-hidden">
         <motion.a
           href={project.live}
           target="_blank"
           rel="noopener noreferrer"
-          whileHover={{ scale: 1.1 }}
-          transition={{ duration: 0.3 }}
+          className="block w-full h-full"
         >
           <motion.img
             src={project.image}
             alt={project.title}
-            className="absolute top-0 left-0 w-full h-full object-contain"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 shadow-[inset_0_-4px_6px_rgba(0,0,0,0.1)]"
           />
+          <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <span className="text-white text-lg font-semibold">Ver Proyecto</span>
+          </div>
         </motion.a>
       </div>
-      <div className="p-6 flex-grow">
-        <h3 className="text-xl font-semibold mb-2 text-timberwolf mb-3">
+      <div className="p-6 flex-grow relative">
+        <div className="absolute top-0 left-0 right-0 h-4 bg-gradient-to-b from-black/20 to-transparent"></div>
+        <h3 className="text-xl font-semibold mb-2 text-timberwolf">
           {project.title}
         </h3>
         <div className="flex flex-wrap gap-3 mt-2">
@@ -86,7 +100,23 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           ))}
         </div>
       </div>
-      <ProjectLinks github={project.github} live={project.live} />
+      <div className="px-6 pb-6 flex justify-between items-center">
+        <motion.a
+          href={project.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center text-sage hover:text-timberwolf transition-colors duration-300"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          aria-label="View source code on GitHub"
+        >
+          <Github size={20} className="mr-1" />
+          <span>Source</span>
+        </motion.a>
+        <span className={`text-sm font-medium ${categoryColors[project.category].bg} ${categoryColors[project.category].text} px-3 py-1.5 rounded-full shadow-md`}>
+          {project.category}
+        </span>
+      </div>
     </motion.div>
   );
 };

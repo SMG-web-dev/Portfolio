@@ -22,7 +22,6 @@ import {
   SiMysql,
   SiOracle,
   SiApache,
-  SiVisualstudiocode,
   SiEclipseide,
   SiIntellijidea,
   SiStackblitz,
@@ -35,6 +34,7 @@ import {
   SiSpring,
   SiMariadb,
 } from "react-icons/si";
+import { BiLogoVisualStudio } from "react-icons/bi";
 import { TbBrandWindows } from "react-icons/tb";
 import { DiDatabase } from "react-icons/di";
 
@@ -94,7 +94,7 @@ export const skillCategories = [
     name: "Development Tools",
     skills: [
       {
-        icon: SiVisualstudiocode,
+        icon: BiLogoVisualStudio,
         name: "VS Code",
         color: "from-blue-500 to-blue-700",
       },

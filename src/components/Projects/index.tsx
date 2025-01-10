@@ -5,26 +5,50 @@ import ProjectCard, { ProjectProps } from "./ProjectCard";
 const projects: ProjectProps[] = [
   {
     title: "AWS S3 Bucket Manager",
-    image: "/s3man.webp",
+    image: "/projects/s3man.webp",
     github: "https://github.com/SMG-web-dev/S3BucketManager",
     live: "https://github.com/SMG-web-dev/S3BucketManager",
-    technologies: ["Java", "Spring", "AWS", "Docker", "HTML", "CSS", "Tailwind"],
+    technologies: ["HTML", "Spring", "Tailwind", "Docker", "AWS"],
     category: "Full-Stack",
   },
   {
-    title: "DAW Promotional Web",
-    image: "/dawPromo.webp",
-    github: "https://github.com/SMG-web-dev/WebPromocionDAW",
-    live: "https://ies-tetuan-daw.netlify.app",
-    technologies: ["React", "Vite", "TypeScript", "Tailwind"],
-    category: "Frontend",
+    title: "Fancy CRUD (In Progress)",
+    image: "/projects/phpClientes.webp",
+    github: "https://github.com/SMG-web-dev/DWES/tree/main/tareas/CRUDPagi",
+    live: "https://github.com/SMG-web-dev/DWES/tree/main/tareas/CRUDPagi/",
+    technologies: ["PHP", "MYSQL", "CSS"],
+    category: "Full-Stack",
   },
   {
     title: "SuRótulo Website",
-    image: "/suRotulo.webp",
+    image: "/projects/suRotulo.webp",
     github: "https://github.com/SMG-web-dev/SuRotulo",
     live: "https://surotulo.netlify.app/",
-    technologies: ["HTML", "JavaScript", "SASS"],
+    technologies: ["JavaScript", "HTML", "SASS"],
+    category: "Frontend",
+  },
+  {
+    title: "CryptoTracker (In Progress)",
+    image: "/projects/crypto.webp",
+    github: "https://github.com/SMG-web-dev/CryptoTracker",
+    live: "https://smg-dev-criptos.netlify.app/",
+    technologies: ["React", "TypeScript", "Tailwind"],
+    category: "Frontend",
+  },
+  {
+    title: "DAW Promotional Web",
+    image: "/projects/dawPromo.webp",
+    github: "https://github.com/SMG-web-dev/WebPromocionDAW",
+    live: "https://ies-tetuan-daw.netlify.app",
+    technologies: ["React", "TypeScript", "Tailwind"],
+    category: "Frontend",
+  },
+  {
+    title: "Bootlearn (In Progress)",
+    image: "/projects/bootLearn.webp",
+    github: "https://github.com/SMG-web-dev/BootLearn",
+    live: "https://bootlearn.netlify.app/",
+    technologies: ["JavaScript", "HTML", "CSS", "Bootstrap",],
     category: "Frontend",
   },
 ];
@@ -37,7 +61,7 @@ const Projects: React.FC = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl font-bold text-center mb-8 text-timberwolf"
+          className="text-4xl font-bold text-center mb-8 text-timberwolf"
         >
           Featured Projects
         </motion.h2>

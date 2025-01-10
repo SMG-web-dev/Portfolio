@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   ReactOriginal,
-  VitejsOriginal,
   JavaOriginal,
   TailwindcssOriginal,
   SpringOriginal,
@@ -11,7 +10,8 @@ import {
   JavascriptOriginal,
   SassOriginal,
   Html5Original, Css3Original,
-  DockerOriginal
+  DockerOriginal, PhpOriginal, MysqlOriginal
+  , BootstrapOriginal
 } from "devicons-react";
 import { Github } from "lucide-react";
 
@@ -37,13 +37,15 @@ const technologyIcons: { [key: string]: React.ReactNode } = {
   SASS: <SassOriginal size="40" />,
   JavaScript: <JavascriptOriginal size="38" />,
   React: <ReactOriginal size="38" />,
-  Vite: <VitejsOriginal size="38" />,
   Java: <JavaOriginal size="38" />,
   Tailwind: <TailwindcssOriginal size="38" />,
   Spring: <SpringOriginal size="38" />,
   AWS: <AmazonwebservicesOriginalWordmark size="38" />,
   TypeScript: <TypescriptOriginal size="38" />,
-  Docker: <DockerOriginal size="43" />
+  Docker: <DockerOriginal size="43" />,
+  PHP: <PhpOriginal size="38" />,
+  MYSQL: <MysqlOriginal size="38" />,
+  Bootstrap: <BootstrapOriginal size="38" />
 };
 
 

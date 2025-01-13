@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import ProjectCard, { ProjectProps } from "./ProjectCard";
 
@@ -12,7 +11,7 @@ const projects: ProjectProps[] = [
     category: "Full-Stack",
   },
   {
-    title: "Fancy CRUD (In Progress)",
+    title: "Clients Manager (In Progress)",
     image: "/projects/phpClientes.webp",
     github: "https://github.com/SMG-web-dev/DWES/tree/main/tareas/CRUDPagi",
     live: "https://github.com/SMG-web-dev/DWES/tree/main/tareas/CRUDPagi/",

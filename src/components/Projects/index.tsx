@@ -44,7 +44,7 @@ const projects: ProjectProps[] = [
     category: "Frontend",
   },
   {
-    title: "Bootlearn (In Progress)",
+    title: "BootLearn",
     image: "/projects/bootLearn.webp",
     github: "https://github.com/SMG-web-dev/BootLearn",
     live: "https://bootlearn.netlify.app/",

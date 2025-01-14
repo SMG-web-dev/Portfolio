@@ -11,22 +11,6 @@ const projects: ProjectProps[] = [
     category: "Full-Stack",
   },
   {
-    title: "Clients Manager (In Progress)",
-    image: "/projects/phpClientes.webp",
-    github: "https://github.com/SMG-web-dev/DWES/tree/main/tareas/CRUDPagi",
-    live: "https://github.com/SMG-web-dev/DWES/tree/main/tareas/CRUDPagi/",
-    technologies: ["PHP", "MYSQL", "CSS"],
-    category: "Full-Stack",
-  },
-  {
-    title: "SuRótulo Website",
-    image: "/projects/suRotulo.webp",
-    github: "https://github.com/SMG-web-dev/SuRotulo",
-    live: "https://surotulo.netlify.app/",
-    technologies: ["JavaScript", "HTML", "SASS"],
-    category: "Frontend",
-  },
-  {
     title: "CryptoTracker (In Progress)",
     image: "/projects/crypto.webp",
     github: "https://github.com/SMG-web-dev/CryptoTracker",
@@ -42,6 +26,15 @@ const projects: ProjectProps[] = [
     technologies: ["React", "TypeScript", "Tailwind"],
     category: "Frontend",
   },
+
+  {
+    title: "Life Forms Analyzer",
+    image: "/projects/lfa.webp",
+    github: "https://github.com/SMG-web-dev/LifeFormsAnalyzer",
+    live: "https://life-forms-analyzer.netlify.app/",
+    technologies: ["React", "TypeScript", "Tailwind", "Gemini",],
+    category: "Frontend",
+  },
   {
     title: "BootLearn",
     image: "/projects/bootLearn.webp",
@@ -50,6 +43,15 @@ const projects: ProjectProps[] = [
     technologies: ["JavaScript", "HTML", "CSS", "Bootstrap",],
     category: "Frontend",
   },
+  {
+    title: "SuRótulo Website",
+    image: "/projects/suRotulo.webp",
+    github: "https://github.com/SMG-web-dev/SuRotulo",
+    live: "https://surotulo.netlify.app/",
+    technologies: ["JavaScript", "HTML", "SASS"],
+    category: "Frontend",
+  },
+
 ];
 
 const Projects: React.FC = () => {

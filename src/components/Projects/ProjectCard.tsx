@@ -9,11 +9,15 @@ import {
   TypescriptOriginal,
   JavascriptOriginal,
   SassOriginal,
-  Html5Original, Css3Original,
-  DockerOriginal, PhpOriginal, MysqlOriginal
-  , BootstrapOriginal
+  Html5Original,
+  Css3Original,
+  DockerOriginal,
+  PhpOriginal,
+  MysqlOriginal,
+  BootstrapOriginal,
 } from "devicons-react";
 import { Github } from "lucide-react";
+import { RiGeminiFill } from "react-icons/ri";
 
 export type ProjectCategory = "Frontend" | "Backend" | "Full-Stack";
 
@@ -45,7 +49,8 @@ const technologyIcons: { [key: string]: React.ReactNode } = {
   Docker: <DockerOriginal size="43" />,
   PHP: <PhpOriginal size="38" />,
   MYSQL: <MysqlOriginal size="38" />,
-  Bootstrap: <BootstrapOriginal size="38" />
+  Bootstrap: <BootstrapOriginal size="38" />,
+  Gemini: <RiGeminiFill size="38" color="#00A8E8" />
 };
 
 

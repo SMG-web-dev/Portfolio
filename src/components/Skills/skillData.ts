@@ -14,7 +14,6 @@ import {
   FaDocker,
   FaAngular,
   FaMicrosoft,
-  FaRobot,
   FaSass,
 } from "react-icons/fa";
 import {
@@ -33,6 +32,7 @@ import {
   SiVercel,
   SiSpring,
   SiMariadb,
+  SiGooglegemini,
 } from "react-icons/si";
 import { BiLogoVisualStudio } from "react-icons/bi";
 import { TbBrandWindows } from "react-icons/tb";
@@ -159,9 +159,9 @@ export const skillCategories = [
       { icon: SiStackblitz, name: "Bolt", color: "from-blue-400 to-blue-600" },
       { icon: SiVercel, name: "V0", color: "from-gray-600 to-gray-800" },
       {
-        icon: FaRobot,
-        name: "Tabnine",
-        color: "from-indigo-400 to-indigo-600",
+        icon: SiGooglegemini,
+        name: "Gemini",
+        color: "from-blue-400 to-blue-600",
       },
     ],
   },

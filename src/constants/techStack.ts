@@ -38,10 +38,10 @@ import { BiLogoVisualStudio } from "react-icons/bi";
 import { TbBrandWindows } from "react-icons/tb";
 import { DiDatabase } from "react-icons/di";
 
-export const skillCategories = [
+export const techStackCategories = [
   {
-    name: "Languages",
-    skills: [
+    name: "techstack.languages",
+    techstack: [
       { icon: FaHtml5, name: "HTML5", color: "from-orange-400 to-orange-600" },
       { icon: FaCss3Alt, name: "CSS3", color: "from-blue-400 to-blue-600" },
       {
@@ -65,8 +65,8 @@ export const skillCategories = [
     ],
   },
   {
-    name: "Frameworks & Libraries",
-    skills: [
+    name: "techstack.frameworks",
+    techstack: [
       { icon: FaReact, name: "React", color: "from-cyan-400 to-cyan-600" },
       { icon: FaAngular, name: "Angular", color: "from-red-700 to-red-900" },
       {
@@ -91,8 +91,8 @@ export const skillCategories = [
   },
 
   {
-    name: "Development Tools",
-    skills: [
+    name: "techstack.devTools",
+    techstack: [
       {
         icon: BiLogoVisualStudio,
         name: "VS Code",
@@ -126,9 +126,10 @@ export const skillCategories = [
         color: "from-red-500 to-red-700",
       },
     ],
-  }, {
-    name: "Databases & Cloud",
-    skills: [
+  },
+  {
+    name: "techstack.databases",
+    techstack: [
       { icon: SiMysql, name: "MySQL", color: "from-blue-300 to-blue-500" },
       { icon: SiOracle, name: "OracleDB", color: "from-red-300 to-red-500" },
       {
@@ -140,8 +141,8 @@ export const skillCategories = [
     ],
   },
   {
-    name: "Operating Systems & Servers",
-    skills: [
+    name: "techstack.operatingSystems",
+    techstack: [
       { icon: FaWindows, name: "Windows", color: "from-blue-400 to-blue-600" },
       { icon: FaLinux, name: "Linux", color: "from-yellow-500 to-yellow-700" },
       {
@@ -153,8 +154,8 @@ export const skillCategories = [
     ],
   },
   {
-    name: "AI Tools",
-    skills: [
+    name: "techstack.aiTools",
+    techstack: [
       { icon: SiOpenai, name: "ChatGPT", color: "from-green-400 to-green-600" },
       { icon: SiStackblitz, name: "Bolt", color: "from-blue-400 to-blue-600" },
       { icon: SiVercel, name: "V0", color: "from-gray-600 to-gray-800" },

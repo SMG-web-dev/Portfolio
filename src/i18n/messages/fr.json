@@ -1,0 +1,48 @@
+{
+  "hero": {
+    "title": "Bonjour, je suis",
+    "subtitle": "Développeur Frontend",
+    "welcome": "Bienvenue, je suis Sergio",
+    "description": "un Développeur Web",
+    "downloadCV": "Télécharger CV"
+  },
+  "experience": {
+    "title": "Expérience Professionnelle",
+    "role": "Rôle",
+    "period": "Période",
+    "teamSize": "Taille de l'équipe",
+    "achievements": "Réalisations"
+  },
+  "techstack": {
+    "title": "Stack Technique",
+    "languages": "Langages",
+    "frameworks": "Frameworks et Bibliothèques",
+    "devTools": "Outils de Développement",
+    "databases": "Bases de Données et Cloud",
+    "operatingSystems": "Systèmes d'Exploitation et Serveurs",
+    "aiTools": "Outils IA"
+  },
+  "projects": {
+    "title": "Projets personnels",
+    "source": "Code",
+    "liveDemo": "Démo",
+    "viewProject": "Voir le Projet",
+    "category": {
+      "Frontend": "Frontend",
+      "Backend": "Backend",
+      "Full-Stack": "Full-Stack"
+    }
+  },
+  "footer": {
+    "contact": "Contact",
+    "connectWithMe": "Connectez-vous avec moi",
+    "allRightsReserved": "Tous droits réservés",
+    "location": "Madrid, Espagne"
+  },
+  "menu": {
+    "experience": "Expérience professionnelle",
+    "techStack": "Stack Technique",
+    "projects": "Projets personnels",
+    "contact": "Contact"
+  }
+}

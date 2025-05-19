@@ -1,12 +1,13 @@
-import React, { useEffect } from "react"
-import { motion, useAnimation } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import SkillIcon from "./SkillIcon"
+import React, { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import SkillIcon from "../TechStack/SkillIcon";
+import { useTranslation } from "react-i18next";
 
 interface CategoryCardProps {
     category: {
         name: string;
-        skills: Array<{
+        techstack: Array<{
             icon: React.ElementType;
             name: string;
             color: string;
@@ -16,17 +17,18 @@ interface CategoryCardProps {
 }
 
 const CategoryCard: React.FC<CategoryCardProps> = ({ category, index }) => {
-    const controls = useAnimation()
+    const controls = useAnimation();
     const [ref, inView] = useInView({
         threshold: 0.1,
         triggerOnce: true,
-    })
+    });
+    const { t } = useTranslation();
 
     useEffect(() => {
         if (inView) {
-            controls.start("visible")
+            controls.start("visible");
         }
-    }, [controls, inView])
+    }, [controls, inView]);
 
     return (
         <motion.div
@@ -43,7 +45,9 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category, index }) => {
             }}
             className="bg-white bg-opacity-10 rounded-lg p-6 shadow-lg backdrop-blur-sm hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
         >
-            <h3 className="text-xl md:text-2xl font-semibold text-brunswick-green mb-4">{category.name}</h3>
+            <h3 className="text-xl md:text-2xl font-semibold text-brunswick-green mb-4">
+                {t(category.name)}
+            </h3>
             <motion.div
                 className="grid grid-cols-3 sm:grid-cols-4 gap-4"
                 initial="hidden"
@@ -56,12 +60,12 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category, index }) => {
                     },
                 }}
             >
-                {category.skills.map((skill, skillIndex) => (
+                {category.techstack.map((skill, skillIndex) => (
                     <SkillIcon key={skill.name} skill={skill} index={skillIndex} />
                 ))}
             </motion.div>
         </motion.div>
-    )
-}
+    );
+};
 
-export default CategoryCard
+export default CategoryCard;

@@ -1,5 +1,6 @@
 import { Github, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const iconVariants = {
   hover: {
@@ -16,6 +17,8 @@ const colorAnimation = {
 };
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-brunswick-green text-timberwolf py-16">
       <div id="contact" className="container mx-auto px-6">
@@ -26,7 +29,7 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
             className="space-y-4"
           >
-            <h3 className="text-2xl font-semibold text-sage">Contact</h3>
+            <h3 className="text-2xl font-semibold text-sage">{t('footer.contact')}</h3>
             <motion.div className="flex items-center space-x-3" whileHover="hover">
               <motion.span variants={iconVariants}>
                 <motion.span variants={colorAnimation} animate="animate">
@@ -59,7 +62,7 @@ export default function Footer() {
                   <MapPin size={20} className="text-sage" />
                 </motion.span>
               </motion.span>
-              <span>Madrid, Spain</span>
+              <span>{t('footer.location')}</span>
             </motion.div>
           </motion.div>
 
@@ -79,7 +82,7 @@ export default function Footer() {
             className="space-y-4"
           >
             <h3 className="text-2xl font-semibold text-sage">
-              Connect With Me
+              {t('footer.connectWithMe')}
             </h3>
             <div className="flex space-x-4">
               <motion.a
@@ -112,7 +115,7 @@ export default function Footer() {
               </motion.a>
             </div>
             <p className="mt-4">
-              &copy; {new Date().getFullYear()} smg-dev. All rights reserved.
+              &copy; {new Date().getFullYear()} smg-dev. {t('footer.allRightsReserved')}.
             </p>
           </motion.div>
         </div>

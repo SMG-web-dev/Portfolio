@@ -1,10 +1,13 @@
 'use client'
 
 import { motion } from "framer-motion"
-import CategoryCard from "./CategoryCard"
-import { skillCategories } from "./skillData"
+import CategoryCard from "../Cards/CategoryCard"
+import { techStackCategories } from "../../constants/techStack"
+import { useTranslation } from "react-i18next"
 
-export default function Skills() {
+export default function TechStack() {
+  const { t } = useTranslation();
+
   return (
     <section
       id="tech-stack"
@@ -17,10 +20,10 @@ export default function Skills() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-4xl md:text-5xl font-bold text-center mb-12 md:mb-20 text-brunswick-green"
         >
-          Tech Stack
+          {t('techstack.title')}
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-          {skillCategories.map((category, index) => (
+          {techStackCategories.map((category, index) => (
             <CategoryCard key={category.name} category={category} index={index} />
           ))}
         </div>

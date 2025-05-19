@@ -1,58 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  ReactOriginal,
-  JavaOriginal,
-  TailwindcssOriginal,
-  SpringOriginal,
-  AmazonwebservicesOriginalWordmark,
-  TypescriptOriginal,
-  JavascriptOriginal,
-  SassOriginal,
-  Html5Original,
-  Css3Original,
-  DockerOriginal,
-  PhpOriginal,
-  MysqlOriginal,
-  BootstrapOriginal,
-} from "devicons-react";
+import { useTranslation } from "react-i18next";
+import { ProjectCardProps, ProjectCategory } from "../../types/projects";
 import { Github } from "lucide-react";
-import { RiGeminiFill } from "react-icons/ri";
-
-export type ProjectCategory = "Frontend" | "Backend" | "Full-Stack";
-
-export interface ProjectProps {
-  title: string;
-  image: string;
-  github: string;
-  live: string;
-  technologies: string[];
-  category: ProjectCategory;
-}
-
-interface ProjectCardProps {
-  project: ProjectProps;
-  index: number;
-}
-
-const technologyIcons: { [key: string]: React.ReactNode } = {
-  HTML: <Html5Original size="38" />,
-  CSS: <Css3Original size="38" />,
-  SASS: <SassOriginal size="40" />,
-  JavaScript: <JavascriptOriginal size="38" />,
-  React: <ReactOriginal size="38" />,
-  Java: <JavaOriginal size="38" />,
-  Tailwind: <TailwindcssOriginal size="38" />,
-  Spring: <SpringOriginal size="38" />,
-  AWS: <AmazonwebservicesOriginalWordmark size="38" />,
-  TypeScript: <TypescriptOriginal size="38" />,
-  Docker: <DockerOriginal size="43" />,
-  PHP: <PhpOriginal size="38" />,
-  MYSQL: <MysqlOriginal size="38" />,
-  Bootstrap: <BootstrapOriginal size="38" />,
-  Gemini: <RiGeminiFill size="38" color="#00A8E8" />
-};
-
+import { technologyIcons } from "../../constants/technologyIcons";
 
 const categoryColors: { [key in ProjectCategory]: { bg: string; text: string } } = {
   "Frontend": { bg: "bg-fern-green", text: "text-white" },
@@ -61,6 +12,8 @@ const categoryColors: { [key in ProjectCategory]: { bg: string; text: string } }
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
+  const { t } = useTranslation();
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -82,7 +35,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
             className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 shadow-[inset_0_-4px_6px_rgba(0,0,0,0.1)]"
           />
           <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <span className="text-white text-lg font-semibold">Ver Proyecto</span>
+            <span className="text-white text-lg font-semibold">{t('projects.viewProject')}</span>
           </div>
         </motion.a>
       </div>
@@ -118,10 +71,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           aria-label="View source code on GitHub"
         >
           <Github size={20} className="mr-1" />
-          <span>Source</span>
+          <span>{t('projects.source')}</span>
         </motion.a>
         <span className={`text-sm font-medium ${categoryColors[project.category].bg} ${categoryColors[project.category].text} px-3 py-1.5 rounded-full shadow-md`}>
-          {project.category}
+          {t(`projects.category.${project.category}`)}
         </span>
       </div>
     </motion.div>

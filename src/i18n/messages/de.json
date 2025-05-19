@@ -1,0 +1,48 @@
+{
+  "hero": {
+    "title": "Hallo, ich bin",
+    "subtitle": "Frontend-Entwickler",
+    "welcome": "Willkommen, ich bin Sergio",
+    "description": "ein Webentwickler",
+    "downloadCV": "Lebenslauf herunterladen"
+  },
+  "experience": {
+    "title": "Berufserfahrung",
+    "role": "Rolle",
+    "period": "Zeitraum",
+    "teamSize": "Teamgröße",
+    "achievements": "Erfolge"
+  },
+  "techstack": {
+    "title": "Tech-Stack",
+    "languages": "Programmiersprachen",
+    "frameworks": "Frameworks und Bibliotheken",
+    "devTools": "Entwicklungstools",
+    "databases": "Datenbanken und Cloud",
+    "operatingSystems": "Betriebssysteme und Server",
+    "aiTools": "KI-Tools"
+  },
+  "projects": {
+    "title": "Persönliche Projekte",
+    "source": "Quellcode",
+    "liveDemo": "Live-Demo",
+    "viewProject": "Projekt ansehen",
+    "category": {
+      "Frontend": "Frontend",
+      "Backend": "Backend",
+      "Full-Stack": "Full-Stack"
+    }
+  },
+  "footer": {
+    "contact": "Kontakt",
+    "connectWithMe": "Verbinde dich mit mir",
+    "allRightsReserved": "Alle Rechte vorbehalten",
+    "location": "Madrid, Spanien"
+  },
+  "menu": {
+    "experience": "Berufserfahrung",
+    "techStack": "Tech-Stack",
+    "projects": "Persönliche Projekte",
+    "contact": "Kontakt"
+  }
+}

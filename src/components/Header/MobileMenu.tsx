@@ -1,14 +1,8 @@
-import React from "react"
-import { Link } from "react-scroll"
-import { motion, AnimatePresence } from "framer-motion"
-import { FiUser, FiLayers, FiBriefcase, FiMail } from "react-icons/fi"
-
-const menuItems = [
-    { name: "about", icon: FiUser },
-    { name: "tech stack", icon: FiLayers },
-    { name: "projects", icon: FiBriefcase },
-    { name: "contact", icon: FiMail }
-]
+import React from "react";
+import { Link } from "react-scroll";
+import { motion, AnimatePresence } from "framer-motion";
+import { navbarItems } from "../../constants/navbarItems";
+import { useTranslation } from "react-i18next";
 
 interface MobileMenuProps {
     isMenuOpen: boolean;
@@ -16,6 +10,8 @@ interface MobileMenuProps {
 }
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ isMenuOpen, setIsMenuOpen }) => {
+    const { t } = useTranslation();
+
     return (
         <AnimatePresence>
             {isMenuOpen && (
@@ -43,9 +39,9 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isMenuOpen, setIsMenuOpen }) =>
                                 closed: { transition: { staggerChildren: 0.05, staggerDirection: -1 } }
                             }}
                         >
-                            {menuItems.map((item) => (
+                            {navbarItems.map((item) => (
                                 <motion.li
-                                    key={item.name}
+                                    key={item.id}
                                     variants={{
                                         open: { opacity: 1, y: 0 },
                                         closed: { opacity: 0, y: 20 }
@@ -53,14 +49,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isMenuOpen, setIsMenuOpen }) =>
                                     className="w-auto"
                                 >
                                     <Link
-                                        to={item.name.replace(" ", "-")}
+                                        to={item.id}
                                         smooth={true}
                                         duration={500}
                                         className="flex items-center py-2 px-4 rounded-lg cursor-pointer transition-all duration-300 capitalize font-medium text-brunswick-green hover:text-fern-green text-center group relative overflow-hidden"
                                         onClick={() => setIsMenuOpen(false)}
                                     >
                                         <item.icon className="mr-2 h-5 w-5" />
-                                        {item.name}
+                                        {t(item.name)}
                                         <span className="absolute bottom-0 left-0 w-full h-0.5 bg-fern-green transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
                                     </Link>
                                 </motion.li>
@@ -70,7 +66,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isMenuOpen, setIsMenuOpen }) =>
                 </motion.nav>
             )}
         </AnimatePresence>
-    )
-}
+    );
+};
 
-export default MobileMenu
+export default MobileMenu;

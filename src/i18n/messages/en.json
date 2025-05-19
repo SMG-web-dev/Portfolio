@@ -1,0 +1,48 @@
+{
+  "hero": {
+    "title": "Hello, I'm",
+    "subtitle": "Frontend Developer",
+    "welcome": "Welcome, I'm Sergio",
+    "description": "A Web Developer",
+    "downloadCV": "Download CV"
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "role": "Role",
+    "period": "Period",
+    "teamSize": "Team Size",
+    "achievements": "Achievements"
+  },
+  "techstack": {
+    "title": "Tech Stack",
+    "languages": "Languages",
+    "frameworks": "Frameworks & Libraries",
+    "devTools": "Development Tools",
+    "databases": "Databases & Cloud",
+    "operatingSystems": "Operating Systems & Servers",
+    "aiTools": "AI Tools"
+  },
+  "projects": {
+    "title": "Personal Projects",
+    "source": "Source",
+    "liveDemo": "Live Demo",
+    "viewProject": "View Project",
+    "category": {
+      "Frontend": "Frontend",
+      "Backend": "Backend",
+      "Full-Stack": "Full-Stack"
+    }
+  },
+  "footer": {
+    "contact": "Contact",
+    "connectWithMe": "Connect With Me",
+    "allRightsReserved": "All rights reserved",
+    "location": "Madrid, Spain"
+  },
+  "menu": {
+    "experience": "Profesional Experience",
+    "techStack": "Tech Stack",
+    "projects": "Personal Projects",
+    "contact": "Contact"
+  }
+}

@@ -1,13 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
-
-interface ProjectLinksProps {
-  github: string;
-  live: string;
-}
+import { useTranslation } from "react-i18next";
+import { ProjectLinksProps } from "../../types/projects";
 
 const ProjectLinks: React.FC<ProjectLinksProps> = ({ github, live }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="px-6 pb-6 flex justify-between">
       <motion.a
@@ -20,7 +19,7 @@ const ProjectLinks: React.FC<ProjectLinksProps> = ({ github, live }) => {
         aria-label="View source code on GitHub"
       >
         <Github size={20} className="mr-1" aria-hidden="true" />
-        <span>Source</span>
+        <span>{t('projects.source')}</span>
       </motion.a>
       {live && (
         <motion.a
@@ -33,7 +32,7 @@ const ProjectLinks: React.FC<ProjectLinksProps> = ({ github, live }) => {
           aria-label="View live demo"
         >
           <ExternalLink size={20} className="mr-1" aria-hidden="true" />
-          <span>Live Demo</span>
+          <span>{t('projects.liveDemo')}</span>
         </motion.a>
       )}
     </div>

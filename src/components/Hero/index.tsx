@@ -1,5 +1,4 @@
 import React from "react";
-import { useAnimation } from "framer-motion";
 import AnimatedBackground from './AnimatedBackground';
 import FloatingText from './FloatingText';
 import AnimatedTitle from './AnimatedTitle';
@@ -7,12 +6,6 @@ import AnimatedSubtitle from './AnimatedSubtitle';
 import DownloadButton from './DownloadButton';
 
 const Hero: React.FC = () => {
-  const controls = useAnimation();
-
-  React.useEffect(() => {
-    controls.start({ opacity: 1, y: 0 });
-  }, [controls]);
-
   return (
     <section
       id="hero"
@@ -21,13 +14,13 @@ const Hero: React.FC = () => {
       <AnimatedBackground />
       <div className="text-center text-brunswick-green z-10">
         <FloatingText delay={0}>
-          <AnimatedTitle controls={controls} />
+          <AnimatedTitle delay={300} />
         </FloatingText>
         <FloatingText delay={400}>
-          <AnimatedSubtitle controls={controls} />
+          <AnimatedSubtitle />
         </FloatingText>
         <FloatingText delay={800}>
-          <DownloadButton controls={controls} />
+          <DownloadButton />
         </FloatingText>
       </div>
     </section>

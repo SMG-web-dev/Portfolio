@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { ProjectCardProps, ProjectCategory } from "../../types/projects";
 import { Github } from "lucide-react";
-import { technologyIcons } from "../../constants/technologyIcons";
+import { technologyIcons } from "../technologyIcons";
 
 const categoryColors: { [key in ProjectCategory]: { bg: string; text: string } } = {
   "Frontend": { bg: "bg-fern-green", text: "text-white" },

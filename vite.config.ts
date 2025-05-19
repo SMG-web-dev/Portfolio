@@ -2,11 +2,9 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { visualizer } from "rollup-plugin-visualizer";
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    // Visualiza el tamaño de los paquetes (opcional)
     visualizer({
       open: false,
       gzipSize: true,
@@ -16,20 +14,63 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        // Divide los chunks para mejorar el caching
-        manualChunks: {
-          "react-vendor": ["react", "react-dom"],
-          "i18n-vendor": [
-            "i18next",
-            "react-i18next",
-            "i18next-browser-languagedetector",
-          ],
-          "motion-vendor": ["framer-motion"],
-          "icons-vendor": ["lucide-react", "react-icons", "devicons-react"],
+        manualChunks: (id) => {
+          // React y bibliotecas principales
+          if (
+            id.includes("node_modules/react/") ||
+            id.includes("node_modules/react-dom/")
+          ) {
+            return "react-vendor";
+          }
+
+          // Internacionalización
+          if (
+            id.includes("node_modules/i18next/") ||
+            id.includes("node_modules/react-i18next/") ||
+            id.includes("node_modules/i18next-browser-languagedetector/")
+          ) {
+            return "i18n-vendor";
+          }
+
+          // Animación
+          if (id.includes("node_modules/framer-motion/")) {
+            return "motion-vendor";
+          }
+
+          // Iconos por categoría
+          if (id.includes("node_modules/lucide-react/")) {
+            return "lucide-icons";
+          }
+
+          if (id.includes("node_modules/react-icons/")) {
+            return "react-icons";
+          }
+
+          // Separar los iconos de devicons por categorías
+          if (id.includes("node_modules/devicons-react/")) {
+            if (
+              id.includes("/react") ||
+              id.includes("/javascript") ||
+              id.includes("/typescript")
+            ) {
+              return "devicons-js";
+            }
+            if (id.includes("/java") || id.includes("/spring")) {
+              return "devicons-java";
+            }
+            if (
+              id.includes("/html") ||
+              id.includes("/css") ||
+              id.includes("/sass") ||
+              id.includes("/tailwind")
+            ) {
+              return "devicons-web";
+            }
+            return "devicons-other";
+          }
         },
       },
     },
-    // Mejora la minificación
     minify: "terser",
     terserOptions: {
       compress: {

@@ -1,15 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { ProjectCardProps, ProjectCategory } from "../../types/projects";
-import { Github } from "lucide-react";
+import { ProjectCardProps } from "../../types/projects";
 import { technologyIcons } from "../technologyIcons";
-
-const categoryColors: { [key in ProjectCategory]: { bg: string; text: string } } = {
-  "Frontend": { bg: "bg-fern-green", text: "text-white" },
-  "Backend": { bg: "bg-sage", text: "text-brunswick-green" },
-  "Full-Stack": { bg: "bg-timberwolf", text: "text-brunswick-green" }
-};
+import ProjectLinks from "../Projects/ProjectLinks";
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
   const { t } = useTranslation();
@@ -60,23 +54,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           ))}
         </div>
       </div>
-      <div className="px-6 pb-6 flex justify-between items-center">
-        <motion.a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center text-sage hover:text-timberwolf transition-colors duration-300"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          aria-label="View source code on GitHub"
-        >
-          <Github size={20} className="mr-1" />
-          <span>{t('projects.source')}</span>
-        </motion.a>
-        <span className={`text-sm font-medium ${categoryColors[project.category].bg} ${categoryColors[project.category].text} px-3 py-1.5 rounded-full shadow-md`}>
-          {t(`projects.category.${project.category}`)}
-        </span>
-      </div>
+
+      {/* Ahora con categoría incluida en ProjectLinks */}
+      <ProjectLinks
+        github={project.github}
+        live={project.live}
+        category={project.category}
+      />
     </motion.div>
   );
 };

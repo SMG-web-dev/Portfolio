@@ -3,7 +3,7 @@ export type ProjectCategory = "Frontend" | "Backend" | "Full-Stack";
 export interface ProjectProps {
   title: string;
   image: string;
-  github: string;
+  github: string | null;
   live: string;
   technologies: string[];
   category: ProjectCategory;
@@ -15,6 +15,7 @@ export interface ProjectCardProps {
 }
 
 interface ProjectLinksProps {
-  github: string;
+  github: string | null;
   live: string;
+  category: ProjectCategory;
 }

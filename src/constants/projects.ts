@@ -10,6 +10,14 @@ export const projects: ProjectProps[] = [
     category: "Full-Stack",
   },
   {
+    title: "FSC TopNutrition (In Progress)",
+    image: "/projects/topnutrition.webp",
+    github: null,
+    live: "https://top-nutrition-fsc.vercel.app/es",
+    technologies: ["NextJS", "Tailwind"],
+    category: "Full-Stack",
+  },
+  {
     title: "CryptoTracker (In Progress)",
     image: "/projects/crypto.webp",
     github: "https://github.com/SMG-web-dev/CryptoTracker",
@@ -17,15 +25,6 @@ export const projects: ProjectProps[] = [
     technologies: ["React", "TypeScript", "Tailwind"],
     category: "Frontend",
   },
-  {
-    title: "DAW Promotional Web",
-    image: "/projects/dawPromo.webp",
-    github: "https://github.com/SMG-web-dev/WebPromocionDAW",
-    live: "https://ies-tetuan-daw.netlify.app",
-    technologies: ["React", "TypeScript", "Tailwind"],
-    category: "Frontend",
-  },
-
   {
     title: "Life Forms Analyzer",
     image: "/projects/lfa.webp",

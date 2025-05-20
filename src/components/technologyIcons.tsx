@@ -5,6 +5,7 @@ import cssIcon from '@iconify/icons-logos/css-3';
 import sassIcon from '@iconify/icons-logos/sass';
 import javascriptIcon from '@iconify/icons-logos/javascript';
 import reactIcon from '@iconify/icons-logos/react';
+import nexjts from '@iconify/icons-logos/nextjs-icon';
 import javaIcon from '@iconify/icons-logos/java';
 import tailwindIcon from '@iconify/icons-logos/tailwindcss-icon';
 import springIcon from '@iconify/icons-logos/spring-icon';
@@ -31,5 +32,6 @@ export const technologyIcons: { [key: string]: React.ReactNode } = {
   PHP: <Icon icon={phpIcon} width="38" height="38" />,
   MYSQL: <Icon icon={mysqlIcon} width="38" height="38" />,
   Bootstrap: <Icon icon={bootstrapIcon} width="38" height="38" />,
+  NextJS: <Icon icon={nexjts} width="38" height="38" />,
   Gemini: <Icon icon={geminiIcon} width="38" height="38" color="#00A8E8" />
 };

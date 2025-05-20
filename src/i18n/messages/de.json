@@ -25,6 +25,7 @@
   "projects": {
     "title": "Persönliche Projekte",
     "source": "Quellcode",
+    "private": "Privat",
     "liveDemo": "Live-Demo",
     "viewProject": "Projekt ansehen",
     "category": {

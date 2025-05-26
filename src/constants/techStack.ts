@@ -31,10 +31,9 @@ import {
   SiOpenai,
   SiVercel,
   SiSpring,
-  SiMariadb,
   SiGooglegemini,
 } from "react-icons/si";
-import { BiLogoVisualStudio } from "react-icons/bi";
+import { BiLogoVisualStudio, BiLogoPostgresql } from "react-icons/bi";
 import { TbBrandWindows } from "react-icons/tb";
 import { DiDatabase } from "react-icons/di";
 
@@ -133,9 +132,9 @@ export const techStackCategories = [
       { icon: SiMysql, name: "MySQL", color: "from-blue-300 to-blue-500" },
       { icon: SiOracle, name: "OracleDB", color: "from-red-300 to-red-500" },
       {
-        icon: SiMariadb,
-        name: "MariaDB",
-        color: "from-brown-400 to-brown-600",
+        icon: BiLogoPostgresql,
+        name: "PostgreSQL ",
+        color: "from-blue-700 to-blue-300",
       },
       { icon: FaAws, name: "AWS", color: "from-yellow-500 to-yellow-700" },
     ],

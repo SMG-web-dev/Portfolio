@@ -1,9 +1,27 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
-
-// Solo importamos inglés como idioma predeterminado
 import enMessages from "./messages/en.json";
+import { useState, useEffect } from "react";
+
+export function useTranslationLoaded() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const checkIfLoaded = async () => {
+      // Espera a que el idioma actual esté cargado
+      const currentLang = i18n.language;
+      if (currentLang !== "en") {
+        await loadLanguageAsync(currentLang);
+      }
+      setIsLoaded(true);
+    };
+
+    checkIfLoaded();
+  }, []);
+
+  return isLoaded;
+}
 
 // Función para cargar idiomas bajo demanda
 const loadLanguageAsync = async (language: string) => {

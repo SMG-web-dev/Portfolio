@@ -5,10 +5,12 @@ import { FiMenu, FiX } from "react-icons/fi";
 import useScrollDirection from "./useScrollDirection";
 import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
+import { useTranslationLoaded } from "../../i18n/i18n";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const scrollDirection = useScrollDirection();
+  const isTranslationLoaded = useTranslationLoaded();
 
   useEffect(() => {
     const handleResize = () => {
@@ -20,6 +22,8 @@ const Header: React.FC = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const renderMenus = isTranslationLoaded;
 
   return (
     <motion.header
@@ -57,7 +61,7 @@ const Header: React.FC = () => {
             </Link>
           </motion.div>
 
-          <DesktopMenu />
+          {renderMenus && <DesktopMenu />}
 
           <motion.button
             className="md:hidden p-2 rounded-full hover:bg-fern-green hover:bg-opacity-20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-fern-green"
@@ -75,7 +79,7 @@ const Header: React.FC = () => {
           </motion.button>
         </nav>
 
-        <MobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+        {renderMenus && <MobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />}
       </div>
     </motion.header>
   );

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useState, useRef, useEffect } from 'react';
-import { Globe, Check } from 'lucide-react';
+import { FaGlobe, FaCheck } from 'react-icons/fa';
 import { languages } from '../constants/languages';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -55,7 +55,7 @@ function LanguageSwitcher() {
                     aria-expanded={isOpen}
                     aria-haspopup="true"
                 >
-                    <Globe size={20} className="text-white" />
+                    <FaGlobe size={20} className="text-white" />
                 </button>
 
                 {/* Dropdown menu with animation */}
@@ -97,7 +97,7 @@ function LanguageSwitcher() {
                                     >
                                         <span className="flex-grow text-left">{language.name}</span>
                                         {i18n.language === language.code && (
-                                            <Check
+                                            <FaCheck
                                                 size={16}
                                                 style={{ color: 'var(--color-fern-green)' }}
                                             />

@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
@@ -33,7 +33,7 @@ export default function Footer() {
             <motion.div className="flex items-center space-x-3" whileHover="hover">
               <motion.span variants={iconVariants}>
                 <motion.span variants={colorAnimation} animate="animate">
-                  <Mail size={20} className="text-sage" />
+                  <FaEnvelope size={20} className="text-sage" />
                 </motion.span>
               </motion.span>
               <a
@@ -46,7 +46,7 @@ export default function Footer() {
             <motion.div className="flex items-center space-x-3" whileHover="hover">
               <motion.span variants={iconVariants}>
                 <motion.span variants={colorAnimation} animate="animate">
-                  <Phone size={20} className="text-sage" />
+                  <FaPhone size={20} className="text-sage" />
                 </motion.span>
               </motion.span>
               <a
@@ -59,7 +59,7 @@ export default function Footer() {
             <motion.div className="flex items-center space-x-3" whileHover="hover">
               <motion.span variants={iconVariants}>
                 <motion.span variants={colorAnimation} animate="animate">
-                  <MapPin size={20} className="text-sage" />
+                  <FaMapMarkerAlt size={20} className="text-sage" />
                 </motion.span>
               </motion.span>
               <span>{t('footer.location')}</span>
@@ -95,7 +95,7 @@ export default function Footer() {
               >
                 <motion.span variants={iconVariants}>
                   <motion.span variants={colorAnimation} animate="animate">
-                    <Github size={24} />
+                    <FaGithub size={24} />
                   </motion.span>
                 </motion.span>
               </motion.a>
@@ -109,7 +109,7 @@ export default function Footer() {
               >
                 <motion.span variants={iconVariants}>
                   <motion.span variants={colorAnimation} animate="animate">
-                    <Linkedin size={24} />
+                    <FaLinkedin size={24} />
                   </motion.span>
                 </motion.span>
               </motion.a>

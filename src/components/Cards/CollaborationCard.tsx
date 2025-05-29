@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Building2, Award, Users, Calendar } from "lucide-react";
+import { FaBuilding, FaAward, FaUsers, FaCalendarAlt } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { CollaborationProps } from "../../types/collaboration";
 
@@ -74,7 +74,7 @@ const CollaborationCard: React.FC<{ collaboration: CollaborationProps; index: nu
               whileHover="hover"
             >
               <motion.div variants={iconAnimation} className="text-sage mr-2">
-                <Building2 size={18} />
+                <FaBuilding size={18} />
               </motion.div>
               <span className="text-timberwolf font-semibold">
                 {t('experience.role')}: <span className="font-normal">{getLocalizedContent(collaboration.role)}</span>
@@ -85,7 +85,7 @@ const CollaborationCard: React.FC<{ collaboration: CollaborationProps; index: nu
               whileHover="hover"
             >
               <motion.div variants={iconAnimation} className="text-sage mr-2">
-                <Calendar size={18} />
+                <FaCalendarAlt size={18} />
               </motion.div>
               <span className="text-timberwolf">
                 {t('experience.period')}: <span className="font-normal">{getLocalizedContent(collaboration.period)}</span>
@@ -96,7 +96,7 @@ const CollaborationCard: React.FC<{ collaboration: CollaborationProps; index: nu
               whileHover="hover"
             >
               <motion.div variants={iconAnimation} className="text-sage mr-2">
-                <Users size={18} />
+                <FaUsers size={18} />
               </motion.div>
               <span className="text-timberwolf">
                 {t('experience.teamSize')}: <span className="font-normal">{getLocalizedContent(collaboration.teamSize)}</span>
@@ -134,7 +134,7 @@ const CollaborationCard: React.FC<{ collaboration: CollaborationProps; index: nu
               whileHover="hover"
             >
               <motion.div variants={iconAnimation} className="mr-2">
-                <Award size={18} />
+                <FaAward size={18} />
               </motion.div>
               {t('experience.achievements')}
             </motion.h4>

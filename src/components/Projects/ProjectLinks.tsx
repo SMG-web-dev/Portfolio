@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Github, Lock } from "lucide-react";
+import { FaGithub, FaLock } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { ProjectLinksProps, ProjectCategory } from "../../types/projects";
 
@@ -25,7 +25,7 @@ const ProjectLinks: React.FC<ProjectLinksProps> = ({ github, category }) => {
           whileTap={{ scale: 0.95 }}
           aria-label="View source code on GitHub"
         >
-          <Github size={20} className="mr-1" aria-hidden="true" />
+          <FaGithub size={20} className="mr-1" aria-hidden="true" />
           <span>{t('projects.source')}</span>
         </motion.a>
       ) : (
@@ -33,7 +33,7 @@ const ProjectLinks: React.FC<ProjectLinksProps> = ({ github, category }) => {
           className="flex items-center text-gray-400 cursor-not-allowed"
           whileHover={{ scale: 1.02 }}
         >
-          <Lock size={20} className="mr-1" aria-hidden="true" />
+          <FaLock size={20} className="mr-1" aria-hidden="true" />
           <span>{t('projects.private') || "Private"}</span>
         </motion.div>
       )}

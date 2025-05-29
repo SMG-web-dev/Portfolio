@@ -1,4 +1,4 @@
-import { FiUser, FiLayers, FiBriefcase, FiMail } from "react-icons/fi";
+import { FiUser, FiLayers, FiBriefcase, FiMail } from "./icons";
 
 export const navbarItems = [
   { id: "experience", name: "menu.experience", icon: FiBriefcase },

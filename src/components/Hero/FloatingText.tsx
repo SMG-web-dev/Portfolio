@@ -4,6 +4,7 @@ import { useSpring, animated } from "react-spring";
 interface FloatingTextProps {
     children: React.ReactNode;
     delay?: number;
+    variant: string;
 }
 
 const FloatingText: React.FC<FloatingTextProps> = ({ children, delay = 0 }) => {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FiDownload } from "react-icons/fi";
+import { FiDownload } from '../../constants/icons';
 import { useTranslation } from "react-i18next";
 
 const DownloadButton: React.FC = () => {
@@ -18,7 +18,7 @@ const DownloadButton: React.FC = () => {
       }, 700);
       return () => clearTimeout(timer);
     });
-    
+
     return () => cancelAnimationFrame(rafId);
   }, []);
 

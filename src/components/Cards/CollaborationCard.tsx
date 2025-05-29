@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaBuilding, FaAward, FaUsers, FaCalendarAlt } from "react-icons/fa";
+import { FaBuilding, FaAward, FaUsers, FaCalendarAlt } from "../../constants/icons";
 import { useTranslation } from "react-i18next";
 import { CollaborationProps } from "../../types/collaboration";
 

@@ -8,7 +8,7 @@ import {
   FaDocker,
   FaPhp,
   FaAws
-} from "react-icons/fa";
+} from "../constants/icons";
 import {
   SiTypescript,
   SiTailwindcss,
@@ -17,7 +17,7 @@ import {
   SiBootstrap,
   SiNextdotjs,
   SiGooglegemini
-} from "react-icons/si";
+} from '../constants/icons';
 
 export const technologyIcons: { [key: string]: React.ReactNode } = {
   HTML: <FaHtml5 size={38} color="#E34F26" />,

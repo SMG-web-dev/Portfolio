@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX } from '../../constants/icons';
 import useScrollDirection from "./useScrollDirection";
 import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";

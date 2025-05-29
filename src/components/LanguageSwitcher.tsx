@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useState, useRef, useEffect } from 'react';
-import { FaGlobe, FaCheck } from 'react-icons/fa';
+import { FaGlobe, FaCheck } from '../constants/icons';
 import { languages } from '../constants/languages';
 import { motion, AnimatePresence } from 'framer-motion';
 

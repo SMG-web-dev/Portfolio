@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaLock } from "react-icons/fa";
+import { FaGithub, FaLock } from "../../constants/icons";
 import { useTranslation } from "react-i18next";
 import { ProjectLinksProps, ProjectCategory } from "../../types/projects";
 

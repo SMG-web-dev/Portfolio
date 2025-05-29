@@ -15,8 +15,6 @@ import {
   FaAngular,
   FaMicrosoft,
   FaSass,
-} from "react-icons/fa";
-import {
   SiTypescript,
   SiMysql,
   SiOracle,
@@ -32,10 +30,11 @@ import {
   SiVercel,
   SiSpring,
   SiGooglegemini,
-} from "react-icons/si";
-import { BiLogoVisualStudio, BiLogoPostgresql } from "react-icons/bi";
-import { TbBrandWindows } from "react-icons/tb";
-import { DiDatabase } from "react-icons/di";
+  BiLogoVisualStudio,
+  BiLogoPostgresql,
+  TbBrandWindows,
+  DiDatabase,
+} from "./icons";
 
 export const techStackCategories = [
   {

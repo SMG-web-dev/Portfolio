@@ -5,15 +5,15 @@ import Footer from "./components/Footer";
 import LanguageSwitcher from "./components/LanguageSwitcher";
 
 // Componentes cargados de forma perezosa
-const Experience = React.lazy(() => import("./components/Experience"));
+// const Experience = React.lazy(() => import("./components/Experience"));
 const TechStack = React.lazy(() => import("./components/TechStack"));
 const Projects = React.lazy(() => import("./components/Projects"));
 
 // Componente de carga simple
 const LoadingFallback = () => (
-  <div className="py-16 flex justify-center items-center text-fern-green">
-    <div className="animate-pulse">Cargando...</div>
-  </div>
+  <article className="py-16 flex justify-center items-center text-fern-green">
+    <section className="animate-pulse">...</section>
+  </article>
 );
 
 function App() {
@@ -21,22 +21,18 @@ function App() {
     <main className="min-h-screen bg-timberwolf text-brunswick-green">
       <Header />
       <Hero />
-      
-      {/* Sección de Experience con lazy loading */}
+      {/* Sección de Experience con lazy loading
       <Suspense fallback={<LoadingFallback />}>
         <Experience />
-      </Suspense>
-      
-      {/* Sección de TechStack con lazy loading */}
-      <Suspense fallback={<LoadingFallback />}>
-        <TechStack />
-      </Suspense>
-      
+      </Suspense> */}
       {/* Sección de Projects con lazy loading */}
       <Suspense fallback={<LoadingFallback />}>
         <Projects />
       </Suspense>
-      
+      {/* Sección de TechStack con lazy loading */}
+      <Suspense fallback={<LoadingFallback />}>
+        <TechStack />
+      </Suspense>
       <Footer />
       <LanguageSwitcher />
     </main>
@@ -47,7 +43,6 @@ function App() {
 if (typeof window !== 'undefined') {
   window.addEventListener('load', () => {
     if ('requestIdleCallback' in window) {
-      // @ts-ignore
       window.requestIdleCallback(() => {
         import('./components/Experience');
         import('./components/TechStack');

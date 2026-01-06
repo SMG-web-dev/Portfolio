@@ -3,7 +3,6 @@ import AnimatedBackground from './AnimatedBackground';
 import FloatingText from './FloatingText';
 import AnimatedTitle from './AnimatedTitle';
 import AnimatedSubtitle from './AnimatedSubtitle';
-import DownloadButton from './DownloadButton';
 
 const Hero: React.FC = () => {
   return (
@@ -13,14 +12,11 @@ const Hero: React.FC = () => {
     >
       <AnimatedBackground />
       <div className="text-center text-brunswick-green z-10">
-        <FloatingText delay={0}>
+        <FloatingText delay={0} variant="title">
           <AnimatedTitle delay={300} />
         </FloatingText>
-        <FloatingText delay={400}>
+        <FloatingText delay={400} variant="subtitle">
           <AnimatedSubtitle />
-        </FloatingText>
-        <FloatingText delay={800}>
-          <DownloadButton />
         </FloatingText>
       </div>
     </section>

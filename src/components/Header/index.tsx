@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, startTransition } from "react";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { FiMenu, FiX } from '../../constants/icons';
@@ -15,7 +15,9 @@ const Header: React.FC = () => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
-        setIsMenuOpen(false);
+        startTransition(() => {
+          setIsMenuOpen(false);
+        });
       }
     };
 
@@ -65,7 +67,11 @@ const Header: React.FC = () => {
 
           <motion.button
             className="md:hidden p-2 rounded-full hover:bg-fern-green hover:bg-opacity-20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-fern-green"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={() => {
+              startTransition(() => {
+                setIsMenuOpen(!isMenuOpen);
+              });
+            }}
             aria-expanded={isMenuOpen}
             aria-label="Toggle menu"
             whileTap={{ scale: 0.95 }}

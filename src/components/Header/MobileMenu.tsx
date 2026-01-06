@@ -1,4 +1,4 @@
-import React from "react";
+import React, { startTransition } from "react";
 import { Link } from "react-scroll";
 import { motion, AnimatePresence } from "framer-motion";
 import { navbarItems } from "../../constants/navbarItems";
@@ -53,7 +53,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isMenuOpen, setIsMenuOpen }) =>
                                         smooth={true}
                                         duration={500}
                                         className="flex items-center py-2 px-4 rounded-lg cursor-pointer transition-all duration-300 capitalize font-medium text-brunswick-green hover:text-fern-green text-center group relative overflow-hidden"
-                                        onClick={() => setIsMenuOpen(false)}
+                                        onClick={() => {
+                                            startTransition(() => {
+                                                setIsMenuOpen(false);
+                                            });
+                                        }}
                                     >
                                         <item.icon className="mr-2 h-5 w-5" />
                                         {t(item.name)}

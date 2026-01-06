@@ -1,5 +1,4 @@
-import React from "react";
-import { Helmet } from "react-helmet-async";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 const SEO: React.FC = () => {
@@ -49,54 +48,80 @@ const SEO: React.FC = () => {
     // URL de LinkedIn
     const linkedinUrl = "https://www.linkedin.com/in/smg-dev/";
 
-    return (
-        <Helmet>
-            {/* Metadatos básicos */}
-            <html lang={lang} />
-            <title>{currentMeta.title}</title>
-            <meta name="description" content={currentMeta.description} />
-            <meta name="keywords" content={currentMeta.keywords} />
+    useEffect(() => {
+        // Función para crear o actualizar meta tags
+        const updateMetaTag = (name: string, content: string, property?: boolean) => {
+            const attribute = property ? 'property' : 'name';
+            const attributeValue = property ? name : name;
+            
+            let meta = document.querySelector(`meta[${attribute}="${attributeValue}"]`) as HTMLMetaElement;
+            if (!meta) {
+                meta = document.createElement('meta');
+                meta.setAttribute(attribute, attributeValue);
+                document.head.appendChild(meta);
+            }
+            meta.setAttribute('content', content);
+        };
 
-            {/* Autor y Publisher */}
-            <meta name="author" content="SMG-Dev" />
-            <meta name="publisher" content="SMG-Dev" />
+        // Función para crear o actualizar link tags
+        const updateLinkTag = (rel: string, href: string, hreflang?: string) => {
+            const selector = hreflang ? `link[rel="${rel}"][hreflang="${hreflang}"]` : `link[rel="${rel}"]`;
+            let link = document.querySelector(selector) as HTMLLinkElement;
+            if (!link) {
+                link = document.createElement('link');
+                link.setAttribute('rel', rel);
+                if (hreflang) link.setAttribute('hreflang', hreflang);
+                document.head.appendChild(link);
+            }
+            link.setAttribute('href', href);
+        };
 
-            {/* Robots */}
-            <meta name="robots" content="index, follow" />
+        // Actualizar título y lang del HTML
+        document.title = currentMeta.title;
+        document.documentElement.lang = lang;
 
-            {/* URL Canónica */}
-            <link rel="canonical" href={canonicalUrl} />
+        // Metadatos básicos
+        updateMetaTag('description', currentMeta.description);
+        updateMetaTag('keywords', currentMeta.keywords);
+        updateMetaTag('author', 'SMG-Dev');
+        updateMetaTag('publisher', 'SMG-Dev');
+        updateMetaTag('robots', 'index, follow');
 
-            {/* LinkedIn */}
-            <meta property="linkedin:author" content={linkedinUrl} />
-            <meta property="og:profession" content={currentMeta.profession} />
-            <meta name="linkedin:owner" content="SMG-Dev" />
+        // LinkedIn
+        updateMetaTag('linkedin:author', linkedinUrl, true);
+        updateMetaTag('og:profession', currentMeta.profession, true);
+        updateMetaTag('linkedin:owner', 'SMG-Dev');
 
-            {/* Open Graph / Facebook */}
-            <meta property="og:type" content="website" />
-            <meta property="og:url" content={canonicalUrl} />
-            <meta property="og:title" content={currentMeta.title} />
-            <meta property="og:description" content={currentMeta.description} />
-            <meta property="og:image" content={`${canonicalUrl}/og-image.png`} />
-            <meta property="og:site_name" content="SMG-Dev Portfolio" />
+        // Open Graph / Facebook
+        updateMetaTag('og:type', 'website', true);
+        updateMetaTag('og:url', canonicalUrl, true);
+        updateMetaTag('og:title', currentMeta.title, true);
+        updateMetaTag('og:description', currentMeta.description, true);
+        updateMetaTag('og:image', `${canonicalUrl}/og-image.png`, true);
+        updateMetaTag('og:site_name', 'SMG-Dev Portfolio', true);
 
-            {/* Twitter */}
-            <meta property="twitter:card" content="summary_large_image" />
-            <meta property="twitter:url" content={canonicalUrl} />
-            <meta property="twitter:title" content={currentMeta.title} />
-            <meta property="twitter:description" content={currentMeta.description} />
-            <meta property="twitter:image" content={`${canonicalUrl}/og-image.png`} />
-            <meta property="twitter:creator" content="@smg_dev" />
+        // Twitter
+        updateMetaTag('twitter:card', 'summary_large_image', true);
+        updateMetaTag('twitter:url', canonicalUrl, true);
+        updateMetaTag('twitter:title', currentMeta.title, true);
+        updateMetaTag('twitter:description', currentMeta.description, true);
+        updateMetaTag('twitter:image', `${canonicalUrl}/og-image.png`, true);
+        updateMetaTag('twitter:creator', '@smg_dev', true);
 
-            {/* Alternativas de idioma para SEO */}
-            <link rel="alternate" hrefLang="en" href={`${canonicalUrl}/en`} />
-            <link rel="alternate" hrefLang="es" href={`${canonicalUrl}/es`} />
-            <link rel="alternate" hrefLang="it" href={`${canonicalUrl}/it`} />
-            <link rel="alternate" hrefLang="de" href={`${canonicalUrl}/de`} />
-            <link rel="alternate" hrefLang="fr" href={`${canonicalUrl}/fr`} />
-            <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
-        </Helmet>
-    );
+        // URL Canónica
+        updateLinkTag('canonical', canonicalUrl);
+
+        // Alternativas de idioma para SEO
+        updateLinkTag('alternate', `${canonicalUrl}/en`, 'en');
+        updateLinkTag('alternate', `${canonicalUrl}/es`, 'es');
+        updateLinkTag('alternate', `${canonicalUrl}/it`, 'it');
+        updateLinkTag('alternate', `${canonicalUrl}/de`, 'de');
+        updateLinkTag('alternate', `${canonicalUrl}/fr`, 'fr');
+        updateLinkTag('alternate', canonicalUrl, 'x-default');
+
+    }, [lang, currentMeta, canonicalUrl, linkedinUrl]);
+
+    return null; // No render nada, solo efectos en el DOM
 };
 
 export default SEO;

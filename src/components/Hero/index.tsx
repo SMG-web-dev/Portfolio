@@ -8,10 +8,10 @@ const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-hunter-green to-sage"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-hunter-green to-sage px-4 sm:px-6 lg:px-8"
     >
       <AnimatedBackground />
-      <div className="text-center text-brunswick-green z-10">
+      <div className="text-center text-brunswick-green z-10 max-w-4xl mx-auto">
         <FloatingText delay={0} variant="title">
           <AnimatedTitle delay={300} />
         </FloatingText>

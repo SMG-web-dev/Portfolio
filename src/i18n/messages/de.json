@@ -20,7 +20,8 @@
     "devTools": "Entwicklungstools",
     "databases": "Datenbanken und Cloud",
     "operatingSystems": "Betriebssysteme und Server",
-    "aiTools": "KI-Tools"
+    "aiTools": "KI-Tools",
+    "cloudHosting": "Cloud und Hosting"
   },
   "projects": {
     "title": "Persönliche Projekte",

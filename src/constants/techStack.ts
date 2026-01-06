@@ -29,6 +29,11 @@ import {
   SiOpenai,
   SiVercel,
   SiSpring,
+  SiSupabase,
+  SiGithubcopilot,
+  SiAnthropic,
+  SiNetlify,
+  SiJsonwebtokens,
   SiGooglegemini,
   BiLogoVisualStudio,
   BiLogoPostgresql,
@@ -135,7 +140,14 @@ export const techStackCategories = [
         name: "PostgreSQL ",
         color: "from-blue-700 to-blue-300",
       },
+      {
+        icon: SiSupabase,
+        name: "Supabase",
+        color: "from-green-400 to-green-600",
+      },
       { icon: FaAws, name: "AWS", color: "from-yellow-500 to-yellow-700" },
+      { icon: SiVercel, name: "Vercel", color: "from-gray-600 to-gray-800" },
+      { icon: SiNetlify, name: "Netlify", color: "from-teal-400 to-teal-600" },
     ],
   },
   {
@@ -155,8 +167,22 @@ export const techStackCategories = [
     name: "techstack.aiTools",
     techstack: [
       { icon: SiOpenai, name: "ChatGPT", color: "from-green-400 to-green-600" },
+      {
+        icon: SiGithubcopilot,
+        name: "GitHub Copilot",
+        color: "from-purple-500 to-purple-700",
+      },
+      {
+        icon: SiAnthropic,
+        name: "Claude",
+        color: "from-orange-400 to-orange-600",
+      },
       { icon: SiStackblitz, name: "Bolt", color: "from-blue-400 to-blue-600" },
-      { icon: SiVercel, name: "V0", color: "from-gray-600 to-gray-800" },
+      {
+        icon: SiJsonwebtokens,
+        name: "MCP",
+        color: "from-indigo-400 to-indigo-600",
+      },
       {
         icon: SiGooglegemini,
         name: "Gemini",

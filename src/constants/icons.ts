@@ -54,6 +54,11 @@ export const SiBootstrap = lazy(() => import('react-icons/si').then(mod => ({ de
 export const SiOpenai = lazy(() => import('react-icons/si').then(mod => ({ default: mod.SiOpenai })))
 export const SiVercel = lazy(() => import('react-icons/si').then(mod => ({ default: mod.SiVercel })))
 export const SiSpring = lazy(() => import('react-icons/si').then(mod => ({ default: mod.SiSpring })))
+export const SiSupabase = lazy(() => import('react-icons/si').then(mod => ({ default: mod.SiSupabase })))
+export const SiGithubcopilot = lazy(() => import('react-icons/si').then(mod => ({ default: mod.SiGithubcopilot })))
+export const SiAnthropic = lazy(() => import('react-icons/si').then(mod => ({ default: mod.SiAnthropic })))
+export const SiNetlify = lazy(() => import('react-icons/si').then(mod => ({ default: mod.SiNetlify })))
+export const SiJsonwebtokens = lazy(() => import('react-icons/si').then(mod => ({ default: mod.SiJsonwebtokens })))
 export const SiGooglegemini = lazy(() => import('react-icons/si').then(mod => ({ default: mod.SiGooglegemini })))
 
 // BI Icons - Lazy imports

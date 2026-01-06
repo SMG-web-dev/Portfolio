@@ -20,7 +20,8 @@
     "devTools": "Outils de Développement",
     "databases": "Bases de Données et Cloud",
     "operatingSystems": "Systèmes d'Exploitation et Serveurs",
-    "aiTools": "Outils IA"
+    "aiTools": "Outils d'IA",
+    "cloudHosting": "Cloud et Hébergement"
   },
   "projects": {
     "title": "Projets personnels",

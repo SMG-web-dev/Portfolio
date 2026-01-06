@@ -51,6 +51,7 @@ function LanguageSwitcher() {
             <div className="relative">
                 {/* Main button */}
                 <motion.button
+                    onClick={() => setIsOpen(!isOpen)}
                     className="text-white p-4 rounded-full shadow-xl backdrop-blur-md bg-brunswick-green/90 border border-sage/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-fern-green focus:ring-offset-2 focus:ring-offset-sage/20 hover:bg-brunswick-green hover:shadow-2xl"
                     aria-expanded={isOpen}
                     aria-haspopup="true"

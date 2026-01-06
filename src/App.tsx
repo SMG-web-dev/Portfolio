@@ -86,9 +86,6 @@ function App() {
         </Suspense>
         <Footer />
         <LanguageSwitcher />
-        
-        {/* Barra inferior para dispositivos iOS */}
-        <div className="ios-bottom-bar fixed bottom-0 left-0 right-0 pointer-events-none z-40"></div>
       </main>
     </>
   );

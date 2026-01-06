@@ -11,7 +11,8 @@ const FloatingText: React.FC<FloatingTextProps> = ({ children, delay = 0 }) => {
     const floatAnimation = useSpring({
         from: { transform: "translateY(0px)" },
         to: async (next) => {
-            while (1) {
+             
+            while (true) {
                 await next({ transform: "translateY(-20px)" });
                 await next({ transform: "translateY(0px)" });
             }

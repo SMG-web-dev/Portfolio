@@ -58,6 +58,36 @@ export default {
         '.text-shadow': {
           textShadow: '0 2px 4px rgba(0,0,0,0.1)',
         },
+        // Safe area utilities
+        '.pt-safe': { paddingTop: 'var(--safe-area-inset-top)' },
+        '.pr-safe': { paddingRight: 'var(--safe-area-inset-right)' },
+        '.pb-safe': { paddingBottom: 'var(--safe-area-inset-bottom)' },
+        '.pl-safe': { paddingLeft: 'var(--safe-area-inset-left)' },
+        '.p-safe': {
+          paddingTop: 'var(--safe-area-inset-top)',
+          paddingRight: 'var(--safe-area-inset-right)',
+          paddingBottom: 'var(--safe-area-inset-bottom)',
+          paddingLeft: 'var(--safe-area-inset-left)',
+        },
+        '.h-screen-safe': {
+          height: 'calc(100vh - var(--safe-area-inset-top) - var(--safe-area-inset-bottom))',
+        },
+        '.min-h-screen-safe': {
+          minHeight: 'calc(100vh - var(--safe-area-inset-top) - var(--safe-area-inset-bottom))',
+        },
+        // iOS specific utilities
+        '.pb-safe-ios': {
+          paddingBottom: 'max(1rem, var(--safe-area-inset-bottom))',
+        },
+        '.bottom-safe': {
+          bottom: 'max(1rem, var(--safe-area-inset-bottom))',
+        },
+        '.right-safe': {
+          right: 'max(1rem, var(--safe-area-inset-right))',
+        },
+        '.left-safe': {
+          left: 'max(1rem, var(--safe-area-inset-left))',
+        },
       };
 
       addUtilities(utilities, ['responsive', 'hover']);

@@ -20,7 +20,7 @@ export default function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-brunswick-green text-timberwolf py-12 sm:py-16 lg:py-20">
+    <footer className="bg-brunswick-green text-timberwolf py-12 sm:py-16 lg:py-20 pb-safe-ios">
       <div id="contact" className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 xl:gap-16">
           <motion.div

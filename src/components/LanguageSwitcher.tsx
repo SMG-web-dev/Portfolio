@@ -41,7 +41,7 @@ function LanguageSwitcher() {
     return (
         <motion.div
             ref={dropdownRef}
-            className="fixed bottom-6 right-6 z-50"
+            className="fixed z-50 bottom-safe right-safe"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             initial={{ scale: 0 }}

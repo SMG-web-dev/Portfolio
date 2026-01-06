@@ -65,7 +65,7 @@ function App() {
       />
       
       {/* Contenido principal */}
-      <main className={`min-h-screen bg-timberwolf text-brunswick-green transition-opacity duration-700 ${
+      <main className={`safe-area-container bg-timberwolf text-brunswick-green transition-opacity duration-700 ${
         isLoading ? 'opacity-0' : 'opacity-100'
       }`}>
         {/* Header siempre visible pero controlamos su animación */}
@@ -86,6 +86,9 @@ function App() {
         </Suspense>
         <Footer />
         <LanguageSwitcher />
+        
+        {/* Barra inferior para dispositivos iOS */}
+        <div className="ios-bottom-bar fixed bottom-0 left-0 right-0 pointer-events-none z-40"></div>
       </main>
     </>
   );

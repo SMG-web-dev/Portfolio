@@ -1,6 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import "./styles/ios-safe-areas.css";
 
 :root {
   --color-timberwolf: #9bb894;
@@ -8,6 +9,12 @@
   --color-fern-green: #588157;
   --color-hunter-green: #3a5a40;
   --color-brunswick-green: #344e41;
+  
+  /* Variables para safe areas */
+  --safe-area-inset-top: env(safe-area-inset-top, 0px);
+  --safe-area-inset-right: env(safe-area-inset-right, 0px);
+  --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-area-inset-left: env(safe-area-inset-left, 0px);
 }
 
 html {
@@ -24,4 +31,59 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased; /* Solo en navegadores WebKit */
   -moz-osx-font-smoothing: grayscale; /* Solo en macOS */
+}
+
+/* Estilos para safe areas en dispositivos móviles */
+body {
+  padding-top: var(--safe-area-inset-top);
+  padding-left: var(--safe-area-inset-left);
+  padding-right: var(--safe-area-inset-right);
+  /* No aplicamos padding-bottom aquí para controlarlo por componentes */
+}
+
+/* Contenedor principal que respeta todas las safe areas */
+.safe-area-container {
+  min-height: 100vh;
+  min-height: calc(100vh - var(--safe-area-inset-top) - var(--safe-area-inset-bottom));
+  padding-bottom: var(--safe-area-inset-bottom);
+}
+
+/* Clase específica para elementos que necesitan respetar el área segura inferior */
+.safe-bottom {
+  padding-bottom: calc(1rem + var(--safe-area-inset-bottom));
+}
+
+/* Para dispositivos con notch o Dynamic Island */
+@supports (padding: max(0px)) {
+  .safe-top {
+    padding-top: max(1rem, var(--safe-area-inset-top));
+  }
+  
+  .safe-bottom {
+    padding-bottom: max(1rem, var(--safe-area-inset-bottom));
+  }
+  
+  .safe-left {
+    padding-left: max(1rem, var(--safe-area-inset-left));
+  }
+  
+  .safe-right {
+    padding-right: max(1rem, var(--safe-area-inset-right));
+  }
+}
+
+/* Estilos específicos para iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  /* Detecta Safari en iOS */
+  .ios-safe-bottom {
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom, 20px));
+  }
+  
+  /* Ajuste específico para la barra de navegación del iPhone */
+  .ios-bottom-bar {
+    background: linear-gradient(180deg, transparent 0%, rgba(52, 78, 65, 0.8) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    height: calc(env(safe-area-inset-bottom, 20px) + 20px);
+  }
 }

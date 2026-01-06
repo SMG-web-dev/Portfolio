@@ -4,7 +4,11 @@ import { motion } from "framer-motion";
 import { navbarItems } from "../../constants/navbarItems";
 import { useTranslation } from "react-i18next";
 
-const DesktopMenu: React.FC = () => {
+interface DesktopMenuProps {
+  showInitialAnimation?: boolean;
+}
+
+const DesktopMenu: React.FC<DesktopMenuProps> = ({ showInitialAnimation = false }) => {
     const { t } = useTranslation();
 
     return (
@@ -12,9 +16,17 @@ const DesktopMenu: React.FC = () => {
             {navbarItems.map((item, index) => (
                 <motion.li
                     key={item.id}
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    initial={{ 
+                        opacity: showInitialAnimation ? 0 : 1, 
+                        y: showInitialAnimation ? -20 : 0,
+                        scale: showInitialAnimation ? 0.9 : 1
+                    }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ 
+                        duration: showInitialAnimation ? 0.4 : 0.5, 
+                        delay: showInitialAnimation ? 0.8 + (index * 0.1) : index * 0.1,
+                        ease: "easeOut"
+                    }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                 >

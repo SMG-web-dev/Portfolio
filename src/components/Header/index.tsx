@@ -7,7 +7,11 @@ import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
 import { useTranslationLoaded } from "../../i18n/i18n";
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  showInitialAnimation?: boolean;
+}
+
+const Header: React.FC<HeaderProps> = ({ showInitialAnimation = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const scrollDirection = useScrollDirection();
   const isTranslationLoaded = useTranslationLoaded();
@@ -29,18 +33,52 @@ const Header: React.FC = () => {
 
   return (
     <motion.header
-      className="fixed w-full z-50 transition-all duration-300"
-      initial={{ y: 0 }}
-      animate={{ y: scrollDirection === "down" ? -100 : 0 }}
-      transition={{ duration: 0.3 }}
+      className="fixed w-full z-50 transition-all duration-150"
+      initial={{ 
+        y: showInitialAnimation ? -120 : 0,
+        opacity: showInitialAnimation ? 0 : 1
+      }}
+      animate={{ 
+        y: scrollDirection === "down" ? -100 : 0,
+        opacity: 1
+      }}
+      transition={{ 
+        duration: showInitialAnimation ? 0.4 : 0.15,
+        ease: showInitialAnimation ? [0.25, 0.46, 0.45, 0.94] : "easeInOut",
+        delay: showInitialAnimation ? 0.1 : 0
+      }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
-        <nav className="flex justify-between items-center backdrop-blur-md bg-sage/80 shadow-xl rounded-full px-6 sm:px-8 lg:px-10 py-3 sm:py-4 border border-white/20">
+        <motion.nav 
+          className="flex justify-between items-center backdrop-blur-md bg-sage/80 shadow-xl rounded-full px-6 sm:px-8 lg:px-10 py-3 sm:py-4 border border-white/20"
+          initial={{
+            scale: showInitialAnimation ? 0.8 : 1,
+            opacity: showInitialAnimation ? 0 : 1,
+            y: showInitialAnimation ? 30 : 0
+          }}
+          animate={{
+            scale: 1,
+            opacity: 1,
+            y: 0
+          }}
+          transition={{
+            duration: showInitialAnimation ? 0.8 : 0,
+            ease: "easeOut",
+            delay: showInitialAnimation ? 0.3 : 0
+          }}
+        >
           <motion.div
             className="flex items-center space-x-3 sm:space-x-4"
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ 
+              opacity: showInitialAnimation ? 0 : 1, 
+              x: showInitialAnimation ? -30 : 0 
+            }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ 
+              duration: showInitialAnimation ? 0.5 : 0.5,
+              ease: "easeOut",
+              delay: showInitialAnimation ? 0.6 : 0
+            }}
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -64,7 +102,7 @@ const Header: React.FC = () => {
             </Link>
           </motion.div>
 
-          {renderMenus && <DesktopMenu />}
+          {renderMenus && <DesktopMenu showInitialAnimation={showInitialAnimation} />}
 
           <motion.button
             className="md:hidden p-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-fern-green focus:ring-offset-2 focus:ring-offset-sage/20 shadow-lg"
@@ -75,6 +113,21 @@ const Header: React.FC = () => {
             }}
             aria-expanded={isMenuOpen}
             aria-label="Toggle menu"
+            initial={{
+              opacity: showInitialAnimation ? 0 : 1,
+              x: showInitialAnimation ? 30 : 0,
+              rotate: showInitialAnimation ? 180 : 0
+            }}
+            animate={{ 
+              opacity: 1, 
+              x: 0, 
+              rotate: isMenuOpen ? 180 : 0 
+            }}
+            transition={{
+              duration: showInitialAnimation ? 0.5 : 0.3,
+              delay: showInitialAnimation ? 0.6 : 0,
+              ease: "easeOut"
+            }}
             whileTap={{ scale: 0.9 }}
             whileHover={{ scale: 1.1 }}
           >
@@ -84,7 +137,7 @@ const Header: React.FC = () => {
               <FiMenu className="w-5 h-5 sm:w-6 sm:h-6" />
             )}
           </motion.button>
-        </nav>
+        </motion.nav>
 
         {renderMenus && <MobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />}
       </div>

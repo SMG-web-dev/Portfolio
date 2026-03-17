@@ -46,5 +46,8 @@
     "techStack": "Tech-Stack",
     "projects": "Persönliche Projekte",
     "contact": "Kontakt"
+  },
+  "loading": {
+    "preparing": "Bereite ein unglaubliches Erlebnis vor..."
   }
 }

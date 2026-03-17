@@ -13,7 +13,7 @@ export const projects: ProjectProps[] = [
     title: "FSC TopNutrition (In Progress)",
     image: "/projects/topnutrition.webp",
     github: null,
-    live: "https://top-nutrition-fsc.vercel.app/es",
+    live: "https://fsctopnutrition.es",
     technologies: ["NextJS", "Tailwind"],
     category: "Full-Stack",
   },

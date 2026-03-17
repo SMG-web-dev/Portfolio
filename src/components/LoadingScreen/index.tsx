@@ -2,7 +2,6 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedBackground from '../Hero/AnimatedBackground';
 import './LoadingScreen.css';
-import { useTranslation } from 'react-i18next';
 
 interface LoadingScreenProps {
   isVisible: boolean;
@@ -28,7 +27,6 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ isVisible, onLogoAnimatio
     }
   }, [isVisible, showLogo, onLogoAnimationStart]);
 
-  const { t } = useTranslation();
   return (
     <AnimatePresence>
       {isVisible && (
@@ -39,8 +37,10 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ isVisible, onLogoAnimatio
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <AnimatedBackground />
+          
           {/* Overlay oscuro sutil */}
           <div className="loading-overlay" />
+          
           {/* Contenido principal */}
           <article className="loading-content">
             {/* Logo con animación épica */}
@@ -80,6 +80,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ isVisible, onLogoAnimatio
                 </motion.div>
               )}
             </AnimatePresence>
+
             {/* Spinner principal */}
             <motion.div 
               className="loading-spinner-container"
@@ -94,6 +95,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ isVisible, onLogoAnimatio
                 <div className="spinner-ring"></div>
               </div>
             </motion.div>
+
             {/* Barra de progreso */}
             <motion.div 
               className="loading-progress-container"
@@ -105,8 +107,9 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ isVisible, onLogoAnimatio
               <div className="loading-progress-bar">
                 <div className="loading-progress-fill"></div>
               </div>
-              <p className="loading-text">{t('loading.preparing')}</p>
+              <p className="loading-text">Preparando experiencia increíble...</p>
             </motion.div>
+
             {/* Puntos flotantes */}
             <div className="loading-dots">
               {[1, 2, 3, 4, 5].map((num) => (

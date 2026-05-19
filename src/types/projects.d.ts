@@ -7,6 +7,7 @@ export interface ProjectProps {
   live: string;
   technologies: string[];
   category: ProjectCategory;
+  isProfessional?: boolean;
 }
 
 export interface ProjectCardProps {

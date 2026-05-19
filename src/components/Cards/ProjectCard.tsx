@@ -16,7 +16,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       whileHover={{ scale: 1.03 }}
       className="bg-brunswick-green rounded-lg shadow-lg overflow-hidden flex flex-col group transition-all duration-200 ease-in-out"
     >
-      <div className="relative pt-[60%] overflow-hidden">
+      <div className={`relative pt-[60%] overflow-hidden ${project.isProfessional ? 'bg-white' : ''}`}>
         <motion.a
           href={project.live}
           target="_blank"
@@ -26,23 +26,23 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           <motion.img
             src={project.image}
             alt={project.title}
-            className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 shadow-[inset_0_-4px_6px_rgba(0,0,0,0.1)]"
+            className={`absolute top-0 left-0 w-full h-full transition-transform duration-300 group-hover:scale-105 shadow-[inset_0_-4px_6px_rgba(0,0,0,0.1)] ${project.isProfessional ? 'object-contain p-4' : 'object-cover'}`}
           />
           <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
             <span className="text-white text-lg font-semibold">{t('projects.viewProject')}</span>
           </div>
         </motion.a>
       </div>
-      <div className="p-6 flex-grow relative">
+      <div className="p-4 flex-grow relative">
         <div className="absolute top-0 left-0 right-0 h-4 bg-gradient-to-b from-black/20 to-transparent"></div>
-        <h3 className="text-xl font-semibold mb-2 text-timberwolf">
+        <h3 className="text-lg font-semibold mb-2 text-timberwolf line-clamp-2">
           {project.title}
         </h3>
-        <div className="flex flex-wrap gap-3 mt-2">
+        <div className="flex flex-wrap gap-2 mt-2">
           {project.technologies.map((tech, index) => (
             <motion.div
               key={tech}
-              className="flex items-center justify-center bg-hunter-green rounded-lg w-12 h-12 shadow-md"
+              className="flex items-center justify-center bg-hunter-green rounded-lg w-9 h-9 shadow-md"
               title={tech}
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}

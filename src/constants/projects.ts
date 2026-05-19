@@ -1,20 +1,12 @@
 import { ProjectProps } from "../types/projects";
 
-export const projects: ProjectProps[] = [
+export const personalProjects: ProjectProps[] = [
   {
     title: "AWS S3 Bucket Manager",
     image: "/projects/s3man.webp",
     github: "https://github.com/SMG-web-dev/S3BucketManager",
     live: "https://github.com/SMG-web-dev/S3BucketManager",
     technologies: ["HTML", "Spring", "Tailwind", "Docker", "AWS"],
-    category: "Full-Stack",
-  },
-  {
-    title: "FSC TopNutrition (In Progress)",
-    image: "/projects/topnutrition.webp",
-    github: null,
-    live: "https://fsctopnutrition.es",
-    technologies: ["NextJS", "Tailwind"],
     category: "Full-Stack",
   },
   {
@@ -26,12 +18,12 @@ export const projects: ProjectProps[] = [
     category: "Frontend",
   },
   {
-    title: "Life Forms Analyzer",
-    image: "/projects/lfa.webp",
-    github: "https://github.com/SMG-web-dev/LifeFormsAnalyzer",
-    live: "https://life-forms-analyzer.netlify.app/",
-    technologies: ["React", "TypeScript", "Tailwind", "Gemini"],
-    category: "Frontend",
+    title: "FSC TopNutrition (In Progress)",
+    image: "/projects/topnutrition.webp",
+    github: null,
+    live: "https://fsctopnutrition.es",
+    technologies: ["NextJS", "Tailwind"],
+    category: "Full-Stack",
   },
   {
     title: "BootLearn",
@@ -48,5 +40,53 @@ export const projects: ProjectProps[] = [
     live: "https://surotulo.netlify.app/",
     technologies: ["JavaScript", "HTML", "SASS"],
     category: "Frontend",
+  },
+];
+
+export const professionalProjects: ProjectProps[] = [
+  {
+    title: "ITB",
+    image: "/projects/DLTCode-horizontal.svg",
+    github: null,
+    live: "https://www.incibe.es/industria-cpi/dltcode-sl",
+    technologies: ["SASS", "NextJS", "TypeScript"],
+    category: "Frontend",
+    isProfessional: true,
+  },
+  {
+    title: "S@IC",
+    image: "/projects/DLTCode-horizontal.svg",
+    github: null,
+    live: "https://www.incibe.es/industria-cpi/dltcode-sl",
+    technologies: ["SASS", "NextJS", "TypeScript"],
+    category: "Frontend",
+    isProfessional: true,
+  },
+  {
+    title: "ATS",
+    image: "/projects/Correcta-horizontal.svg",
+    github: null,
+    live: "https://www.incibe.es/industria-cpi/correcta-digital-sl",
+    technologies: ["SASS", "NextJS", "TypeScript"],
+    category: "Frontend",
+    isProfessional: true,
+  },
+  {
+    title: "Osborne",
+    image: "/projects/Correcta-horizontal.svg",
+    github: null,
+    live: "https://www.incibe.es/industria-cpi/correcta-digital-sl",
+    technologies: ["SASS", "NextJS", "TypeScript"],
+    category: "Frontend",
+    isProfessional: true,
+  },
+  {
+    title: "DStar",
+    image: "/projects/DLTCode-horizontal.svg",
+    github: null,
+    live: "https://www.incibe.es/industria-cpi/dltcode-sl",
+    technologies: ["SASS", "NextJS", "TypeScript"],
+    category: "Frontend",
+    isProfessional: true,
   },
 ];

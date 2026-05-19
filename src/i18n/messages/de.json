@@ -3,7 +3,7 @@
     "title": "Hallo, ich bin",
     "subtitle": "Frontend-Entwickler",
     "welcome": "Willkommen, ich bin Sergio",
-    "description": "ein Webentwickler",
+    "description": "ein Webentwickler ツ",
     "downloadCV": "Lebenslauf herunterladen"
   },
   "experience": {
@@ -24,7 +24,9 @@
     "cloudHosting": "Cloud und Hosting"
   },
   "projects": {
-    "title": "Persönliche Projekte",
+    "title": "Projekte",
+    "personalSubtitle": "Persönliche Projekte",
+    "professionalSubtitle": "Berufliche Projekte",
     "source": "Quellcode",
     "private": "Privat",
     "liveDemo": "Live-Demo",

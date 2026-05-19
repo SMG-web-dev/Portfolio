@@ -19,9 +19,11 @@ const CollaborationCard: React.FC<{
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.1 }}
+      variants={{
+        hidden: { opacity: 0, y: 30 },
+        visible: { opacity: 1, y: 0 },
+      }}
+      transition={{ duration: 0.4 }}
       whileHover={{ y: -2, boxShadow: "0 8px 25px rgba(0, 0, 0, 0.25)" }}
       className="bg-brunswick-green rounded-xl shadow-lg overflow-hidden transition-all duration-300"
     >
@@ -30,10 +32,12 @@ const CollaborationCard: React.FC<{
         <div className="relative h-full flex items-center px-4 sm:px-5">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-sage/20 flex items-center justify-center flex-shrink-0 overflow-hidden">
-              <img
+              <motion.img
                 src={collaboration.image}
                 alt={collaboration.company}
                 className="w-full h-full object-cover"
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.3 }}
               />
             </div>
             <div>
@@ -72,10 +76,20 @@ const CollaborationCard: React.FC<{
         </div>
         <ul className="space-y-1">
           {achievements.map((achievement, i) => (
-            <li key={i} className="flex items-start gap-1.5 text-timberwolf/80 text-sm leading-relaxed">
-              <span className="h-1 w-1 bg-sage rounded-full mt-1.5 flex-shrink-0" />
+            <motion.li
+              key={i}
+              initial={{ opacity: 0, x: -5 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3, delay: i * 0.1 }}
+              className="flex items-start gap-1.5 text-timberwolf/80 text-sm leading-relaxed"
+            >
+              <motion.span
+                className="h-1 w-1 bg-sage rounded-full mt-1.5 flex-shrink-0"
+                whileHover={{ scale: 1.5 }}
+                transition={{ duration: 0.2 }}
+              />
               <span>{achievement}</span>
-            </li>
+            </motion.li>
           ))}
         </ul>
       </div>

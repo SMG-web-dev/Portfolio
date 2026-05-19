@@ -105,9 +105,13 @@ const SoftSkills: React.FC = () => {
                 className="bg-brunswick-green rounded-lg p-4 shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <div className="flex items-center space-x-3">
-                  <div className="text-sage">
+                  <motion.div
+                    className="text-sage"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.5 }}
+                  >
                     <SoftSkillIcon icon={skill.icon} className="w-6 h-6" />
-                  </div>
+                  </motion.div>
                   <span className="text-timberwolf text-sm font-medium">
                     {getLocalizedContent(skill.name)}
                   </span>

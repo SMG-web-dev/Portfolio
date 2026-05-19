@@ -29,9 +29,18 @@ const Projects: React.FC = () => {
           </motion.h3>
           <motion.div
             className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.08,
+                  delayChildren: 0.2,
+                },
+              },
+            }}
           >
             {personalProjects.map((project, index) => (
               <ProjectCard key={project.title} project={project} index={index} />
@@ -50,9 +59,18 @@ const Projects: React.FC = () => {
           </motion.h3>
           <motion.div
             className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.08,
+                  delayChildren: 0.4,
+                },
+              },
+            }}
           >
             {professionalProjects.map((project, index) => (
               <ProjectCard key={project.title} project={project} index={index} />

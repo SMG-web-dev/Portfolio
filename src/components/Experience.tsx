@@ -19,7 +19,21 @@ const Experience: React.FC = () => {
           {t('experience.title')}
         </motion.h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+        <motion.div
+          className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.2,
+              },
+            },
+          }}
+        >
           {collaborations.map((collab, index) => (
             <CollaborationCard
               key={index}
@@ -27,7 +41,7 @@ const Experience: React.FC = () => {
               index={index}
             />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

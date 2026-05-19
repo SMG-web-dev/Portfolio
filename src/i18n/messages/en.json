@@ -13,6 +13,9 @@
     "teamSize": "Team Size",
     "achievements": "Achievements"
   },
+  "softskills": {
+    "title": "Soft Skills"
+  },
   "techstack": {
     "title": "Tech Stack",
     "languages": "Languages",
@@ -44,9 +47,10 @@
     "location": "Madrid, Spain"
   },
   "menu": {
-    "experience": "Profesional Experience",
+    "experience": "Experience",
     "techStack": "Tech Stack",
-    "projects": "Personal Projects",
+    "projects": "Projects",
+    "softSkills": "Soft Skills",
     "contact": "Contact"
   },
   "loading": {

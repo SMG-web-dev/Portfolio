@@ -13,6 +13,9 @@
     "teamSize": "Taille de l'équipe",
     "achievements": "Réalisations"
   },
+  "softskills": {
+    "title": "Compétences Douces"
+  },
   "techstack": {
     "title": "Stack Technique",
     "languages": "Langages",
@@ -44,9 +47,10 @@
     "location": "Madrid, Espagne"
   },
   "menu": {
-    "experience": "Expérience professionnelle",
-    "techStack": "Stack Technique",
-    "projects": "Projets personnels",
+    "experience": "Expérience",
+    "techStack": "Tech Stack",
+    "projects": "Projets",
+    "softSkills": "Compétences",
     "contact": "Contact"
   },
   "loading": {

@@ -6,9 +6,10 @@ import LanguageSwitcher from "./components/LanguageSwitcher";
 import LoadingScreen from "./components/LoadingScreen";
 
 // Componentes cargados de forma perezosa
-// const Experience = React.lazy(() => import("./components/Experience"));
+const Experience = React.lazy(() => import("./components/Experience"));
 const TechStack = React.lazy(() => import("./components/TechStack"));
 const Projects = React.lazy(() => import("./components/Projects"));
+const SoftSkills = React.lazy(() => import("./components/SoftSkills"));
 
 // Componente de carga simple para lazy loading
 const LoadingFallback = () => (
@@ -72,10 +73,10 @@ function App() {
         <Header showInitialAnimation={headerShouldAnimate} />
         
         <Hero />
-        {/* Sección de Experience con lazy loading
+        {/* Sección de Experience con lazy loading */}
         <Suspense fallback={<LoadingFallback />}>
           <Experience />
-        </Suspense> */}
+        </Suspense>
         {/* Sección de Projects con lazy loading */}
         <Suspense fallback={<LoadingFallback />}>
           <Projects />
@@ -83,6 +84,10 @@ function App() {
         {/* Sección de TechStack con lazy loading */}
         <Suspense fallback={<LoadingFallback />}>
           <TechStack />
+        </Suspense>
+        {/* Sección de SoftSkills con lazy loading */}
+        <Suspense fallback={<LoadingFallback />}>
+          <SoftSkills />
         </Suspense>
         <Footer />
         <LanguageSwitcher />
@@ -98,11 +103,13 @@ if (typeof window !== 'undefined') {
       window.requestIdleCallback(() => {
         import('./components/Experience');
         import('./components/TechStack');
+        import('./components/SoftSkills');
       });
     } else {
       setTimeout(() => {
         import('./components/Experience');
         import('./components/TechStack');
+        import('./components/SoftSkills');
       }, 3000);
     }
   });

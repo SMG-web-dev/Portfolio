@@ -13,6 +13,9 @@
     "teamSize": "Tamaño del equipo",
     "achievements": "Logros"
   },
+  "softskills": {
+    "title": "Habilidades Blandas"
+  },
   "techstack": {
     "title": "Stack Tecnológico",
     "languages": "Lenguajes",
@@ -44,9 +47,10 @@
     "location": "Madrid, España"
   },
   "menu": {
-    "experience": "Experiencia profesional",
-    "techStack": "Stack Tecnológico",
-    "projects": "Proyectos personales",
+    "experience": "Experiencia",
+    "techStack": "Tech Stack",
+    "projects": "Proyectos",
+    "softSkills": "Habilidades",
     "contact": "Contacto"
   },
   "loading": {

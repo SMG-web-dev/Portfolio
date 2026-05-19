@@ -13,6 +13,9 @@
     "teamSize": "Dimensione del team",
     "achievements": "Risultati"
   },
+  "softskills": {
+    "title": "Competenze Trasversali"
+  },
   "techstack": {
     "title": "Stack Tecnologico",
     "languages": "Linguaggi",
@@ -44,9 +47,10 @@
     "location": "Madrid, Spagna"
   },
   "menu": {
-    "experience": "Esperienza professionale",
-    "techStack": "Stack Tecnologico",
-    "projects": "Progetti personali",
+    "experience": "Esperienza",
+    "techStack": "Tech Stack",
+    "projects": "Progetti",
+    "softSkills": "Competenze",
     "contact": "Contatto"
   },
   "loading": {

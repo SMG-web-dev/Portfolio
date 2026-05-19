@@ -1,10 +1,10 @@
-import React, { useState, useEffect, startTransition } from "react";
+import React, { useState, useEffect, startTransition, useRef } from "react";
 import { Link } from "react-scroll";
-import { motion } from "framer-motion";
-import { FiMenu, FiX } from '../../constants/icons';
+import { motion, AnimatePresence } from "framer-motion";
+import { FiMenu, FaGithub, FaLinkedin } from '../../constants/icons';
 import useScrollDirection from "./useScrollDirection";
-import DesktopMenu from "./DesktopMenu";
-import MobileMenu from "./MobileMenu";
+import { navbarItems } from "../../constants/navbarItems";
+import { useTranslation } from "react-i18next";
 import { useTranslationLoaded } from "../../i18n/i18n";
 
 interface HeaderProps {
@@ -15,6 +15,37 @@ const Header: React.FC<HeaderProps> = ({ showInitialAnimation = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const scrollDirection = useScrollDirection();
   const isTranslationLoaded = useTranslationLoaded();
+  const { t } = useTranslation();
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  const iconVariants = {
+    hover: {
+      scale: 1.2,
+      transition: { duration: 0.3 },
+    },
+  };
+
+  const colorAnimation = {
+    animate: {
+      color: ['#84A98C', '#CAD2C5', '#52796F', '#84A98C'],
+      transition: { duration: 4, repeat: Infinity, ease: 'linear' },
+    },
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        startTransition(() => {
+          setIsMenuOpen(false);
+        });
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isMenuOpen]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -49,8 +80,8 @@ const Header: React.FC<HeaderProps> = ({ showInitialAnimation = false }) => {
       }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
-        <motion.nav 
-          className="flex justify-between items-center backdrop-blur-md bg-sage/80 shadow-xl rounded-full px-6 sm:px-8 lg:px-10 py-3 sm:py-4 border border-white/20"
+          <motion.nav 
+          className="flex justify-between items-center backdrop-blur-md bg-sage/80 shadow-xl rounded-full px-4 sm:px-6 lg:px-8 py-2 sm:py-3 border border-white/20"
           initial={{
             scale: showInitialAnimation ? 0.8 : 1,
             opacity: showInitialAnimation ? 0 : 1,
@@ -67,19 +98,7 @@ const Header: React.FC<HeaderProps> = ({ showInitialAnimation = false }) => {
             delay: showInitialAnimation ? 0.3 : 0
           }}
         >
-          <motion.div
-            className="flex items-center space-x-3 sm:space-x-4"
-            initial={{ 
-              opacity: showInitialAnimation ? 0 : 1, 
-              x: showInitialAnimation ? -30 : 0 
-            }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ 
-              duration: showInitialAnimation ? 0.5 : 0.5,
-              ease: "easeOut",
-              delay: showInitialAnimation ? 0.6 : 0
-            }}
-          >
+          <div className="flex items-center space-x-3 sm:space-x-4">
             <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
@@ -100,46 +119,99 @@ const Header: React.FC<HeaderProps> = ({ showInitialAnimation = false }) => {
               smg-dev
               <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-fern-green to-transparent opacity-60 transform scale-x-75 group-hover:scale-x-100 group-hover:opacity-100 transition-all duration-500 ease-out"></span>
             </Link>
-          </motion.div>
+          </div>
 
-          {renderMenus && <DesktopMenu showInitialAnimation={showInitialAnimation} />}
+          <div className="flex items-center gap-2" ref={menuRef}>
+            <motion.a
+              href="https://github.com/SMG-hash"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="GitHub Profile"
+            >
+              <motion.span variants={iconVariants}>
+                <motion.span variants={colorAnimation} animate="animate">
+                  <FaGithub className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                </motion.span>
+              </motion.span>
+            </motion.a>
 
-          <motion.button
-            className="md:hidden p-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-fern-green focus:ring-offset-2 focus:ring-offset-sage/20 shadow-lg"
-            onClick={() => {
-              startTransition(() => {
-                setIsMenuOpen(!isMenuOpen);
-              });
-            }}
-            aria-expanded={isMenuOpen}
-            aria-label="Toggle menu"
-            initial={{
-              opacity: showInitialAnimation ? 0 : 1,
-              x: showInitialAnimation ? 30 : 0,
-              rotate: showInitialAnimation ? 180 : 0
-            }}
-            animate={{ 
-              opacity: 1, 
-              x: 0, 
-              rotate: isMenuOpen ? 180 : 0 
-            }}
-            transition={{
-              duration: showInitialAnimation ? 0.5 : 0.3,
-              delay: showInitialAnimation ? 0.6 : 0,
-              ease: "easeOut"
-            }}
-            whileTap={{ scale: 0.9 }}
-            whileHover={{ scale: 1.1 }}
-          >
-            {isMenuOpen ? (
-              <FiX className="w-5 h-5 sm:w-6 sm:h-6" />
-            ) : (
-              <FiMenu className="w-5 h-5 sm:w-6 sm:h-6" />
+            <motion.a
+              href="https://linkedin.com/in/smg-web-dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="LinkedIn Profile"
+            >
+              <motion.span variants={iconVariants}>
+                <motion.span variants={colorAnimation} animate="animate">
+                  <FaLinkedin className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                </motion.span>
+              </motion.span>
+            </motion.a>
+
+            <div className="w-px h-5 bg-brunswick-green/30" />
+
+            {renderMenus && (
+              <div className="relative">
+                <motion.button
+                  onClick={() => {
+                    startTransition(() => {
+                      setIsMenuOpen(!isMenuOpen);
+                    });
+                  }}
+                  className="p-1 text-brunswick-green hover:text-fern-green transition-colors duration-300"
+                  whileTap={{ scale: 0.9 }}
+                  whileHover={{ scale: 1.1 }}
+                >
+                  <FiMenu className="w-6 h-6" />
+                </motion.button>
+
+                <AnimatePresence>
+                  {isMenuOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute right-0 mt-2 w-56 bg-sage/95 backdrop-blur-md rounded-xl shadow-2xl border border-white/20 overflow-hidden"
+                    >
+                      <ul className="py-2">
+                        {navbarItems.map((item, index) => (
+                          <motion.li
+                            key={item.id}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: index * 0.05 }}
+                          >
+                            <Link
+                              to={item.id}
+                              smooth={true}
+                              duration={500}
+                              onClick={() => {
+                                startTransition(() => {
+                                  setIsMenuOpen(false);
+                                });
+                              }}
+                              className="flex items-center gap-3 px-4 py-2.5 text-brunswick-green hover:bg-brunswick-green/10 hover:text-fern-green transition-all duration-200 cursor-pointer text-sm"
+                            >
+                              <item.icon className="w-4 h-4" />
+                              <span>{t(item.name)}</span>
+                            </Link>
+                          </motion.li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             )}
-          </motion.button>
+          </div>
         </motion.nav>
-
-        {renderMenus && <MobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />}
       </div>
     </motion.header>
   );

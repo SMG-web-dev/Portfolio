@@ -13,6 +13,9 @@
     "teamSize": "Teamgröße",
     "achievements": "Erfolge"
   },
+  "softskills": {
+    "title": "Soziale Kompetenzen"
+  },
   "techstack": {
     "title": "Tech-Stack",
     "languages": "Programmiersprachen",
@@ -44,9 +47,10 @@
     "location": "Madrid, Spanien"
   },
   "menu": {
-    "experience": "Berufserfahrung",
-    "techStack": "Tech-Stack",
-    "projects": "Persönliche Projekte",
+    "experience": "Erfahrung",
+    "techStack": "Tech Stack",
+    "projects": "Projekte",
+    "softSkills": "Kompetenzen",
     "contact": "Kontakt"
   },
   "loading": {

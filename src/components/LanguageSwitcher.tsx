@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useState, useRef, useEffect } from 'react';
-import { FaGlobe, FaCheck } from '../constants/icons';
+import { FaCheck } from '../constants/icons';
 import { languages } from '../constants/languages';
 import { motion, AnimatePresence } from 'framer-motion';
 import { USFlag, SpainFlag, ItalyFlag, GermanyFlag, FranceFlag } from './FlagIcons';
@@ -10,6 +10,21 @@ function LanguageSwitcher() {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+    const flagComponents = {
+        en: USFlag,
+        es: SpainFlag,
+        it: ItalyFlag,
+        de: GermanyFlag,
+        fr: FranceFlag,
+    };
+
+    const getCurrentFlag = () => {
+        const lang = i18n.language?.split('-')[0] || 'en';
+        return flagComponents[lang as keyof typeof flagComponents] || USFlag;
+    };
+
+    const CurrentFlag = getCurrentFlag();
 
     const changeLanguage = (language: string | undefined) => {
         i18n.changeLanguage(language);
@@ -59,12 +74,7 @@ function LanguageSwitcher() {
                     whileTap={{ scale: 0.95 }}
                     transition={{ duration: 0.2 }}
                 >
-                    <motion.div
-                        animate={{ rotate: isOpen ? 180 : 0 }}
-                        transition={{ duration: 0.3 }}
-                    >
-                        <FaGlobe size={22} className="text-sage" />
-                    </motion.div>
+                    <CurrentFlag size={22} className="rounded-sm shadow-sm" />
                 </motion.button>
 
                 {/* Dropdown menu with animation */}
@@ -79,16 +89,7 @@ function LanguageSwitcher() {
                         >
                             <div className="py-2">
                                 {languages.map((language, index) => {
-                                    // Mapeo local de códigos de idioma a componentes de bandera
-                                    const flagComponents = {
-                                        en: USFlag,
-                                        es: SpainFlag,
-                                        it: ItalyFlag,
-                                        de: GermanyFlag,
-                                        fr: FranceFlag,
-                                    };
-                                    
-                                    const FlagComponent = flagComponents[language.code as keyof typeof flagComponents];
+                                    const FlagComponent = flagComponents[language.code as keyof typeof flagComponents] || USFlag;
                                     return (
                                         <motion.button
                                             key={language.code}

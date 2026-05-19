@@ -85,6 +85,12 @@ export const FaMapMarkerAlt = lazy(() =>
 export const FaLinkedin = lazy(() =>
   import("react-icons/fa").then((mod) => ({ default: mod.FaLinkedin }))
 );
+export const FaChevronDown = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaChevronDown }))
+);
+export const FaChevronUp = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaChevronUp }))
+);
 
 // FI Icons - Lazy imports
 export const FiUser = lazy(() =>
@@ -98,6 +104,15 @@ export const FiBriefcase = lazy(() =>
 );
 export const FiMail = lazy(() =>
   import("react-icons/fi").then((mod) => ({ default: mod.FiMail }))
+);
+export const FiGlobe = lazy(() =>
+  import("react-icons/fi").then((mod) => ({ default: mod.FiGlobe }))
+);
+export const FiUsers = lazy(() =>
+  import("react-icons/fi").then((mod) => ({ default: mod.FiUsers }))
+);
+export const FiChevronDown = lazy(() =>
+  import("react-icons/fi").then((mod) => ({ default: mod.FiChevronDown }))
 );
 export const FiMenu = lazy(() =>
   import("react-icons/fi").then((mod) => ({ default: mod.FiMenu }))

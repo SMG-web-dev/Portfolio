@@ -123,7 +123,7 @@ const Header: React.FC<HeaderProps> = ({ showInitialAnimation = false }) => {
 
           <div className="flex items-center gap-2" ref={menuRef}>
             <motion.a
-              href="https://github.com/SMG-hash"
+              href="https://github.com/SMG-web-dev"
               target="_blank"
               rel="noopener noreferrer"
               className="group"

@@ -28,8 +28,6 @@
   },
   "projects": {
     "title": "Projects",
-    "personalSubtitle": "Personal Projects",
-    "professionalSubtitle": "Professional Projects",
     "source": "Source",
     "private": "Private",
     "liveDemo": "Live Demo",

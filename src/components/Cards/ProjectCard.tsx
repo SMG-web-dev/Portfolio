@@ -16,7 +16,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       whileHover={{ scale: 1.03 }}
       className="bg-brunswick-green rounded-lg shadow-lg overflow-hidden flex flex-col group transition-all duration-200 ease-in-out"
     >
-      <div className={`relative pt-[60%] overflow-hidden ${project.isProfessional ? 'bg-white' : ''}`}>
+      <div className="relative pt-[60%] overflow-hidden">
         <motion.a
           href={project.live}
           target="_blank"
@@ -26,7 +26,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           <motion.img
             src={project.image}
             alt={project.title}
-            className={`absolute top-0 left-0 w-full h-full transition-transform duration-300 group-hover:scale-105 shadow-[inset_0_-4px_6px_rgba(0,0,0,0.1)] ${project.isProfessional ? 'object-contain p-4' : 'object-cover'}`}
+            className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 shadow-[inset_0_-4px_6px_rgba(0,0,0,0.1)]"
           />
           <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
             <span className="text-white text-lg font-semibold">{t('projects.viewProject')}</span>

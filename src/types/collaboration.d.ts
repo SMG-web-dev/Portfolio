@@ -37,4 +37,5 @@ export interface CollaborationProps {
     fr: string;
   };
   image: string;
+  website?: string;
 }

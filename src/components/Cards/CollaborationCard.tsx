@@ -1,18 +1,23 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaAward, FaUsers, FaCalendarAlt } from "../../constants/icons";
+import {
+  FaAward,
+  FaUsers,
+  FaCalendarAlt,
+  FaGlobe,
+} from "../../constants/icons";
 import { useTranslation } from "react-i18next";
 import { CollaborationProps } from "../../types/collaboration";
 
 const CollaborationCard: React.FC<{
   collaboration: CollaborationProps;
   index: number;
-}> = ({ collaboration, index }) => {
+}> = ({ collaboration }) => {
   const { t, i18n } = useTranslation();
-  const currentLanguage = i18n.language as 'en' | 'es' | 'it' | 'de' | 'fr';
+  const currentLanguage = i18n.language as "en" | "es" | "it" | "de" | "fr";
 
   const getLocalizedContent = <T,>(content: Record<string, T>): T => {
-    return content[currentLanguage] || content['en'];
+    return content[currentLanguage] || content["en"];
   };
 
   const achievements = getLocalizedContent(collaboration.achievements);
@@ -61,6 +66,21 @@ const CollaborationCard: React.FC<{
           <FaUsers className="text-sage text-sm flex-shrink-0" />
           <span>{getLocalizedContent(collaboration.teamSize)}</span>
         </div>
+        {collaboration.website && (
+          <a
+            href={collaboration.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-sm text-sage hover:text-timberwolf transition-colors duration-200"
+          >
+            <FaGlobe className="text-sm flex-shrink-0" />
+            <span>
+              {collaboration.website
+                .replace(/^https?:\/\//, "")
+                .replace(/\/$/, "")}
+            </span>
+          </a>
+        )}
       </div>
 
       <div className="px-4 sm:px-5 py-2">
@@ -72,7 +92,9 @@ const CollaborationCard: React.FC<{
       <div className="px-4 sm:px-5 py-2 border-t border-sage/20">
         <div className="flex items-center gap-1.5 mb-1.5">
           <FaAward className="text-sage text-sm" />
-          <span className="text-sage text-sm font-medium">{t('experience.achievements')}</span>
+          <span className="text-sage text-sm font-medium">
+            {t("experience.achievements")}
+          </span>
         </div>
         <ul className="space-y-1">
           {achievements.map((achievement, i) => (

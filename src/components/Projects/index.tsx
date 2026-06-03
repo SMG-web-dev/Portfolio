@@ -1,7 +1,15 @@
 import { motion } from "framer-motion";
 import ProjectCard from "../Cards/ProjectCard";
-import { personalProjects } from "../../constants/projects";
+import { personalProjects, freelanceProjects } from "../../constants/projects";
 import { useTranslation } from "react-i18next";
+
+const gridVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.08, delayChildren: 0.2 },
+  },
+};
 
 const Projects: React.FC = () => {
   const { t } = useTranslation();
@@ -18,20 +26,38 @@ const Projects: React.FC = () => {
           {t('projects.title')}
         </motion.h2>
 
+        <motion.h3
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+          className="text-xl font-semibold text-sage mb-4"
+        >
+          {t('projects.freelance')}
+        </motion.h3>
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12"
           initial="hidden"
           animate="visible"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.08,
-                delayChildren: 0.2,
-              },
-            },
-          }}
+          variants={gridVariants}
+        >
+          {freelanceProjects.map((project, index) => (
+            <ProjectCard key={project.title} project={project} index={index} />
+          ))}
+        </motion.div>
+
+        <motion.h3
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+          className="text-xl font-semibold text-sage mb-4"
+        >
+          {t('projects.personal')}
+        </motion.h3>
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+          initial="hidden"
+          animate="visible"
+          variants={gridVariants}
         >
           {personalProjects.map((project, index) => (
             <ProjectCard key={project.title} project={project} index={index} />

@@ -28,6 +28,8 @@
   },
   "projects": {
     "title": "Projets",
+    "freelance": "Travaux Freelance",
+    "personal": "Projets Personnels",
     "source": "Code",
     "private": "Privé",
     "liveDemo": "Démo",

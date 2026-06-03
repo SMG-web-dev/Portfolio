@@ -64,6 +64,7 @@ export const collaborations: CollaborationProps[] = [
       fr: "Équipe collaborative",
     },
     image: "/exp/DltCode.webp",
+    website: "https://dltcode.es/",
   },
   {
     company: "FSC TopNutrition",
@@ -128,6 +129,7 @@ export const collaborations: CollaborationProps[] = [
       fr: "Développeur solo",
     },
     image: "/exp/FSC.webp",
+    website: "https://fsctopnutrition.es",
   },
   {
     company: "NewLine Events (RealMadrid CF)",
@@ -187,6 +189,7 @@ export const collaborations: CollaborationProps[] = [
       fr: "Équipe d'événements",
     },
     image: "/exp/NewLine.webp",
+    website: "https://correcta.es/",
   },
   {
     company: "Coop. soc. IL SOGNO arl",
@@ -246,5 +249,6 @@ export const collaborations: CollaborationProps[] = [
       fr: "Petite équipe (Rome)",
     },
     image: "/exp/GentiEPaesi.webp",
+    website: "https://gentiepaesi.com/",
   },
 ];

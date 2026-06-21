@@ -189,7 +189,7 @@ export const collaborations: CollaborationProps[] = [
       fr: "Équipe d'événements",
     },
     image: "/exp/NewLine.webp",
-    website: "https://correcta.es/",
+    website: "https://https://www.newlineevents.es/",
   },
   {
     company: "Coop. soc. IL SOGNO arl",

@@ -1,10 +1,11 @@
 {
   "hero": {
-    "title": "Bonjour, je suis",
-    "subtitle": "Développeur Frontend",
-    "welcome": "Bienvenue, je suis Sergio",
-    "description": "un Développeur Web ツ",
-    "downloadCV": "Télécharger CV"
+    "title": "Construire des Apps Web Évolutives qui Convertissent les Visiteurs en Vrais Clients",
+    "role": "Full-Stack Developer",
+    "descriptor": "Spécialisé dans les architectures web haute performance, les backends solides et l'intégration de l'intelligence artificielle pour maximiser la conversion",
+    "status": "Disponible pour travailler",
+    "statsYears": "Années d'Expérience",
+    "statsProjects": "Projets Livrés"
   },
   "experience": {
     "title": "Expérience Professionnelle",
@@ -14,17 +15,15 @@
     "achievements": "Réalisations"
   },
   "softskills": {
-    "title": "Compétences Douces"
+    "title": "Esprit d'Ingénierie & Compétences",
+    "subtitle": "Comment j'aborde la résolution de problèmes, la collaboration et la livraison"
   },
   "techstack": {
     "title": "Stack Technique",
-    "languages": "Langages",
-    "frameworks": "Frameworks et Bibliothèques",
-    "devTools": "Outils de Développement",
-    "databases": "Bases de Données et Cloud",
-    "operatingSystems": "Systèmes d'Exploitation et Serveurs",
-    "aiTools": "Outils d'IA",
-    "cloudHosting": "Cloud et Hébergement"
+    "coreArchitecture": "Core & Architecture",
+    "backendDatabases": "Backend & Bases de Données",
+    "cloudDevops": "Cloud & Infrastructure",
+    "aiEngineering": "Ingénierie IA & Agents"
   },
   "projects": {
     "title": "Projets",
@@ -52,8 +51,5 @@
     "projects": "Projets",
     "softSkills": "Compétences",
     "contact": "Contact"
-  },
-  "loading": {
-    "preparing": "Préparation d'une expérience incroyable..."
   }
 }

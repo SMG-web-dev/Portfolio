@@ -1,10 +1,11 @@
 {
   "hero": {
-    "title": "Ciao, sono",
-    "subtitle": "Sviluppatore Frontend",
-    "welcome": "Benvenuto, sono Sergio",
-    "description": "uno Sviluppatore Web ツ",
-    "downloadCV": "Scarica CV"
+    "title": "Sviluppo App Web Scalabili che Convertono i Visitatori in Clienti Reali",
+    "role": "Full-Stack Developer",
+    "descriptor": "Specializzato in architetture web ad alte prestazioni, backend solidi e integrazione di intelligenza artificiale per massimizzare l'impatto aziendale",
+    "status": "Disponibile per lavorare",
+    "statsYears": "Anni di Esperienza",
+    "statsProjects": "Progetti Consegnati"
   },
   "experience": {
     "title": "Esperienza Professionale",
@@ -14,17 +15,15 @@
     "achievements": "Risultati"
   },
   "softskills": {
-    "title": "Competenze Trasversali"
+    "title": "Mentalità & Competenze di Ingegneria",
+    "subtitle": "Come affronto il problem solving, la collaborazione e il delivery del software"
   },
   "techstack": {
     "title": "Stack Tecnologico",
-    "languages": "Linguaggi",
-    "frameworks": "Framework e Librerie",
-    "devTools": "Strumenti di Sviluppo",
-    "databases": "Database e Cloud",
-    "operatingSystems": "Sistemi Operativi e Server",
-    "aiTools": "Strumenti di IA",
-    "cloudHosting": "Cloud e Hosting"
+    "coreArchitecture": "Core & Architettura",
+    "backendDatabases": "Backend & Database",
+    "cloudDevops": "Cloud & Infrastruttura",
+    "aiEngineering": "Ingegneria IA & Agenti"
   },
   "projects": {
     "title": "Progetti",
@@ -52,8 +51,5 @@
     "projects": "Progetti",
     "softSkills": "Competenze",
     "contact": "Contatto"
-  },
-  "loading": {
-    "preparing": "Preparando un'esperienza incredibile..."
   }
 }

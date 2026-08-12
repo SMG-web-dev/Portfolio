@@ -1,10 +1,11 @@
 {
   "hero": {
-    "title": "Hallo, ich bin",
-    "subtitle": "Frontend-Entwickler",
-    "welcome": "Willkommen, ich bin Sergio",
-    "description": "ein Webentwickler ツ",
-    "downloadCV": "Lebenslauf herunterladen"
+    "title": "Skalierbare Web-Apps entwickeln, die Besucher in echte Kunden verwandeln",
+    "role": "Full-Stack Developer",
+    "descriptor": "Spezialisiert auf hochperformante Webarchitekturen, robuste Backends und KI-Integration zur Maximierung des Geschäftserfolgs",
+    "status": "Verfügbar für Arbeit",
+    "statsYears": "Jahre Erfahrung",
+    "statsProjects": "Projekte Geliefert"
   },
   "experience": {
     "title": "Berufserfahrung",
@@ -14,17 +15,15 @@
     "achievements": "Erfolge"
   },
   "softskills": {
-    "title": "Soziale Kompetenzen"
+    "title": "Engineering-Denkweise & Kompetenzen",
+    "subtitle": "Wie ich Problemlösung, Teamarbeit und Software-Lieferung angehe"
   },
   "techstack": {
     "title": "Tech-Stack",
-    "languages": "Programmiersprachen",
-    "frameworks": "Frameworks und Bibliotheken",
-    "devTools": "Entwicklungstools",
-    "databases": "Datenbanken und Cloud",
-    "operatingSystems": "Betriebssysteme und Server",
-    "aiTools": "KI-Tools",
-    "cloudHosting": "Cloud und Hosting"
+    "coreArchitecture": "Core & Architektur",
+    "backendDatabases": "Backend & Datenbanken",
+    "cloudDevops": "Cloud & Infrastruktur",
+    "aiEngineering": "KI-Engineering & Agenten"
   },
   "projects": {
     "title": "Projekte",
@@ -52,8 +51,5 @@
     "projects": "Projekte",
     "softSkills": "Kompetenzen",
     "contact": "Kontakt"
-  },
-  "loading": {
-    "preparing": "Bereite ein unglaubliches Erlebnis vor..."
   }
 }

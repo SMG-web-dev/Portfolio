@@ -1,10 +1,11 @@
 {
   "hero": {
-    "title": "Hello, I'm",
-    "subtitle": "Frontend Developer",
-    "welcome": "Welcome, I'm Sergio",
-    "description": "A Web Developer ツ",
-    "downloadCV": "Download CV"
+    "title": "Building Scalable Web Apps That Convert Visitors Into Real Customers",
+    "role": "Full-Stack Developer",
+    "descriptor": "Specialized in high-performance web architecture, robust backends, and AI agent integration to maximize conversion and business impact",
+    "status": "Available for work",
+    "statsYears": "Years Experience",
+    "statsProjects": "Projects Delivered"
   },
   "experience": {
     "title": "Professional Experience",
@@ -14,17 +15,15 @@
     "achievements": "Achievements"
   },
   "softskills": {
-    "title": "Soft Skills"
+    "title": "Engineering Mindset & Competencies",
+    "subtitle": "How I approach problem solving, team collaboration, and software delivery"
   },
   "techstack": {
-    "title": "Tech Stack",
-    "languages": "Languages",
-    "frameworks": "Frameworks & Libraries",
-    "devTools": "Development Tools",
-    "databases": "Databases & Cloud",
-    "operatingSystems": "Operating Systems & Servers",
-    "aiTools": "AI Tools",
-    "cloudHosting": "Cloud & Hosting"
+    "title": "Tech Stack & Engineering Skills",
+    "coreArchitecture": "Core & Architecture",
+    "backendDatabases": "Backend & Databases",
+    "cloudDevops": "Cloud & Infrastructure",
+    "aiEngineering": "AI & Agentic Engineering"
   },
   "projects": {
     "title": "Projects",
@@ -50,10 +49,7 @@
     "experience": "Experience",
     "techStack": "Tech Stack",
     "projects": "Projects",
-    "softSkills": "Soft Skills",
+    "softSkills": "Skills",
     "contact": "Contact"
-  },
-  "loading": {
-    "preparing": "Preparing amazing experience..."
   }
 }

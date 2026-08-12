@@ -1,71 +1,55 @@
-import React, { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import React from "react";
+import { motion } from "framer-motion";
 import SkillIcon from "../TechStack/SkillIcon";
 import { useTranslation } from "react-i18next";
 
 interface CategoryCardProps {
-    category: {
-        name: string;
-        techstack: Array<{
-            icon: React.ElementType;
-            name: string;
-            color: string;
-        }>;
-    };
-    index: number;
+  category: {
+    name: string;
+    techstack: Array<{
+      icon: React.ElementType;
+      name: string;
+      color: string;
+    }>;
+  };
+  index: number;
 }
 
 const CategoryCard: React.FC<CategoryCardProps> = ({ category, index }) => {
-    const controls = useAnimation();
-    const [ref, inView] = useInView({
-        threshold: 0.1,
-        triggerOnce: true,
-    });
-    const { t } = useTranslation();
+  const { t } = useTranslation();
+  const isAICategory = category.name === "techstack.aiEngineering";
 
-    useEffect(() => {
-        if (inView) {
-            controls.start("visible");
-        }
-    }, [controls, inView]);
-
-    return (
-        <motion.div
-            ref={ref}
-            initial="hidden"
-            animate={controls}
-            variants={{
-                hidden: { opacity: 0, scale: 0.8 },
-                visible: {
-                    opacity: 1,
-                    scale: 1,
-                    transition: { duration: 0.6, delay: index * 0.2 },
-                },
-            }}
-            className="bg-white bg-opacity-10 rounded-lg p-6 shadow-lg backdrop-blur-sm hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileHover={{ y: -5 }}
+      className={`relative rounded-3xl p-6 sm:p-7 backdrop-blur-md transition-all duration-300 ${
+        isAICategory
+          ? "bg-gradient-to-br from-brunswick-green/90 to-hunter-green/90 border-2 border-fern-green/50 shadow-green-lg text-white"
+          : "bg-white/80 border border-white/50 shadow-card hover:shadow-card-hover text-brunswick-green"
+      }`}
+    >
+      {/* Category Header */}
+      <div className="flex items-center justify-between mb-6">
+        <h3
+          className={`text-xl sm:text-2xl font-display font-bold ${
+            isAICategory ? "text-white" : "text-brunswick-green"
+          }`}
         >
-            <h3 className="text-xl md:text-2xl font-semibold text-brunswick-green mb-4">
-                {t(category.name)}
-            </h3>
-            <motion.div
-                className="grid grid-cols-3 sm:grid-cols-4 gap-4"
-                initial="hidden"
-                animate="visible"
-                variants={{
-                    visible: {
-                        transition: {
-                            staggerChildren: 0.1,
-                        },
-                    },
-                }}
-            >
-                {category.techstack.map((skill, skillIndex) => (
-                    <SkillIcon key={skill.name} skill={skill} index={skillIndex} />
-                ))}
-            </motion.div>
-        </motion.div>
-    );
+          {t(category.name)}
+        </h3>
+      </div>
+
+      {/* Tech Grid */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3.5 sm:gap-4">
+        {category.techstack.map((skill, skillIndex) => (
+          <SkillIcon key={skill.name} skill={skill} index={skillIndex} />
+        ))}
+      </div>
+    </motion.div>
+  );
 };
 
 export default CategoryCard;

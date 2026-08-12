@@ -1,7 +1,73 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { softSkills } from "../constants/profile";
+import { useInView } from "react-intersection-observer";
+import { USFlag, SpainFlag, ItalyFlag, FranceFlag } from "./FlagIcons";
+
+interface SoftSkillPillar {
+  title: { en: string; es: string };
+  description: { en: string; es: string };
+  badge: string;
+  skills: Array<{ name: { en: string; es: string }; icon: string }>;
+}
+
+const engineeringPillars: SoftSkillPillar[] = [
+  {
+    title: {
+      en: "Architecture & System Thinking",
+      es: "Arquitectura & Pensamiento de Sistemas",
+    },
+    description: {
+      en: "Designing scalable, maintainable frontends and backend APIs with clean modular patterns.",
+      es: "Diseño de interfaces y APIs backend escalables y mantenibles con patrones modulares limpios.",
+    },
+    badge: "System Design",
+    skills: [
+      { name: { en: "Analytical Thinking", es: "Pensamiento Analítico" }, icon: "brain" },
+      { name: { en: "Problem Solving", es: "Resolución de Problemas" }, icon: "puzzle" },
+      { name: { en: "Continuous Learning", es: "Aprendizaje Continuo" }, icon: "book" },
+    ],
+  },
+  {
+    title: {
+      en: "Product Growth & Conversion",
+      es: "Crecimiento de Producto & Conversión",
+    },
+    description: {
+      en: "Building user-centric web applications that convert visitors into active customers.",
+      es: "Creación de aplicaciones web centradas en el usuario que convierten visitantes en clientes activos.",
+    },
+    badge: "Value Driven",
+    skills: [
+      { name: { en: "Customer Orientation", es: "Orientación al Cliente" }, icon: "star" },
+      { name: { en: "Agile & Flexibility", es: "Agilidad y Adaptabilidad" }, icon: "refresh" },
+      { name: { en: "Time Management", es: "Gestión del Tiempo" }, icon: "clock" },
+    ],
+  },
+  {
+    title: {
+      en: "Team Leadership & Communication",
+      es: "Liderazgo de Equipo & Comunicación",
+    },
+    description: {
+      en: "Fostering transparent communication and technical alignment across engineering teams.",
+      es: "Fomentando la comunicación transparente y la alineación técnica en equipos de desarrollo.",
+    },
+    badge: "Collaboration",
+    skills: [
+      { name: { en: "Team Leadership", es: "Liderazgo de Equipo" }, icon: "group" },
+      { name: { en: "Effective Communication", es: "Comunicación Efectiva" }, icon: "message" },
+      { name: { en: "Conflict Resolution", es: "Resolución de Conflictos" }, icon: "users" },
+    ],
+  },
+];
+
+const spokenLanguages = [
+  { code: "es", flag: SpainFlag, name: { en: "Spanish", es: "Español" }, level: { en: "Native Speaker", es: "Nativo" }, percent: 100 },
+  { code: "en", flag: USFlag, name: { en: "English", es: "Inglés" }, level: { en: "Advanced", es: "Avanzado" }, percent: 85 },
+  { code: "it", flag: ItalyFlag, name: { en: "Italian", es: "Italiano" }, level: { en: "Basic (Erasmus+)", es: "Básico (Erasmus+)" }, percent: 45 },
+  { code: "fr", flag: FranceFlag, name: { en: "French", es: "Francés" }, level: { en: "Basic Understanding", es: "Comprensión Básica" }, percent: 35 },
+];
 
 const SoftSkillIcon: React.FC<{ icon: string; className?: string }> = ({ icon, className = "" }) => {
   const icons: Record<string, React.ReactNode> = {
@@ -50,74 +116,134 @@ const SoftSkillIcon: React.FC<{ icon: string; className?: string }> = ({ icon, c
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
       </svg>
     ),
-    calendar: (
-      <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-      </svg>
-    ),
-    chart: (
-      <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-      </svg>
-    ),
-    lightbulb: (
-      <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-      </svg>
-    ),
   };
   return <>{icons[icon] || null}</>;
 };
 
 const SoftSkills: React.FC = () => {
   const { t, i18n } = useTranslation();
-  const currentLanguage = i18n.language as 'en' | 'es' | 'it' | 'de' | 'fr';
-
-  const getLocalizedContent = <T,>(content: Record<string, T>): T => {
-    return content[currentLanguage] || content['en'];
-  };
+  const langKey = (i18n.language?.split("-")[0] || "en") as "en" | "es";
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
   return (
-    <section id="soft-skills" className="py-20 bg-hunter-green">
-      <div className="container mx-auto px-6">
-        <motion.h2
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl font-bold text-center mb-12 text-timberwolf"
-        >
-          {t('softskills.title')}
-        </motion.h2>
-
+    <section id="soft-skills" className="py-16 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-sage/20 relative">
+      <div className="container mx-auto max-w-6xl">
+        {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          ref={ref}
+          initial={{ opacity: 0, y: -30 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
+          transition={{ duration: 0.5 }}
+          className="mb-14 text-center"
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {softSkills.map((skill, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-brunswick-green rounded-lg p-4 shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <div className="flex items-center space-x-3">
-                  <motion.div
-                    className="text-sage"
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <SoftSkillIcon icon={skill.icon} className="w-6 h-6" />
-                  </motion.div>
-                  <span className="text-timberwolf text-sm font-medium">
-                    {getLocalizedContent(skill.name)}
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-brunswick-green inline-block relative mb-3">
+            {t("softskills.title")}
+            <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1.5 bg-fern-green rounded-full opacity-80" />
+          </h2>
+          <p className="text-brunswick-green text-base md:text-lg max-w-2xl mx-auto mt-4 font-semibold">
+            {t("softskills.subtitle")}
+          </p>
+        </motion.div>
+
+        {/* Engineering Pillars Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-16">
+          {engineeringPillars.map((pillar, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+              whileHover={{ y: -5 }}
+              className="bg-white/90 backdrop-blur-md border border-white/60 rounded-3xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between group"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="px-3 py-1 text-xs font-bold rounded-full bg-hunter-green text-white shadow-xs">
+                    {pillar.badge}
                   </span>
                 </div>
-              </motion.div>
-            ))}
+
+                <h3 className="text-xl font-display font-extrabold text-brunswick-green mb-3">
+                  {pillar.title[langKey] || pillar.title.en}
+                </h3>
+
+                <p className="text-brunswick-green font-medium text-sm leading-relaxed mb-6">
+                  {pillar.description[langKey] || pillar.description.en}
+                </p>
+              </div>
+
+              {/* Sub-skills list */}
+              <div className="space-y-2.5 pt-4 border-t border-brunswick-green/15">
+                {pillar.skills.map((skill, sIdx) => (
+                  <div
+                    key={sIdx}
+                    className="flex items-center gap-3 p-2 rounded-xl bg-sage/20 group-hover:bg-sage/30 transition-colors"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-fern-green/20 flex items-center justify-center text-fern-green flex-shrink-0">
+                      <SoftSkillIcon icon={skill.icon} className="w-4 h-4" />
+                    </div>
+                    <span className="text-xs sm:text-sm font-bold text-brunswick-green">
+                      {skill.name[langKey] || skill.name.en}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Spoken Languages Sub-Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="bg-white/80 backdrop-blur-md border border-white/50 rounded-3xl p-6 sm:p-8 shadow-card"
+        >
+          <div className="mb-6">
+            <h3 className="text-2xl font-display font-extrabold text-brunswick-green">
+              Spoken Languages & Global Communication
+            </h3>
+            <p className="text-brunswick-green font-semibold text-sm mt-1">
+              Multilingual capabilities enabling seamless international collaboration
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {spokenLanguages.map((lang) => {
+              const FlagComp = lang.flag;
+
+              return (
+                <div
+                  key={lang.code}
+                  className="p-4 rounded-2xl bg-white/90 border border-white/60 shadow-xs flex flex-col justify-between space-y-3"
+                >
+                  <div className="flex items-center gap-3">
+                    <FlagComp size={24} className="rounded-xs shadow-xs flex-shrink-0" />
+                    <div>
+                      <h4 className="font-display font-extrabold text-brunswick-green text-sm sm:text-base leading-tight">
+                        {lang.name[langKey] || lang.name.en}
+                      </h4>
+                      <p className="text-xs font-bold text-fern-green mt-0.5">
+                        {lang.level[langKey] || lang.level.en}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Animated Progress Bar */}
+                  <div className="w-full bg-brunswick-green/10 rounded-full h-2 overflow-hidden">
+                    <motion.div
+                      className="bg-gradient-to-r from-fern-green to-hunter-green h-full rounded-full"
+                      initial={{ width: 0 }}
+                      animate={inView ? { width: `${lang.percent}%` } : { width: 0 }}
+                      transition={{ duration: 1, delay: 0.5 }}
+                    />
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </motion.div>
       </div>

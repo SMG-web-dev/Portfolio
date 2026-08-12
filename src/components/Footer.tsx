@@ -1,125 +1,79 @@
+import React from "react";
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from "../constants/icons";
-import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-
-const iconVariants = {
-  hover: {
-    scale: 1.2,
-    transition: { duration: 0.3, yoyo: Infinity },
-  },
-};
-
-const colorAnimation = {
-  animate: {
-    color: ['#84A98C', '#CAD2C5', '#52796F', '#84A98C'],
-    transition: { duration: 4, repeat: Infinity, ease: 'linear' },
-  },
-};
 
 export default function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-brunswick-green text-timberwolf py-12 sm:py-16 lg:py-20 pb-safe-ios">
-      <div id="contact" className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 xl:gap-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="space-y-4 lg:space-y-5"
-          >
-            <h3 className="text-xl lg:text-2xl font-semibold text-sage mb-4 lg:mb-5">{t('footer.contact')}</h3>
-            <motion.div className="flex items-center space-x-3 text-sm lg:text-base group" whileHover="hover">
-              <motion.span variants={iconVariants}>
-                <motion.span variants={colorAnimation} animate="animate">
-                  <FaEnvelope size={18} className="text-sage group-hover:scale-110 transition-transform duration-300" />
-                </motion.span>
-              </motion.span>
-              <a
-                href="mailto:smanjon2021@gmail.com"
-                className="hover:text-sage transition-colors duration-300 hover:underline"
-              >
-                smanjon2021@gmail.com
-              </a>
-            </motion.div>
-            <motion.div className="flex items-center space-x-3 text-sm lg:text-base group" whileHover="hover">
-              <motion.span variants={iconVariants}>
-                <motion.span variants={colorAnimation} animate="animate">
-                  <FaPhone size={18} className="text-sage group-hover:scale-110 transition-transform duration-300" />
-                </motion.span>
-              </motion.span>
-              <a
-                href="tel:+34692244230"
-                className="hover:text-sage transition-colors duration-300"
-              >
-                +34 692 244 230
-              </a>
-            </motion.div>
-            <motion.div className="flex items-center space-x-3 text-sm lg:text-base group" whileHover="hover">
-              <motion.span variants={iconVariants}>
-                <motion.span variants={colorAnimation} animate="animate">
-                  <FaMapMarkerAlt size={18} className="text-sage group-hover:scale-110 transition-transform duration-300" />
-                </motion.span>
-              </motion.span>
-              <span>{t('footer.location')}</span>
-            </motion.div>
-          </motion.div>
+    <footer id="contact" className="bg-brunswick-green text-white py-8 sm:py-10 border-t border-white/20 pb-safe-ios">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+          {/* Brand & Location */}
+          <div className="space-y-1">
+            <div className="flex items-center justify-center md:justify-start gap-2">
+              <span className="font-display font-black text-xl text-white">
+                smg-dev
+              </span>
+              <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-fern-green text-white border border-white/20 shadow-xs">
+                Full-Stack
+              </span>
+            </div>
+            <p className="text-xs font-semibold text-white/90 flex items-center justify-center md:justify-start gap-1.5 mt-1">
+              <FaMapMarkerAlt size={12} className="text-sage" />
+              <span>{t("footer.location")}</span>
+            </p>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="space-y-4"
-          >
-            {/* Espacio para contenido adicional si se desea agregar en el futuro */}
-          </motion.div>
+          {/* Quick Contact Action Pills */}
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <a
+              href="mailto:smanjon2021@gmail.com"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-fern-green text-xs sm:text-sm font-semibold text-white transition-all border border-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fern-green shadow-xs"
+              aria-label="Send email to Sergio Manjón"
+            >
+              <FaEnvelope size={14} className="text-sage" />
+              <span>smanjon2021@gmail.com</span>
+            </a>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="space-y-4 lg:space-y-5 lg:col-start-3"
-          >
-            <h3 className="text-xl lg:text-2xl font-semibold text-sage mb-4 lg:mb-5">
-              {t('footer.connectWithMe')}
-            </h3>
-            <div className="flex space-x-6 lg:space-x-8 mb-4 lg:mb-5">
-              <motion.a
+            <a
+              href="tel:+34692244230"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-fern-green text-xs sm:text-sm font-semibold text-white transition-all border border-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fern-green shadow-xs"
+              aria-label="Call Sergio Manjón"
+            >
+              <FaPhone size={14} className="text-sage" />
+              <span>+34 692 244 230</span>
+            </a>
+          </div>
+
+          {/* Social Links & Copyright */}
+          <div className="flex flex-col items-center md:items-end gap-2">
+            <div className="flex items-center gap-4">
+              <a
                 href="https://github.com/SMG-web-dev"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-sage transition-all duration-300 group"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
+                className="text-white/90 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fern-green rounded-full p-1"
                 aria-label="GitHub Profile"
               >
-                <motion.span variants={iconVariants}>
-                  <motion.span variants={colorAnimation} animate="animate">
-                    <FaGithub size={24} className="group-hover:scale-110 transition-transform duration-300" />
-                  </motion.span>
-                </motion.span>
-              </motion.a>
-              <motion.a
+                <FaGithub size={20} />
+              </a>
+
+              <a
                 href="https://www.linkedin.com/in/smg-web-dev/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-sage transition-all duration-300 group"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
+                className="text-white/90 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fern-green rounded-full p-1"
                 aria-label="LinkedIn Profile"
               >
-                <motion.span variants={iconVariants}>
-                  <motion.span variants={colorAnimation} animate="animate">
-                    <FaLinkedin size={24} className="group-hover:scale-110 transition-transform duration-300" />
-                  </motion.span>
-                </motion.span>
-              </motion.a>
+                <FaLinkedin size={20} />
+              </a>
             </div>
-            <p className="text-sm lg:text-base text-sage/90">
-              &copy; {new Date().getFullYear()} smg-dev. {t('footer.allRightsReserved')}.
+
+            <p className="text-xs font-semibold text-white/80">
+              &copy; {new Date().getFullYear()} Sergio Manjón (smg-dev). {t("footer.allRightsReserved")}.
             </p>
-          </motion.div>
+          </div>
         </div>
       </div>
     </footer>

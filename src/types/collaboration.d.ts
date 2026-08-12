@@ -1,4 +1,3 @@
-// types/collaboration.ts
 export interface CollaborationProps {
   company: string;
   role: {
@@ -38,4 +37,12 @@ export interface CollaborationProps {
   };
   image: string;
   website?: string;
+  techStack?: string[];
+  impactMetrics?: {
+    en: string[];
+    es: string[];
+    it: string[];
+    de: string[];
+    fr: string[];
+  };
 }

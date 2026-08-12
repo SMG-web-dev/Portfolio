@@ -5,40 +5,41 @@ import { useTranslation } from "react-i18next";
 import { ProjectLinksProps, ProjectCategory } from "../../types/projects";
 
 const categoryColors: { [key in ProjectCategory]: { bg: string; text: string } } = {
-  "Frontend": { bg: "bg-fern-green", text: "text-white" },
-  "Backend": { bg: "bg-sage", text: "text-brunswick-green" },
-  "Full-Stack": { bg: "bg-timberwolf", text: "text-brunswick-green" }
+  "Frontend": { bg: "bg-fern-green/90", text: "text-white" },
+  "Backend": { bg: "bg-sage", text: "text-brunswick-green font-semibold" },
+  "Full-Stack": { bg: "bg-timberwolf", text: "text-brunswick-green font-semibold" }
 };
 
 const ProjectLinks: React.FC<ProjectLinksProps> = ({ github, category }) => {
   const { t } = useTranslation();
+  const catStyle = categoryColors[category] || { bg: "bg-sage", text: "text-brunswick-green" };
 
   return (
-    <div className="px-6 pb-6 flex justify-between items-center">
+    <div className="px-5 pb-5 pt-2 flex justify-between items-center border-t border-white/10">
       {github ? (
         <motion.a
           href={github}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center text-sage hover:text-timberwolf transition-colors duration-300"
+          className="flex items-center text-timberwolf/90 hover:text-white font-medium text-sm transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fern-green rounded-md px-2 py-1"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          aria-label="View source code on GitHub"
+          aria-label={`${t('projects.source')} code for project`}
         >
-          <FaGithub size={20} className="mr-1" aria-hidden="true" />
+          <FaGithub size={18} className="mr-1.5" aria-hidden="true" />
           <span>{t('projects.source')}</span>
         </motion.a>
       ) : (
-        <motion.div
-          className="flex items-center text-gray-400 cursor-not-allowed"
-          whileHover={{ scale: 1.02 }}
+        <div
+          className="flex items-center text-timberwolf/50 text-sm font-medium cursor-not-allowed px-2 py-1"
+          title="Private repository"
         >
-          <FaLock size={20} className="mr-1" aria-hidden="true" />
+          <FaLock size={16} className="mr-1.5" aria-hidden="true" />
           <span>{t('projects.private') || "Private"}</span>
-        </motion.div>
+        </div>
       )}
 
-      <span className={`text-sm font-medium ${categoryColors[category].bg} ${categoryColors[category].text} px-3 py-1.5 rounded-full shadow-md`}>
+      <span className={`text-xs font-semibold ${catStyle.bg} ${catStyle.text} px-3 py-1 rounded-full shadow-sm`}>
         {t(`projects.category.${category}`)}
       </span>
     </div>

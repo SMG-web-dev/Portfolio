@@ -1,72 +1,36 @@
-import React, { useState, useEffect } from "react"
-import { motion, AnimatePresence, useAnimation } from "framer-motion"
-import { useInView } from "react-intersection-observer"
+import React from "react";
+import { motion } from "framer-motion";
 
 interface SkillIconProps {
-    skill: {
-        icon: React.ElementType;
-        name: string;
-        color: string;
-    };
-    index: number;
+  skill: {
+    icon: React.ElementType;
+    name: string;
+    color: string;
+  };
+  index: number;
 }
 
 const SkillIcon: React.FC<SkillIconProps> = ({ skill, index }) => {
-    const [isHovered, setIsHovered] = useState(false)
-    const controls = useAnimation()
-    const [ref, inView] = useInView({
-        threshold: 0.1,
-        triggerOnce: true,
-    })
+  const IconComponent = skill.icon;
 
-    useEffect(() => {
-        if (inView) {
-            controls.start("visible")
-        }
-    }, [controls, inView])
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.3, delay: index * 0.04 }}
+      whileHover={{ scale: 1.06, y: -2 }}
+      className="flex flex-col items-center justify-center p-3 rounded-2xl bg-white/40 border border-white/60 hover:bg-white/80 transition-all duration-200 group shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fern-green cursor-default"
+      tabIndex={0}
+      aria-label={skill.name}
+    >
+      <div className={`p-2.5 rounded-xl bg-gradient-to-br ${skill.color} text-white shadow-sm group-hover:shadow-md transition-shadow mb-2`}>
+        <IconComponent size={24} className="group-hover:scale-110 transition-transform duration-200" aria-hidden="true" />
+      </div>
+      <span className="text-xs sm:text-sm font-semibold text-brunswick-green group-hover:text-fern-green transition-colors text-center line-clamp-1">
+        {skill.name}
+      </span>
+    </motion.div>
+  );
+};
 
-    return (
-        <motion.div
-            ref={ref}
-            className="relative flex flex-col items-center justify-center h-24"
-            initial="hidden"
-            animate={controls}
-            variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: { duration: 0.6, delay: index * 0.1 },
-                },
-            }}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-        >
-            <motion.div
-                className="cursor-pointer"
-                whileHover={{ scale: 1.2, rotate: 360 }}
-                transition={{ type: "spring", stiffness: 300, damping: 10 }}
-            >
-                <skill.icon className={`w-10 h-10 md:w-12 md:h-12 transition-all duration-300 ease-in-out text-brunswick-green`} />
-            </motion.div>
-            <AnimatePresence>
-                {isHovered && (
-                    <motion.div
-                        initial={{ opacity: 0, y: 10, scale: 0.8 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 10, scale: 0.8 }}
-                        transition={{ duration: 0.2 }}
-                        className={`absolute top-full mt-2 px-2 py-1 rounded-lg shadow-lg bg-gradient-to-r ${skill.color} z-10`}
-                        style={{ pointerEvents: "none" }}
-                    >
-                        <p className="text-xs md:text-sm font-bold text-white whitespace-nowrap">
-                            {skill.name}
-                        </p>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </motion.div>
-    )
-}
-
-export default SkillIcon
+export default SkillIcon;

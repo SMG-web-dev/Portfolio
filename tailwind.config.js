@@ -3,6 +3,10 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['Outfit', 'Inter', 'system-ui', 'sans-serif'],
+      },
       colors: {
         "timberwolf": "#B0BFA1",
         "sage": "#a3b18a",
@@ -10,13 +14,22 @@ export default {
         "hunter-green": "#3a5a40",
         "brunswick-green": "#344e41",
       },
+      boxShadow: {
+        'green': '0 4px 14px -2px rgba(88, 129, 87, 0.15)',
+        'green-lg': '0 10px 30px -4px rgba(88, 129, 87, 0.20)',
+        'green-glow': '0 0 20px rgba(88, 129, 87, 0.15)',
+        'card': '0 1px 3px rgba(52, 78, 65, 0.08), 0 4px 12px rgba(52, 78, 65, 0.05)',
+        'card-hover': '0 4px 16px rgba(52, 78, 65, 0.12), 0 8px 32px rgba(52, 78, 65, 0.08)',
+      },
       animation: {
         'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'gradient': 'gradient 15s ease infinite',
-        'spin-slow': 'spin 3s linear infinite',
-        'bounce-slow': 'bounce 3s ease-in-out infinite',
+        'gradient': 'gradient 25s ease infinite',
+        'spin-slow': 'spin 20s linear infinite',
         'fade-in': 'fadeIn 1s ease-in forwards',
         'slide-up': 'slideUp 0.8s ease-out forwards',
+        'shimmer': 'shimmer 2s ease-in-out infinite',
+        'ring-rotate': 'ringRotate 8s linear infinite',
+        'counter': 'counter 1.5s ease-out forwards',
       },
       keyframes: {
         gradient: {
@@ -31,14 +44,19 @@ export default {
         slideUp: {
           '0%': { opacity: '0', transform: 'translateY(30px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
-        }
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+        ringRotate: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
       },
       transitionProperty: {
         'height': 'height',
         'spacing': 'margin, padding',
-      },
-      textShadow: {
-        'default': '0 2px 4px rgba(0,0,0,0.1)',
       },
       backdropFilter: {
         'none': 'none',
@@ -47,7 +65,7 @@ export default {
     },
   },
   plugins: [
-    function ({ addUtilities, theme, e }) {
+    function ({ addUtilities }) {
       const utilities = {
         '.animate-delay-300': { animationDelay: '300ms' },
         '.animate-delay-500': { animationDelay: '500ms' },
@@ -57,6 +75,9 @@ export default {
         '.animate-delay-4000': { animationDelay: '4000ms' },
         '.text-shadow': {
           textShadow: '0 2px 4px rgba(0,0,0,0.1)',
+        },
+        '.text-shadow-lg': {
+          textShadow: '0 4px 8px rgba(0,0,0,0.15)',
         },
         // Safe area utilities
         '.pt-safe': { paddingTop: 'var(--safe-area-inset-top)' },

@@ -1,61 +1,81 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { ProjectCardProps } from "../../types/projects";
+import { ProjectProps } from "../../types/projects";
 import { technologyIcons } from "../technologyIcons";
 import ProjectLinks from "../Projects/ProjectLinks";
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
+interface ProjectCardProps {
+  project: ProjectProps;
+  index: number;
+  onSelect?: (project: ProjectProps) => void;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onSelect }) => {
   const { t } = useTranslation();
+
+  const handleClick = () => {
+    if (onSelect) {
+      onSelect(project);
+    }
+  };
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileHover={{ scale: 1.03 }}
-      className="bg-brunswick-green rounded-lg shadow-lg overflow-hidden flex flex-col group transition-all duration-200 ease-in-out"
+      transition={{ duration: 0.4, delay: index * 0.08 }}
+      whileHover={{ y: -5 }}
+      onClick={handleClick}
+      className="bg-brunswick-green/90 backdrop-blur-md rounded-2xl shadow-card hover:shadow-card-hover overflow-hidden flex flex-col group transition-all duration-300 border border-fern-green/20 hover:border-fern-green/50 cursor-pointer"
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          handleClick();
+        }
+      }}
+      aria-label={`View details for ${project.title}`}
     >
-      <div className="relative pt-[60%] overflow-hidden">
-        <motion.a
-          href={project.live}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-full h-full"
-        >
-          <motion.img
-            src={project.image}
-            alt={project.title}
-            className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 shadow-[inset_0_-4px_6px_rgba(0,0,0,0.1)]"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <span className="text-white text-lg font-semibold">{t('projects.viewProject')}</span>
-          </div>
-        </motion.a>
-      </div>
-      <div className="p-4 flex-grow relative">
-        <div className="absolute top-0 left-0 right-0 h-4 bg-gradient-to-b from-black/20 to-transparent"></div>
-        <h3 className="text-lg font-semibold mb-2 text-timberwolf line-clamp-2">
-          {project.title}
-        </h3>
-        <div className="flex flex-wrap gap-2 mt-2">
-          {project.technologies.map((tech, index) => (
-            <motion.div
-              key={tech}
-              className="flex items-center justify-center bg-hunter-green rounded-lg w-9 h-9 shadow-md"
-              title={tech}
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-              whileHover={{ scale: 1.1 }}
-            >
-              {technologyIcons[tech]}
-            </motion.div>
-          ))}
+      {/* Top Accent Line */}
+      <div className="h-1 bg-gradient-to-r from-fern-green via-sage to-fern-green transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
+
+      {/* Image Preview Container */}
+      <div className="relative pt-[60%] overflow-hidden bg-black/20">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-108"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-brunswick-green/90 via-brunswick-green/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+          <span className="text-white text-sm font-semibold px-4 py-2 bg-fern-green/90 backdrop-blur-md rounded-full shadow-md transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+            {t('projects.viewProject')} &rarr;
+          </span>
         </div>
       </div>
 
-      {/* Ahora con categoría incluida en ProjectLinks */}
+      {/* Card Body */}
+      <div className="p-5 flex-grow flex flex-col justify-between">
+        <div>
+          <h3 className="text-lg font-display font-bold text-timberwolf group-hover:text-white transition-colors line-clamp-2 mb-3">
+            {project.title}
+          </h3>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.technologies.map((tech, techIndex) => (
+              <div
+                key={tech}
+                className="flex items-center justify-center bg-hunter-green/60 rounded-lg w-8 h-8 border border-white/10"
+                title={tech}
+              >
+                {technologyIcons[tech]}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Footer Links & Badge */}
       <ProjectLinks
         github={project.github}
         live={project.live}

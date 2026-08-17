@@ -123,6 +123,7 @@ const SEO: React.FC = () => {
           "@type": "Person",
           "@id": `${canonicalUrl}/#person`,
           "name": "Sergio Manjón",
+          "email": "dev@smg-dev.es",
           "jobTitle": "Full-Stack Developer",
           "url": canonicalUrl,
           "image": `${canonicalUrl}/logo.webp`,

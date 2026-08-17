@@ -35,12 +35,12 @@ export default function Footer() {
           {/* Quick Contact Action Pills */}
           <div className="flex flex-wrap items-center justify-center gap-3">
             <a
-              href="mailto:smanjon2021@gmail.com"
+              href="mailto:dev@smg-dev.es"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-fern-green text-xs sm:text-sm font-semibold text-white transition-all border border-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fern-green shadow-xs"
-              aria-label="Send email to Sergio Manjón"
+              aria-label="Send email to dev@smg-dev.es"
             >
               <FaEnvelope size={14} className="text-sage" />
-              <span>smanjon2021@gmail.com</span>
+              <span>dev@smg-dev.es</span>
             </a>
           </div>
 

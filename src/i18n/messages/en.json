@@ -9,17 +9,78 @@
   },
   "experience": {
     "title": "Professional Experience",
+    "journey": "Career Journey",
     "role": "Role",
     "period": "Period",
     "teamSize": "Team Size",
-    "achievements": "Achievements"
+    "achievements": "Achievements",
+    "keyPositions": "Key Positions",
+    "internationalScope": "International Scope",
+    "locations": "Madrid · Rome",
+    "agileFocus": "Agile & UI/UX Driven",
+    "achievementsTab": "Achievements",
+    "impactTab": "Impact"
   },
   "softskills": {
     "title": "Engineering Mindset & Competencies",
-    "subtitle": "How I approach problem solving, team collaboration, and software delivery"
+    "subtitle": "How I approach problem solving, team collaboration, and software delivery",
+    "pillars": {
+      "architecture": {
+        "badge": "System Design",
+        "title": "Architecture & System Thinking",
+        "description": "Designing scalable, maintainable frontends and backend APIs with clean modular patterns.",
+        "skills": {
+          "analytical": "Analytical Thinking",
+          "problemSolving": "Problem Solving",
+          "continuousLearning": "Continuous Learning"
+        }
+      },
+      "growth": {
+        "badge": "Value Driven",
+        "title": "Product Growth & Conversion",
+        "description": "Building user-centric web applications that convert visitors into active customers.",
+        "skills": {
+          "customerOrientation": "Customer Orientation",
+          "agile": "Agile & Flexibility",
+          "timeManagement": "Time Management"
+        }
+      },
+      "collaboration": {
+        "badge": "Collaboration",
+        "title": "Team Leadership & Communication",
+        "description": "Fostering transparent communication and technical alignment across engineering teams.",
+        "skills": {
+          "teamLeadership": "Team Leadership",
+          "effectiveCommunication": "Effective Communication",
+          "conflictResolution": "Conflict Resolution"
+        }
+      }
+    },
+    "languages": {
+      "title": "Spoken Languages & Global Communication",
+      "subtitle": "Multilingual capabilities enabling seamless international collaboration",
+      "spanish": {
+        "name": "Spanish",
+        "level": "Native Speaker"
+      },
+      "english": {
+        "name": "English",
+        "level": "Advanced"
+      },
+      "italian": {
+        "name": "Italian",
+        "level": "Basic (Erasmus+)"
+      },
+      "french": {
+        "name": "French",
+        "level": "Basic Understanding"
+      }
+    }
   },
   "techstack": {
     "title": "Tech Stack & Engineering Skills",
+    "filterAll": "All Skills",
+    "filterAi": "AI & Agents ⚡",
     "coreArchitecture": "Core & Architecture",
     "backendDatabases": "Backend & Databases",
     "cloudDevops": "Cloud & Infrastructure",
@@ -33,6 +94,11 @@
     "private": "Private",
     "liveDemo": "Live Demo",
     "viewProject": "View Project",
+    "techUsed": "Technologies Used",
+    "keyFeatures": "Key Features & Architecture",
+    "feature1": "Responsive UI built with clean component architecture and performance optimization.",
+    "feature2": "Seamless API integration and state management tailored for conversion and usability.",
+    "feature3": "Production-ready deployment with SEO optimizations and accessibility compliance.",
     "category": {
       "Frontend": "Frontend",
       "Backend": "Backend",

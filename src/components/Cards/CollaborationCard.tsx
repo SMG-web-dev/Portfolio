@@ -111,7 +111,7 @@ const CollaborationCard: React.FC<{
             }`}
           >
             <FaAward size={13} />
-            <span>{currentLanguage === "es" ? "Logros" : "Achievements"} ({achievements.length})</span>
+            <span>{t("experience.achievementsTab")} ({achievements.length})</span>
           </button>
 
           {techStack.length > 0 && (
@@ -138,7 +138,7 @@ const CollaborationCard: React.FC<{
               }`}
             >
               <FaChartLine size={13} />
-              <span>{currentLanguage === "es" ? "Impacto" : "Impact"}</span>
+              <span>{t("experience.impactTab")}</span>
             </button>
           )}
         </div>

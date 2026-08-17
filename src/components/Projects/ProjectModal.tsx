@@ -94,7 +94,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
             {/* Tech Stack Chips */}
             <div>
               <h3 className="text-sm font-semibold uppercase tracking-wider text-sage mb-3">
-                Technologies Used
+                {t('projects.techUsed')}
               </h3>
               <div className="flex flex-wrap gap-2.5">
                 {project.technologies.map((tech) => (
@@ -114,20 +114,20 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
             {/* Key Highlights */}
             <div>
               <h3 className="text-sm font-semibold uppercase tracking-wider text-sage mb-3">
-                Key Features & Architecture
+                {t('projects.keyFeatures')}
               </h3>
               <ul className="space-y-2.5 text-timberwolf/90 text-sm sm:text-base leading-relaxed">
                 <li className="flex items-start gap-2.5">
                   <FaCheck className="text-fern-green mt-1 flex-shrink-0" size={16} />
-                  <span>Responsive UI built with clean component architecture and performance optimization.</span>
+                  <span>{t('projects.feature1')}</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <FaCheck className="text-fern-green mt-1 flex-shrink-0" size={16} />
-                  <span>Seamless API integration and state management tailored for conversion and usability.</span>
+                  <span>{t('projects.feature2')}</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <FaCheck className="text-fern-green mt-1 flex-shrink-0" size={16} />
-                  <span>Production-ready deployment with SEO optimizations and accessibility compliance.</span>
+                  <span>{t('projects.feature3')}</span>
                 </li>
               </ul>
             </div>

@@ -41,11 +41,11 @@ export default function TechStack() {
         {/* Ecosystem Filter Pills */}
         <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3 mb-12">
           {[
-            { id: "all", label: "All Skills" },
-            { id: "corearchitecture", label: "Core & Architecture" },
-            { id: "backenddatabases", label: "Backend & Data" },
-            { id: "clouddevops", label: "Cloud & DevOps" },
-            { id: "aiengineering", label: "AI & Agents ⚡" },
+            { id: "all", labelKey: "techstack.filterAll" },
+            { id: "corearchitecture", labelKey: "techstack.coreArchitecture" },
+            { id: "backenddatabases", labelKey: "techstack.backendDatabases" },
+            { id: "clouddevops", labelKey: "techstack.cloudDevops" },
+            { id: "aiengineering", labelKey: "techstack.filterAi" },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -56,7 +56,7 @@ export default function TechStack() {
                   : "bg-white/60 text-brunswick-green/80 hover:bg-white/90 hover:text-brunswick-green border border-white/50"
               }`}
             >
-              {tab.label}
+              {t(tab.labelKey)}
             </button>
           ))}
         </div>

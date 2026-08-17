@@ -5,68 +5,50 @@ import { useInView } from "react-intersection-observer";
 import { USFlag, SpainFlag, ItalyFlag, FranceFlag } from "./FlagIcons";
 
 interface SoftSkillPillar {
-  title: { en: string; es: string };
-  description: { en: string; es: string };
-  badge: string;
-  skills: Array<{ name: { en: string; es: string }; icon: string }>;
+  badgeKey: string;
+  titleKey: string;
+  descKey: string;
+  skills: Array<{ nameKey: string; icon: string }>;
 }
 
 const engineeringPillars: SoftSkillPillar[] = [
   {
-    title: {
-      en: "Architecture & System Thinking",
-      es: "Arquitectura & Pensamiento de Sistemas",
-    },
-    description: {
-      en: "Designing scalable, maintainable frontends and backend APIs with clean modular patterns.",
-      es: "Diseño de interfaces y APIs backend escalables y mantenibles con patrones modulares limpios.",
-    },
-    badge: "System Design",
+    badgeKey: "softskills.pillars.architecture.badge",
+    titleKey: "softskills.pillars.architecture.title",
+    descKey: "softskills.pillars.architecture.description",
     skills: [
-      { name: { en: "Analytical Thinking", es: "Pensamiento Analítico" }, icon: "brain" },
-      { name: { en: "Problem Solving", es: "Resolución de Problemas" }, icon: "puzzle" },
-      { name: { en: "Continuous Learning", es: "Aprendizaje Continuo" }, icon: "book" },
+      { nameKey: "softskills.pillars.architecture.skills.analytical", icon: "brain" },
+      { nameKey: "softskills.pillars.architecture.skills.problemSolving", icon: "puzzle" },
+      { nameKey: "softskills.pillars.architecture.skills.continuousLearning", icon: "book" },
     ],
   },
   {
-    title: {
-      en: "Product Growth & Conversion",
-      es: "Crecimiento de Producto & Conversión",
-    },
-    description: {
-      en: "Building user-centric web applications that convert visitors into active customers.",
-      es: "Creación de aplicaciones web centradas en el usuario que convierten visitantes en clientes activos.",
-    },
-    badge: "Value Driven",
+    badgeKey: "softskills.pillars.growth.badge",
+    titleKey: "softskills.pillars.growth.title",
+    descKey: "softskills.pillars.growth.description",
     skills: [
-      { name: { en: "Customer Orientation", es: "Orientación al Cliente" }, icon: "star" },
-      { name: { en: "Agile & Flexibility", es: "Agilidad y Adaptabilidad" }, icon: "refresh" },
-      { name: { en: "Time Management", es: "Gestión del Tiempo" }, icon: "clock" },
+      { nameKey: "softskills.pillars.growth.skills.customerOrientation", icon: "star" },
+      { nameKey: "softskills.pillars.growth.skills.agile", icon: "refresh" },
+      { nameKey: "softskills.pillars.growth.skills.timeManagement", icon: "clock" },
     ],
   },
   {
-    title: {
-      en: "Team Leadership & Communication",
-      es: "Liderazgo de Equipo & Comunicación",
-    },
-    description: {
-      en: "Fostering transparent communication and technical alignment across engineering teams.",
-      es: "Fomentando la comunicación transparente y la alineación técnica en equipos de desarrollo.",
-    },
-    badge: "Collaboration",
+    badgeKey: "softskills.pillars.collaboration.badge",
+    titleKey: "softskills.pillars.collaboration.title",
+    descKey: "softskills.pillars.collaboration.description",
     skills: [
-      { name: { en: "Team Leadership", es: "Liderazgo de Equipo" }, icon: "group" },
-      { name: { en: "Effective Communication", es: "Comunicación Efectiva" }, icon: "message" },
-      { name: { en: "Conflict Resolution", es: "Resolución de Conflictos" }, icon: "users" },
+      { nameKey: "softskills.pillars.collaboration.skills.teamLeadership", icon: "group" },
+      { nameKey: "softskills.pillars.collaboration.skills.effectiveCommunication", icon: "message" },
+      { nameKey: "softskills.pillars.collaboration.skills.conflictResolution", icon: "users" },
     ],
   },
 ];
 
 const spokenLanguages = [
-  { code: "es", flag: SpainFlag, name: { en: "Spanish", es: "Español" }, level: { en: "Native Speaker", es: "Nativo" }, percent: 100 },
-  { code: "en", flag: USFlag, name: { en: "English", es: "Inglés" }, level: { en: "Advanced", es: "Avanzado" }, percent: 85 },
-  { code: "it", flag: ItalyFlag, name: { en: "Italian", es: "Italiano" }, level: { en: "Basic (Erasmus+)", es: "Básico (Erasmus+)" }, percent: 45 },
-  { code: "fr", flag: FranceFlag, name: { en: "French", es: "Francés" }, level: { en: "Basic Understanding", es: "Comprensión Básica" }, percent: 35 },
+  { code: "es", flag: SpainFlag, nameKey: "softskills.languages.spanish.name", levelKey: "softskills.languages.spanish.level", percent: 100 },
+  { code: "en", flag: USFlag, nameKey: "softskills.languages.english.name", levelKey: "softskills.languages.english.level", percent: 85 },
+  { code: "it", flag: ItalyFlag, nameKey: "softskills.languages.italian.name", levelKey: "softskills.languages.italian.level", percent: 45 },
+  { code: "fr", flag: FranceFlag, nameKey: "softskills.languages.french.name", levelKey: "softskills.languages.french.level", percent: 35 },
 ];
 
 const SoftSkillIcon: React.FC<{ icon: string; className?: string }> = ({ icon, className = "" }) => {
@@ -83,7 +65,7 @@ const SoftSkillIcon: React.FC<{ icon: string; className?: string }> = ({ icon, c
     ),
     users: (
       <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20H2v-2a3 3 0 015.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
       </svg>
     ),
     star: (
@@ -121,8 +103,7 @@ const SoftSkillIcon: React.FC<{ icon: string; className?: string }> = ({ icon, c
 };
 
 const SoftSkills: React.FC = () => {
-  const { t, i18n } = useTranslation();
-  const langKey = (i18n.language?.split("-")[0] || "en") as "en" | "es";
+  const { t } = useTranslation();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -162,16 +143,16 @@ const SoftSkills: React.FC = () => {
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="px-3 py-1 text-xs font-bold rounded-full bg-hunter-green text-white shadow-xs">
-                    {pillar.badge}
+                    {t(pillar.badgeKey)}
                   </span>
                 </div>
 
                 <h3 className="text-xl font-display font-extrabold text-brunswick-green mb-3">
-                  {pillar.title[langKey] || pillar.title.en}
+                  {t(pillar.titleKey)}
                 </h3>
 
                 <p className="text-brunswick-green font-medium text-sm leading-relaxed mb-6">
-                  {pillar.description[langKey] || pillar.description.en}
+                  {t(pillar.descKey)}
                 </p>
               </div>
 
@@ -186,7 +167,7 @@ const SoftSkills: React.FC = () => {
                       <SoftSkillIcon icon={skill.icon} className="w-4 h-4" />
                     </div>
                     <span className="text-xs sm:text-sm font-bold text-brunswick-green">
-                      {skill.name[langKey] || skill.name.en}
+                      {t(skill.nameKey)}
                     </span>
                   </div>
                 ))}
@@ -204,10 +185,10 @@ const SoftSkills: React.FC = () => {
         >
           <div className="mb-6">
             <h3 className="text-2xl font-display font-extrabold text-brunswick-green">
-              Spoken Languages & Global Communication
+              {t("softskills.languages.title")}
             </h3>
             <p className="text-brunswick-green font-semibold text-sm mt-1">
-              Multilingual capabilities enabling seamless international collaboration
+              {t("softskills.languages.subtitle")}
             </p>
           </div>
 
@@ -224,10 +205,10 @@ const SoftSkills: React.FC = () => {
                     <FlagComp size={24} className="rounded-xs shadow-xs flex-shrink-0" />
                     <div>
                       <h4 className="font-display font-extrabold text-brunswick-green text-sm sm:text-base leading-tight">
-                        {lang.name[langKey] || lang.name.en}
+                        {t(lang.nameKey)}
                       </h4>
                       <p className="text-xs font-bold text-fern-green mt-0.5">
-                        {lang.level[langKey] || lang.level.en}
+                        {t(lang.levelKey)}
                       </p>
                     </div>
                   </div>

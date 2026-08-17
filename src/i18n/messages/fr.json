@@ -9,17 +9,78 @@
   },
   "experience": {
     "title": "Expérience Professionnelle",
+    "journey": "Parcours Professionnel",
     "role": "Rôle",
     "period": "Période",
     "teamSize": "Taille de l'équipe",
-    "achievements": "Réalisations"
+    "achievements": "Réalisations",
+    "keyPositions": "Postes Clés",
+    "internationalScope": "Portée Internationale",
+    "locations": "Madrid · Rome",
+    "agileFocus": "Orienté Agile & UI/UX",
+    "achievementsTab": "Réalisations",
+    "impactTab": "Impact"
   },
   "softskills": {
     "title": "Esprit d'Ingénierie & Compétences",
-    "subtitle": "Comment j'aborde la résolution de problèmes, la collaboration et la livraison"
+    "subtitle": "Comment j'aborde la résolution de problèmes, la collaboration et la livraison",
+    "pillars": {
+      "architecture": {
+        "badge": "Conception de Systèmes",
+        "title": "Architecture & Pensée Systémique",
+        "description": "Conception d'interfaces et d'APIs backend évolutives et maintenables avec des schémas modulaires propres.",
+        "skills": {
+          "analytical": "Pensée Analytique",
+          "problemSolving": "Résolution de Problèmes",
+          "continuousLearning": "Apprentissage Continu"
+        }
+      },
+      "growth": {
+        "badge": "Orienté Valeur",
+        "title": "Croissance Produit & Conversion",
+        "description": "Création d'applications web centrées sur l'utilisateur qui convertissent les visiteurs en clients actifs.",
+        "skills": {
+          "customerOrientation": "Orientation Client",
+          "agile": "Agilité & Flexibilité",
+          "timeManagement": "Gestion du Temps"
+        }
+      },
+      "collaboration": {
+        "badge": "Collaboration",
+        "title": "Leadership d'Équipe & Communication",
+        "description": "Favoriser une communication transparente et un alignement technique au sein des équipes.",
+        "skills": {
+          "teamLeadership": "Leadership d'Équipe",
+          "effectiveCommunication": "Communication Effective",
+          "conflictResolution": "Résolution de Conflits"
+        }
+      }
+    },
+    "languages": {
+      "title": "Langues Parlées & Communication Globale",
+      "subtitle": "Capacités multilingues permettant une collaboration internationale fluide",
+      "spanish": {
+        "name": "Espagnol",
+        "level": "Langue Maternelle"
+      },
+      "english": {
+        "name": "Anglais",
+        "level": "Avancé"
+      },
+      "italian": {
+        "name": "Italien",
+        "level": "Élémentaire (Erasmus+)"
+      },
+      "french": {
+        "name": "Français",
+        "level": "Compréhension de Base"
+      }
+    }
   },
   "techstack": {
     "title": "Stack Technique",
+    "filterAll": "Toutes les Compétences",
+    "filterAi": "IA & Agents ⚡",
     "coreArchitecture": "Core & Architecture",
     "backendDatabases": "Backend & Bases de Données",
     "cloudDevops": "Cloud & Infrastructure",
@@ -33,6 +94,11 @@
     "private": "Privé",
     "liveDemo": "Démo",
     "viewProject": "Voir le Projet",
+    "techUsed": "Technologies Utilisées",
+    "keyFeatures": "Caractéristiques Clés & Architecture",
+    "feature1": "UI responsive construite avec une architecture propre et une optimisation des performances.",
+    "feature2": "Intégration d'API fluide et gestion d'état adaptées à la conversion et à l'ergonomie.",
+    "feature3": "Déploiement prêt pour la production avec optimisations SEO et conformité à l'accessibilité.",
     "category": {
       "Frontend": "Frontend",
       "Backend": "Backend",

@@ -9,17 +9,78 @@
   },
   "experience": {
     "title": "Berufserfahrung",
+    "journey": "Berufsweg",
     "role": "Rolle",
     "period": "Zeitraum",
     "teamSize": "Teamgröße",
-    "achievements": "Erfolge"
+    "achievements": "Erfolge",
+    "keyPositions": "Wichtige Positionen",
+    "internationalScope": "Internationaler Rahmen",
+    "locations": "Madrid · Rom",
+    "agileFocus": "Agiler & UI/UX-Fokus",
+    "achievementsTab": "Erfolge",
+    "impactTab": "Einfluss"
   },
   "softskills": {
     "title": "Engineering-Denkweise & Kompetenzen",
-    "subtitle": "Wie ich Problemlösung, Teamarbeit und Software-Lieferung angehe"
+    "subtitle": "Wie ich Problemlösung, Teamarbeit und Software-Lieferung angehe",
+    "pillars": {
+      "architecture": {
+        "badge": "Systemdesign",
+        "title": "Architektur & Systemdenken",
+        "description": "Entwicklung skalierbarer, wartbarer Frontends und Backend-APIs mit sauberen modularen Mustern.",
+        "skills": {
+          "analytical": "Analytisches Denken",
+          "problemSolving": "Problemlösung",
+          "continuousLearning": "Kontinuierliches Lernen"
+        }
+      },
+      "growth": {
+        "badge": "Wertorientiert",
+        "title": "Produktwachstum & Konversion",
+        "description": "Entwicklung nutzerzentrierter Webanwendungen, die Besucher in aktive Kunden verwandeln.",
+        "skills": {
+          "customerOrientation": "Kundenorientierung",
+          "agile": "Agilität & Flexibilität",
+          "timeManagement": "Zeitmanagement"
+        }
+      },
+      "collaboration": {
+        "badge": "Zusammenarbeit",
+        "title": "Teamführung & Kommunikation",
+        "description": "Förderung transparenter Kommunikation und technischer Abstimmung in Entwicklerteams.",
+        "skills": {
+          "teamLeadership": "Teamführung",
+          "effectiveCommunication": "Effektive Kommunikation",
+          "conflictResolution": "Konfliktlösung"
+        }
+      }
+    },
+    "languages": {
+      "title": "Gesprochene Sprachen & Globale Kommunikation",
+      "subtitle": "Mehrsprachige Fähigkeiten für eine nahtlose internationale Zusammenarbeit",
+      "spanish": {
+        "name": "Spanisch",
+        "level": "Muttersprache"
+      },
+      "english": {
+        "name": "Englisch",
+        "level": "Fortgeschritten"
+      },
+      "italian": {
+        "name": "Italienisch",
+        "level": "Grundkenntnisse (Erasmus+)"
+      },
+      "french": {
+        "name": "Französisch",
+        "level": "Grundverständnis"
+      }
+    }
   },
   "techstack": {
     "title": "Tech-Stack",
+    "filterAll": "Alle Fähigkeiten",
+    "filterAi": "KI & Agenten ⚡",
     "coreArchitecture": "Core & Architektur",
     "backendDatabases": "Backend & Datenbanken",
     "cloudDevops": "Cloud & Infrastruktur",
@@ -33,6 +94,11 @@
     "private": "Privat",
     "liveDemo": "Live-Demo",
     "viewProject": "Projekt ansehen",
+    "techUsed": "Verwendete Technologien",
+    "keyFeatures": "Hauptmerkmale & Architektur",
+    "feature1": "Responsive Benutzeroberfläche mit sauberer Komponentenarchitektur und Leistungsoptimierung.",
+    "feature2": "Nahtlose API-Integration und Zustandsverwaltung für hohe Konversion und Benutzerfreundlichkeit.",
+    "feature3": "Produktionsreife Bereitstellung mit SEO-Optimierungen und Barrierefreiheit.",
     "category": {
       "Frontend": "Frontend",
       "Backend": "Backend",

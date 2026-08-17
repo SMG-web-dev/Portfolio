@@ -3,11 +3,10 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { collaborations } from "../constants/collaborations";
 import CollaborationCard from "./Cards/CollaborationCard";
-import { FaBriefcase, FaRocket, FaGlobeAmericas, FaBolt } from "../constants/icons";
+import { FaBriefcase, FaGlobeAmericas, FaBolt } from "../constants/icons";
 
 const Experience: React.FC = () => {
-  const { t, i18n } = useTranslation();
-  const currentLanguage = i18n.language?.split("-")[0] || "es";
+  const { t } = useTranslation();
 
   return (
     <section
@@ -29,7 +28,7 @@ const Experience: React.FC = () => {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brunswick-green text-white font-bold text-xs tracking-widest uppercase mb-4 shadow-sm">
             <FaBriefcase size={13} />
-            <span>{currentLanguage === "es" ? "Trayectoria Profesional" : "Career Journey"}</span>
+            <span>{t("experience.journey")}</span>
           </div>
 
           <h2 className="font-display text-3xl sm:text-5xl font-black text-brunswick-green tracking-tight leading-tight">
@@ -50,17 +49,17 @@ const Experience: React.FC = () => {
             <FaBriefcase className="text-fern-green mb-1.5" size={20} />
             <span className="font-display font-black text-xl sm:text-2xl text-brunswick-green">5</span>
             <span className="text-[11px] sm:text-xs font-bold text-brunswick-green/80 uppercase tracking-wider">
-              {currentLanguage === "es" ? "Posiciones Clave" : "Key Positions"}
+              {t("experience.keyPositions")}
             </span>
           </div>
 
           <div className="bg-white/80 backdrop-blur-md border border-white/60 p-4 rounded-2xl shadow-sm text-center flex flex-col items-center justify-center">
             <FaGlobeAmericas className="text-fern-green mb-1.5" size={20} />
             <span className="font-display font-black text-xl sm:text-2xl text-brunswick-green">
-              {currentLanguage === "es" ? "Madrid · Roma" : "Madrid · Rome"}
+              {t("experience.locations")}
             </span>
             <span className="text-[11px] sm:text-xs font-bold text-brunswick-green/80 uppercase tracking-wider">
-              {currentLanguage === "es" ? "Ámbito Internacional" : "International Scope"}
+              {t("experience.internationalScope")}
             </span>
           </div>
 
@@ -68,7 +67,7 @@ const Experience: React.FC = () => {
             <FaBolt className="text-fern-green mb-1.5" size={20} />
             <span className="font-display font-black text-xl sm:text-2xl text-brunswick-green">100%</span>
             <span className="text-[11px] sm:text-xs font-bold text-brunswick-green/80 uppercase tracking-wider">
-              {currentLanguage === "es" ? "Enfoque Ágil & UI/UX" : "Agile & UI/UX Driven"}
+              {t("experience.agileFocus")}
             </span>
           </div>
         </motion.div>

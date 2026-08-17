@@ -9,17 +9,78 @@
   },
   "experience": {
     "title": "Esperienza Professionale",
+    "journey": "Percorso Professionale",
     "role": "Ruolo",
     "period": "Periodo",
     "teamSize": "Dimensione del team",
-    "achievements": "Risultati"
+    "achievements": "Risultati",
+    "keyPositions": "Posizioni Chiave",
+    "internationalScope": "Ambito Internazionale",
+    "locations": "Madrid · Roma",
+    "agileFocus": "Approccio Agile & UI/UX",
+    "achievementsTab": "Risultati",
+    "impactTab": "Impatto"
   },
   "softskills": {
     "title": "Mentalità & Competenze di Ingegneria",
-    "subtitle": "Come affronto il problem solving, la collaborazione e il delivery del software"
+    "subtitle": "Come affronto il problem solving, la collaborazione e il delivery del software",
+    "pillars": {
+      "architecture": {
+        "badge": "Progettazione di Sistemi",
+        "title": "Architettura & Pensiero Sistemico",
+        "description": "Progettazione di frontend e API backend scalabili e manutenibili con pattern modulari puliti.",
+        "skills": {
+          "analytical": "Pensiero Analitico",
+          "problemSolving": "Problem Solving",
+          "continuousLearning": "Apprendimento Continuo"
+        }
+      },
+      "growth": {
+        "badge": "Orientato al Valore",
+        "title": "Crescita del Prodotto & Conversione",
+        "description": "Creazione di applicazioni web centrate sull'utente che convertono i visitatori in clienti attivi.",
+        "skills": {
+          "customerOrientation": "Orientamento al Cliente",
+          "agile": "Agilità e Flessibilità",
+          "timeManagement": "Gestione del Tempo"
+        }
+      },
+      "collaboration": {
+        "badge": "Collaborazione",
+        "title": "Leadership di Team & Comunicazione",
+        "description": "Promuovere una comunicazione trasparente e l'allineamento tecnico nei team di sviluppo.",
+        "skills": {
+          "teamLeadership": "Leadership di Team",
+          "effectiveCommunication": "Comunicazione Efficace",
+          "conflictResolution": "Risoluzione dei Conflitti"
+        }
+      }
+    },
+    "languages": {
+      "title": "Lingue Parlate & Comunicazione Globale",
+      "subtitle": "Competenze multilingue per una collaborazione internazionale fluida",
+      "spanish": {
+        "name": "Spagnolo",
+        "level": "Madrelingua"
+      },
+      "english": {
+        "name": "Inglese",
+        "level": "Avanzato"
+      },
+      "italian": {
+        "name": "Italiano",
+        "level": "Base (Erasmus+)"
+      },
+      "french": {
+        "name": "Francese",
+        "level": "Comprensione di Base"
+      }
+    }
   },
   "techstack": {
     "title": "Stack Tecnologico",
+    "filterAll": "Tutte le Competenze",
+    "filterAi": "IA & Agenti ⚡",
     "coreArchitecture": "Core & Architettura",
     "backendDatabases": "Backend & Database",
     "cloudDevops": "Cloud & Infrastruttura",
@@ -33,6 +94,11 @@
     "private": "Privato",
     "liveDemo": "Demo",
     "viewProject": "Visualizza Progetto",
+    "techUsed": "Tecnologie Utilizzate",
+    "keyFeatures": "Caratteristiche Chiave & Architettura",
+    "feature1": "UI responsive costruita con un'architettura di componenti pulita e ottimizzazione delle prestazioni.",
+    "feature2": "Integrazione API fluida e gestione dello stato orientata alla conversione e usabilità.",
+    "feature3": "Deployment pronto per la produzione con ottimizzazioni SEO e conformità all'accessibilità.",
     "category": {
       "Frontend": "Frontend",
       "Backend": "Backend",

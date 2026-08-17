@@ -1,12 +1,19 @@
-import React from "react";
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from "../constants/icons";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaMapMarkerAlt,
+} from "../constants/icons";
 import { useTranslation } from "react-i18next";
 
 export default function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer id="contact" className="bg-brunswick-green text-white py-8 sm:py-10 border-t border-white/20 pb-safe-ios">
+    <footer
+      id="contact"
+      className="bg-brunswick-green text-white py-8 sm:py-10 border-t border-white/20 pb-safe-ios"
+    >
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           {/* Brand & Location */}
@@ -35,15 +42,6 @@ export default function Footer() {
               <FaEnvelope size={14} className="text-sage" />
               <span>smanjon2021@gmail.com</span>
             </a>
-
-            <a
-              href="tel:+34692244230"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-fern-green text-xs sm:text-sm font-semibold text-white transition-all border border-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fern-green shadow-xs"
-              aria-label="Call Sergio Manjón"
-            >
-              <FaPhone size={14} className="text-sage" />
-              <span>+34 692 244 230</span>
-            </a>
           </div>
 
           {/* Social Links & Copyright */}
@@ -71,7 +69,8 @@ export default function Footer() {
             </div>
 
             <p className="text-xs font-semibold text-white/80">
-              &copy; {new Date().getFullYear()} Sergio Manjón (smg-dev). {t("footer.allRightsReserved")}.
+              &copy; {new Date().getFullYear()} Sergio Manjón (smg-dev).{" "}
+              {t("footer.allRightsReserved")}.
             </p>
           </div>
         </div>

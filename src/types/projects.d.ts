@@ -8,6 +8,7 @@ export interface ProjectProps {
   technologies: string[];
   category: ProjectCategory;
   isProfessional?: boolean;
+  inProgress?: boolean;
 }
 
 export interface ProjectCardProps {

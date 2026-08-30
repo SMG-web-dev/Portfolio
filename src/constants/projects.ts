@@ -16,6 +16,7 @@ export const personalProjects: ProjectProps[] = [
     live: "https://smg-dev-criptos.netlify.app/",
     technologies: ["React", "TypeScript", "Tailwind"],
     category: "Frontend",
+    inProgress: true,
   },
   {
     title: "BootLearn",
@@ -25,23 +26,25 @@ export const personalProjects: ProjectProps[] = [
     technologies: ["JavaScript", "HTML", "CSS", "Bootstrap"],
     category: "Frontend",
   },
-  {
-    title: "SuRótulo Website",
-    image: "/projects/suRotulo.webp",
-    github: "https://github.com/SMG-web-dev/SuRotulo",
-    live: "https://surotulo.netlify.app/",
-    technologies: ["JavaScript", "HTML", "SASS"],
-    category: "Frontend",
-  },
 ];
 
 export const freelanceProjects: ProjectProps[] = [
   {
+    title: "NEOON",
+    image: "/projects/neoon.png",
+    github: "https://github.com/SMG-web-dev/Neoon",
+    live: "https://neoones.netlify.app/",
+    technologies: ["NextJS", "TypeScript", "Tailwind", "PostgreSQL"],
+    category: "Full-Stack",
+    isProfessional: true,
+    inProgress: true,
+  },
+  {
     title: "FSC TopNutrition",
-    image: "/projects/topnutrition.webp",
+    image: "/projects/topnutrition.png",
     github: null,
     live: "https://fsctopnutrition.es",
-    technologies: ["NextJS", "TypeScript", "Tailwind", "Supabase"],
+    technologies: ["NextJS", "TypeScript", "Tailwind", "PostgreSQL"],
     category: "Full-Stack",
     isProfessional: true,
   },

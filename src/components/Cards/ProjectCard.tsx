@@ -43,6 +43,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onSelect }) =
 
       {/* Image Preview Container */}
       <div className="relative pt-[60%] overflow-hidden bg-black/20">
+        {project.inProgress && (
+          <span className="absolute top-3 right-3 z-10 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-500/90 text-white backdrop-blur-md shadow-md">
+            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+            {t('projects.inProgress')}
+          </span>
+        )}
         <img
           src={project.image}
           alt={project.title}
@@ -62,7 +68,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onSelect }) =
             {project.title}
           </h3>
           <div className="flex flex-wrap gap-2 mb-4">
-            {project.technologies.map((tech, techIndex) => (
+            {project.technologies.map((tech) => (
               <div
                 key={tech}
                 className="flex items-center justify-center bg-hunter-green/60 rounded-lg w-8 h-8 border border-white/10"

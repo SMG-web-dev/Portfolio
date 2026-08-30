@@ -74,6 +74,7 @@ export {
   SiGooglegemini,
   SiMeta,
   SiGoogle,
+  SiPostgresql,
 } from "react-icons/si";
 
 export {

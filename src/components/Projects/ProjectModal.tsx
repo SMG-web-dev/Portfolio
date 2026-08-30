@@ -77,9 +77,17 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
 
             {/* Title & Category Badge */}
             <div className="absolute bottom-6 left-6 right-6">
-              <span className="inline-block px-3 py-1 mb-2 text-xs font-semibold rounded-full bg-fern-green/90 text-white shadow-sm">
-                {t(`projects.category.${project.category}`)}
-              </span>
+              <div className="flex flex-wrap items-center gap-2 mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-fern-green/90 text-white shadow-sm">
+                  {t(`projects.category.${project.category}`)}
+                </span>
+                {project.inProgress && (
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full bg-amber-500/90 text-white shadow-sm backdrop-blur-md">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                    {t('projects.inProgress')}
+                  </span>
+                )}
+              </div>
               <h2
                 id="modal-project-title"
                 className="text-2xl sm:text-4xl font-display font-bold text-white leading-tight"

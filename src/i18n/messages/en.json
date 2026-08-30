@@ -93,6 +93,7 @@
     "source": "Source",
     "private": "Private",
     "liveDemo": "Live Demo",
+    "inProgress": "In Progress",
     "viewProject": "View Project",
     "techUsed": "Technologies Used",
     "keyFeatures": "Key Features & Architecture",

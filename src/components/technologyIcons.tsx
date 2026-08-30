@@ -21,7 +21,8 @@ import {
   SiMysql,
   SiBootstrap,
   SiNextdotjs,
-  SiGooglegemini
+  SiGooglegemini,
+  SiPostgresql
 } from '../constants/icons';
 
 export const technologyIcons: { [key: string]: React.ReactNode } = {
@@ -45,5 +46,7 @@ export const technologyIcons: { [key: string]: React.ReactNode } = {
   Claude: <SiAnthropic size={38} color="#FF6B35" />,
   Netlify: <SiNetlify size={38} color="#00C7B7" />,
   MCP: <SiJsonwebtokens size={38} color="#6366F1" />,
-  Gemini: <SiGooglegemini size={38} color="#00A8E8" />
+  Gemini: <SiGooglegemini size={38} color="#00A8E8" />,
+  PostgreSQL: <SiPostgresql size={38} color="#4169E1" />,
+  Postgres: <SiPostgresql size={38} color="#4169E1" />
 };

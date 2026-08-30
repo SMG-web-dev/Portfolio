@@ -1,40 +1,12 @@
 import { ProjectProps } from "../types/projects";
 
-export const personalProjects: ProjectProps[] = [
+export const featuredProjects: ProjectProps[] = [
   {
-    title: "AWS S3 Bucket Manager",
-    image: "/projects/s3man.webp",
-    github: "https://github.com/SMG-web-dev/S3BucketManager",
-    live: "https://github.com/SMG-web-dev/S3BucketManager",
-    technologies: ["HTML", "Spring", "Tailwind", "Docker", "AWS"],
-    category: "Full-Stack",
-  },
-  {
-    title: "CryptoTracker",
-    image: "/projects/crypto.webp",
-    github: "https://github.com/SMG-web-dev/CryptoTracker",
-    live: "https://smg-dev-criptos.netlify.app/",
-    technologies: ["React", "TypeScript", "Tailwind"],
-    category: "Frontend",
-    inProgress: true,
-  },
-  {
-    title: "BootLearn",
-    image: "/projects/bootLearn.webp",
-    github: "https://github.com/SMG-web-dev/BootLearn",
-    live: "https://bootlearn.netlify.app/",
-    technologies: ["JavaScript", "HTML", "CSS", "Bootstrap"],
-    category: "Frontend",
-  },
-];
-
-export const freelanceProjects: ProjectProps[] = [
-  {
-    title: "NEOON",
+    title: "Neoon",
     image: "/projects/neoon.png",
     github: "https://github.com/SMG-web-dev/Neoon",
     live: "https://neoones.netlify.app/",
-    technologies: ["NextJS", "TypeScript", "Tailwind", "PostgreSQL"],
+    technologies: ["NextJS", "TypeScript", "SCSS", "PostgreSQL"],
     category: "Full-Stack",
     isProfessional: true,
     inProgress: true,
@@ -53,8 +25,12 @@ export const freelanceProjects: ProjectProps[] = [
     image: "/projects/pelu.webp",
     github: null,
     live: "https://nuevoestilounisex.es",
-    technologies: ["NextJS", "TypeScript", "Tailwind", "CSS"],
+    technologies: ["TypeScript", "JavaScript", "CSS"],
     category: "Frontend",
     isProfessional: true,
   },
 ];
+
+export const freelanceProjects: ProjectProps[] = featuredProjects;
+export const personalProjects: ProjectProps[] = [];
+

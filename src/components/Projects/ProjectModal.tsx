@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaGithub, FaGlobe, FaLock, FiX, FaCheck } from "../../constants/icons";
+import { FaGlobe, FiX, FaCheck } from "../../constants/icons";
 import { useTranslation } from "react-i18next";
 import { ProjectProps } from "../../types/projects";
 import { technologyIcons } from "../technologyIcons";
@@ -81,10 +81,15 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                 <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-fern-green/90 text-white shadow-sm">
                   {t(`projects.category.${project.category}`)}
                 </span>
-                {project.inProgress && (
+                {project.inProgress ? (
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full bg-amber-500/90 text-white shadow-sm backdrop-blur-md">
                     <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                     {t('projects.inProgress')}
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full bg-emerald-600/90 text-white shadow-sm backdrop-blur-md">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-200 animate-pulse" />
+                    {t('projects.production') || "En Producción"}
                   </span>
                 )}
               </div>
@@ -142,35 +147,17 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
 
             {/* Action Links */}
             <div className="pt-4 border-t border-white/10 flex flex-wrap gap-4 items-center justify-between">
-              <div className="flex gap-3">
-                {project.live && (
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-fern-green text-white font-semibold text-sm hover:bg-hunter-green transition-all shadow-green focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fern-green"
-                  >
-                    <FaGlobe size={16} />
-                    <span>{t('projects.liveDemo')}</span>
-                  </a>
-                )}
-                {project.github ? (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/10 text-white font-medium text-sm hover:bg-white/20 transition-all border border-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fern-green"
-                  >
-                    <FaGithub size={16} />
-                    <span>{t('projects.source')}</span>
-                  </a>
-                ) : (
-                  <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 text-timberwolf/50 font-medium text-sm border border-white/5 cursor-not-allowed">
-                    <FaLock size={14} />
-                    <span>{t('projects.private')}</span>
-                  </div>
-                )}
-              </div>
+              {project.live && (
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-fern-green text-white font-semibold text-sm hover:bg-sage hover:text-brunswick-green transition-all shadow-green focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fern-green"
+                >
+                  <FaGlobe size={16} />
+                  <span>{t('projects.liveDemo')}</span>
+                </a>
+              )}
             </div>
           </div>
         </motion.div>
@@ -180,3 +167,5 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
 };
 
 export default ProjectModal;
+
+

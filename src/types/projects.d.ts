@@ -16,7 +16,7 @@ export interface ProjectCardProps {
   index: number;
 }
 
-interface ProjectLinksProps {
+export interface ProjectLinksProps {
   github: string | null;
   live: string;
   category: ProjectCategory;

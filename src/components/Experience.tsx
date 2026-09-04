@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { collaborations } from "../constants/collaborations";
 import CollaborationCard from "./Cards/CollaborationCard";
-import { FaBriefcase, FaGlobeAmericas, FaBolt } from "../constants/icons";
+import { FaBriefcase, FaRocket, FaBolt } from "../constants/icons";
 
 const Experience: React.FC = () => {
   const { t } = useTranslation();
@@ -43,32 +43,83 @@ const Experience: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-14"
+          className="mb-10 sm:mb-14"
         >
-          <div className="bg-white/80 backdrop-blur-md border border-white/60 p-4 rounded-2xl shadow-sm text-center flex flex-col items-center justify-center">
-            <FaBriefcase className="text-fern-green mb-1.5" size={20} />
-            <span className="font-display font-black text-xl sm:text-2xl text-brunswick-green">5</span>
-            <span className="text-[11px] sm:text-xs font-bold text-brunswick-green/80 uppercase tracking-wider">
-              {t("experience.keyPositions")}
-            </span>
+          {/* Mobile View: Sleek Unified Glass Capsule (Compact & Ergonomic) */}
+          <div className="sm:hidden bg-white/85 backdrop-blur-md border border-white/70 rounded-2xl shadow-sm p-3">
+            <div className="grid grid-cols-3 divide-x divide-brunswick-green/15 text-center">
+              {/* Stat 1 */}
+              <div className="flex flex-col items-center justify-center px-1">
+                <div className="w-7 h-7 rounded-full bg-fern-green/10 flex items-center justify-center mb-1 text-fern-green">
+                  <FaBriefcase size={12} />
+                </div>
+                <span className="font-display font-black text-lg text-brunswick-green leading-none">
+                  5
+                </span>
+                <span className="text-[10px] font-bold text-brunswick-green/75 uppercase tracking-wide mt-1 text-center line-clamp-2 leading-tight">
+                  {t("experience.keyPositions")}
+                </span>
+              </div>
+
+              {/* Stat 2 */}
+              <div className="flex flex-col items-center justify-center px-1">
+                <div className="w-7 h-7 rounded-full bg-fern-green/10 flex items-center justify-center mb-1 text-fern-green">
+                  <FaRocket size={12} />
+                </div>
+                <span className="font-display font-black text-lg text-brunswick-green leading-none">
+                  8+
+                </span>
+                <span className="text-[10px] font-bold text-brunswick-green/75 uppercase tracking-wide mt-1 text-center line-clamp-2 leading-tight">
+                  {t("experience.projectsDelivered")}
+                </span>
+              </div>
+
+              {/* Stat 3 */}
+              <div className="flex flex-col items-center justify-center px-1">
+                <div className="w-7 h-7 rounded-full bg-fern-green/10 flex items-center justify-center mb-1 text-fern-green">
+                  <FaBolt size={12} />
+                </div>
+                <span className="font-display font-black text-lg text-brunswick-green leading-none">
+                  100%
+                </span>
+                <span className="text-[10px] font-bold text-brunswick-green/75 uppercase tracking-wide mt-1 text-center line-clamp-2 leading-tight">
+                  {t("experience.agileFocus")}
+                </span>
+              </div>
+            </div>
           </div>
 
-          <div className="bg-white/80 backdrop-blur-md border border-white/60 p-4 rounded-2xl shadow-sm text-center flex flex-col items-center justify-center">
-            <FaGlobeAmericas className="text-fern-green mb-1.5" size={20} />
-            <span className="font-display font-black text-xl sm:text-2xl text-brunswick-green">
-              {t("experience.locations")}
-            </span>
-            <span className="text-[11px] sm:text-xs font-bold text-brunswick-green/80 uppercase tracking-wider">
-              {t("experience.internationalScope")}
-            </span>
-          </div>
+          {/* Tablet & Desktop View: 3 Refined Glassmorphism Cards */}
+          <div className="hidden sm:grid sm:grid-cols-3 gap-4">
+            <div className="bg-white/80 hover:bg-white/95 transition-all duration-300 backdrop-blur-md border border-white/60 p-4 sm:p-5 rounded-2xl shadow-sm hover:shadow-md text-center flex flex-col items-center justify-center group hover:-translate-y-0.5">
+              <div className="w-10 h-10 rounded-xl bg-fern-green/10 group-hover:bg-fern-green/15 transition-colors flex items-center justify-center mb-2 text-fern-green">
+                <FaBriefcase size={18} />
+              </div>
+              <span className="font-display font-black text-2xl lg:text-3xl text-brunswick-green">5</span>
+              <span className="text-xs font-bold text-brunswick-green/80 uppercase tracking-wider mt-0.5">
+                {t("experience.keyPositions")}
+              </span>
+            </div>
 
-          <div className="bg-white/80 backdrop-blur-md border border-white/60 p-4 rounded-2xl shadow-sm text-center flex flex-col items-center justify-center">
-            <FaBolt className="text-fern-green mb-1.5" size={20} />
-            <span className="font-display font-black text-xl sm:text-2xl text-brunswick-green">100%</span>
-            <span className="text-[11px] sm:text-xs font-bold text-brunswick-green/80 uppercase tracking-wider">
-              {t("experience.agileFocus")}
-            </span>
+            <div className="bg-white/80 hover:bg-white/95 transition-all duration-300 backdrop-blur-md border border-white/60 p-4 sm:p-5 rounded-2xl shadow-sm hover:shadow-md text-center flex flex-col items-center justify-center group hover:-translate-y-0.5">
+              <div className="w-10 h-10 rounded-xl bg-fern-green/10 group-hover:bg-fern-green/15 transition-colors flex items-center justify-center mb-2 text-fern-green">
+                <FaRocket size={18} />
+              </div>
+              <span className="font-display font-black text-2xl lg:text-3xl text-brunswick-green">8+</span>
+              <span className="text-xs font-bold text-brunswick-green/80 uppercase tracking-wider mt-0.5">
+                {t("experience.projectsDelivered")}
+              </span>
+            </div>
+
+            <div className="bg-white/80 hover:bg-white/95 transition-all duration-300 backdrop-blur-md border border-white/60 p-4 sm:p-5 rounded-2xl shadow-sm hover:shadow-md text-center flex flex-col items-center justify-center group hover:-translate-y-0.5">
+              <div className="w-10 h-10 rounded-xl bg-fern-green/10 group-hover:bg-fern-green/15 transition-colors flex items-center justify-center mb-2 text-fern-green">
+                <FaBolt size={18} />
+              </div>
+              <span className="font-display font-black text-2xl lg:text-3xl text-brunswick-green">100%</span>
+              <span className="text-xs font-bold text-brunswick-green/80 uppercase tracking-wider mt-0.5">
+                {t("experience.agileFocus")}
+              </span>
+            </div>
           </div>
         </motion.div>
 

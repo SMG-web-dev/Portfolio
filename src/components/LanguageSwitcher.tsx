@@ -5,25 +5,21 @@ import { languages } from '../constants/languages';
 import { motion, AnimatePresence } from 'framer-motion';
 import { USFlag, SpainFlag, ItalyFlag, GermanyFlag, FranceFlag } from './FlagIcons';
 
+const flagComponents: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+  en: USFlag,
+  es: SpainFlag,
+  it: ItalyFlag,
+  de: GermanyFlag,
+  fr: FranceFlag,
+};
+
 function LanguageSwitcher() {
   const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const flagComponents = {
-    en: USFlag,
-    es: SpainFlag,
-    it: ItalyFlag,
-    de: GermanyFlag,
-    fr: FranceFlag,
-  };
-
-  const getCurrentFlag = () => {
-    const lang = i18n.language?.split('-')[0] || 'en';
-    return flagComponents[lang as keyof typeof flagComponents] || USFlag;
-  };
-
-  const CurrentFlag = getCurrentFlag();
+  const lang = i18n.language?.split('-')[0] || 'en';
+  const CurrentFlag = flagComponents[lang] || USFlag;
 
   const changeLanguage = (languageCode: string) => {
     i18n.changeLanguage(languageCode);

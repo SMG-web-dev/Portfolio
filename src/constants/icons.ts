@@ -75,6 +75,9 @@ export {
   SiMeta,
   SiGoogle,
   SiPostgresql,
+  SiThreedotjs,
+  SiStripe,
+  SiPuppeteer,
 } from "react-icons/si";
 
 export {

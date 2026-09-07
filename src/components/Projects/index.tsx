@@ -1,14 +1,63 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import ProjectCard from "../Cards/ProjectCard";
-import ProjectModal from "./ProjectModal";
+import ProjectBentoCard from "./ProjectBentoCard";
+import ProjectDrawer from "./ProjectDrawer";
 import { featuredProjects } from "../../constants/projects";
 import { useTranslation } from "react-i18next";
 import { ProjectProps } from "../../types/projects";
 
+// Helper to parse project ID from URL hash (e.g., #project=neoon or #neoon)
+const getProjectFromHash = (): ProjectProps | null => {
+  if (typeof window === "undefined") return null;
+  const hash = window.location.hash.toLowerCase();
+  const match = hash.match(/#project=([a-z0-9-]+)/) || hash.match(/#([a-z0-9-]+)/);
+  if (match && match[1]) {
+    const found = featuredProjects.find((p) => p.id === match[1]);
+    return found || null;
+  }
+  return null;
+};
+
 const Projects: React.FC = () => {
   const { t } = useTranslation();
-  const [selectedProject, setSelectedProject] = useState<ProjectProps | null>(null);
+  const [selectedProject, setSelectedProject] = useState<ProjectProps | null>(getProjectFromHash);
+
+  // Listen for history back/forward navigation and external hash changes
+  useEffect(() => {
+    const handleHashChange = () => {
+      const p = getProjectFromHash();
+      setSelectedProject(p);
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+    window.addEventListener("popstate", handleHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+      window.removeEventListener("popstate", handleHashChange);
+    };
+  }, []);
+
+  // Handle project selection and sync with URL hash
+  const handleSelectProject = (project: ProjectProps) => {
+    setSelectedProject(project);
+    if (typeof window !== "undefined") {
+      window.history.pushState(
+        { projectId: project.id },
+        "",
+        `#project=${project.id}`
+      );
+    }
+  };
+
+  // Handle close drawer and clear hash
+  const handleCloseDrawer = () => {
+    setSelectedProject(null);
+    if (typeof window !== "undefined") {
+      // Revert URL hash to clean #projects section without reloading
+      window.history.pushState(null, "", "#projects");
+    }
+  };
 
   return (
     <section
@@ -25,49 +74,47 @@ const Projects: React.FC = () => {
         aria-hidden="true"
       />
 
-      <div className="container mx-auto max-w-7xl relative z-10">
+      <div className="container mx-auto max-w-6xl xl:max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16 md:mb-20 max-w-3xl mx-auto"
+          className="text-center mb-14 md:mb-18 max-w-3xl mx-auto"
         >
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-fern-green/20 text-sage border border-fern-green/30 mb-4">
-            Showcase
+            Production Architecture & Case Studies
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-timberwolf mb-5 tracking-tight">
-            {t('projects.title')}
+            {t("projects.title")}
           </h2>
           <p className="text-timberwolf/80 text-base md:text-lg leading-relaxed mb-6 font-sans">
-            {t('projects.subtitle')}
+            {t("projects.subtitle")}
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-sage to-transparent mx-auto rounded-full" />
         </motion.div>
 
-        {/* 3 Featured Projects Showcase Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 items-stretch">
+        {/* Featured Projects - Horizontal Executive Showcase */}
+        <div className="space-y-8 sm:space-y-12">
           {featuredProjects.map((project, index) => (
-            <div key={project.title} className="h-full">
-              <ProjectCard
-                project={project}
-                index={index}
-                onSelect={(p) => setSelectedProject(p)}
-              />
-            </div>
+            <ProjectBentoCard
+              key={project.id}
+              project={project}
+              index={index}
+              onSelect={handleSelectProject}
+            />
           ))}
         </div>
       </div>
 
-      {/* Detail Modal */}
-      <ProjectModal
+      {/* Deep-Dive Technical Drawer */}
+      <ProjectDrawer
         project={selectedProject}
-        onClose={() => setSelectedProject(null)}
+        onClose={handleCloseDrawer}
       />
     </section>
   );
 };
 
 export default Projects;
-

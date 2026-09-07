@@ -42,7 +42,7 @@ export default function TechStack() {
         <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3 mb-12">
           {[
             { id: "all", labelKey: "techstack.filterAll" },
-            { id: "corearchitecture", labelKey: "techstack.coreArchitecture" },
+            { id: "frontend", labelKey: "techstack.frontend" },
             { id: "backenddatabases", labelKey: "techstack.backendDatabases" },
             { id: "clouddevops", labelKey: "techstack.cloudDevops" },
             { id: "aiengineering", labelKey: "techstack.filterAi" },

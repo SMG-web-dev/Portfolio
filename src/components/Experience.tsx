@@ -54,7 +54,7 @@ const Experience: React.FC = () => {
                   <FaBriefcase size={12} />
                 </div>
                 <span className="font-display font-black text-lg text-brunswick-green leading-none">
-                  5
+                  {collaborations.length}
                 </span>
                 <span className="text-[10px] font-bold text-brunswick-green/75 uppercase tracking-wide mt-1 text-center line-clamp-2 leading-tight">
                   {t("experience.keyPositions")}
@@ -95,7 +95,9 @@ const Experience: React.FC = () => {
               <div className="w-10 h-10 rounded-xl bg-fern-green/10 group-hover:bg-fern-green/15 transition-colors flex items-center justify-center mb-2 text-fern-green">
                 <FaBriefcase size={18} />
               </div>
-              <span className="font-display font-black text-2xl lg:text-3xl text-brunswick-green">5</span>
+              <span className="font-display font-black text-2xl lg:text-3xl text-brunswick-green">
+                {collaborations.length}
+              </span>
               <span className="text-xs font-bold text-brunswick-green/80 uppercase tracking-wider mt-0.5">
                 {t("experience.keyPositions")}
               </span>

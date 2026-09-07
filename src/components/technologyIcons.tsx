@@ -22,7 +22,10 @@ import {
   SiBootstrap,
   SiNextdotjs,
   SiGooglegemini,
-  SiPostgresql
+  SiPostgresql,
+  SiThreedotjs,
+  SiStripe,
+  SiPuppeteer
 } from '../constants/icons';
 
 export const technologyIcons: { [key: string]: React.ReactNode } = {
@@ -49,5 +52,9 @@ export const technologyIcons: { [key: string]: React.ReactNode } = {
   MCP: <SiJsonwebtokens size={38} color="#6366F1" />,
   Gemini: <SiGooglegemini size={38} color="#00A8E8" />,
   PostgreSQL: <SiPostgresql size={38} color="#4169E1" />,
-  Postgres: <SiPostgresql size={38} color="#4169E1" />
+  Postgres: <SiPostgresql size={38} color="#4169E1" />,
+  "Three.js": <SiThreedotjs size={38} color="#FFFFFF" />,
+  R3F: <SiThreedotjs size={38} color="#61DAFB" />,
+  Stripe: <SiStripe size={38} color="#635BFF" />,
+  Puppeteer: <SiPuppeteer size={38} color="#00D8A2" />,
 };

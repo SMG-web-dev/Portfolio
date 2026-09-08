@@ -3,7 +3,7 @@ import { ProjectProps } from "../types/projects";
 export const featuredProjects: ProjectProps[] = [
   {
     id: "top-nutricion",
-    title: "FSC TopNutrition",
+    title: "FSC Nutrition",
     tagline: "E-Commerce de Nutrición con Búsqueda Inteligente por IA y Panel de Control",
     taglineEn: "Sports Nutrition E-Commerce with AI Search & Administrative ERP",
     image: "/projects/topnutrition.png",

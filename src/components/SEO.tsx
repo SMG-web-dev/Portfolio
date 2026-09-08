@@ -211,8 +211,8 @@ const SEO: React.FC = () => {
             {
               "@type": "SoftwareApplication",
               "position": 1,
-              "name": "FSC TopNutrition",
-              "url": "https://fsctopnutrition.es",
+              "name": "FSC Nutrition",
+              "url": "https://fscnutrition.es",
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "Web",
               "description": "Enterprise sports nutrition e-commerce platform with natural language AI search (Google Gemini), executive ERP console, and secure Stripe payment processing."

@@ -2,7 +2,7 @@ import { CollaborationProps } from "../types/collaboration";
 
 export const collaborations: CollaborationProps[] = [
   {
-    company: "FSC TopNutrition",
+    company: "FSC Nutrition",
     role: {
       en: "Full-Stack & E-Commerce Developer",
       es: "Desarrollador Full-Stack & E-Commerce",

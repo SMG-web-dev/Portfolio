@@ -62,7 +62,7 @@ const Projects: React.FC = () => {
   return (
     <section
       id="projects"
-      className="py-20 md:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 bg-brunswick-green/95 relative overflow-hidden"
+      className="py-20 md:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0c150f]/80 via-[#0f1a13]/70 to-[#0a120d]/80 relative overflow-hidden"
     >
       {/* Background Decorative Ambient Glows */}
       <div

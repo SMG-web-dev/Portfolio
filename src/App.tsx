@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import LanguageSwitcher from "./components/LanguageSwitcher";
+import AmbientCursorLight from "./components/AmbientCursorLight";
 
 // Componentes cargados de forma perezosa
 const Experience = React.lazy(() => import("./components/Experience"));
@@ -19,24 +20,29 @@ const LoadingFallback = () => (
 
 function App() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-timberwolf" />}>
-      <main className="safe-area-container bg-timberwolf text-brunswick-green">
-        <Header />
-        <Hero />
-        <Suspense fallback={<LoadingFallback />}>
-          <Experience />
-        </Suspense>
-        <Suspense fallback={<LoadingFallback />}>
-          <Projects />
-        </Suspense>
-        <Suspense fallback={<LoadingFallback />}>
-          <TechStack />
-        </Suspense>
-        <Suspense fallback={<LoadingFallback />}>
-          <SoftSkills />
-        </Suspense>
-        <Footer />
-        <LanguageSwitcher />
+    <Suspense fallback={<div className="min-h-screen bg-[#0a120d]" />}>
+      <main className="safe-area-container bg-[#0a120d] text-white selection:bg-fern-green selection:text-white relative overflow-x-hidden min-h-screen">
+        {/* Ambient subtle green light trailing cursor in background canvas */}
+        <AmbientCursorLight />
+
+        <div className="relative z-10">
+          <Header />
+          <Hero />
+          <Suspense fallback={<LoadingFallback />}>
+            <Experience />
+          </Suspense>
+          <Suspense fallback={<LoadingFallback />}>
+            <Projects />
+          </Suspense>
+          <Suspense fallback={<LoadingFallback />}>
+            <TechStack />
+          </Suspense>
+          <Suspense fallback={<LoadingFallback />}>
+            <SoftSkills />
+          </Suspense>
+          <Footer />
+          <LanguageSwitcher />
+        </div>
       </main>
     </Suspense>
   );

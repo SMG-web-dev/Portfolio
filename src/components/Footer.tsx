@@ -12,21 +12,14 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="bg-brunswick-green text-white py-8 sm:py-10 border-t border-white/20 pb-safe-ios"
+      className="bg-[#070d09] text-white py-10 sm:py-14 border-t border-white/10 pb-safe-ios"
     >
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           {/* Brand & Location */}
           <div className="space-y-1">
             <div className="flex items-center justify-center md:justify-start gap-2.5">
-              <img
-                src="/logo-icon.webp"
-                alt="SMG Dev Logo"
-                width="28"
-                height="28"
-                className="w-7 h-7 rounded-full border border-white/20 object-cover shadow-xs"
-              />
-              <span className="font-display font-black text-xl text-white">
+              <span className="font-display font-black text-xl text-white tracking-tight">
                 smg-dev
               </span>
               <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-fern-green text-white border border-white/20 shadow-xs">

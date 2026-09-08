@@ -2,6 +2,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import enMessages from "./messages/en.json";
+import esMessages from "./messages/es.json";
 import { useState, useEffect } from "react";
 
 export function useTranslationLoaded() {
@@ -25,12 +26,13 @@ export function useTranslationLoaded() {
 
 // Función para cargar idiomas bajo demanda
 const loadLanguageAsync = async (language: string) => {
-  if (i18n.hasResourceBundle(language, "translation")) return;
+  const normalizedLang = language?.split(/[-_]/)[0]?.toLowerCase();
+  if (!normalizedLang || i18n.hasResourceBundle(normalizedLang, "translation")) return;
 
   let messages;
-  switch (language) {
+  switch (normalizedLang) {
     case "es":
-      messages = await import("./messages/es.json");
+      messages = esMessages;
       break;
     case "it":
       messages = await import("./messages/it.json");
@@ -45,7 +47,10 @@ const loadLanguageAsync = async (language: string) => {
       return;
   }
 
-  i18n.addResourceBundle(language, "translation", messages.default || messages);
+  i18n.addResourceBundle(normalizedLang, "translation", messages.default || messages);
+  if (normalizedLang !== language) {
+    i18n.addResourceBundle(language, "translation", messages.default || messages);
+  }
 };
 
 i18n
@@ -56,8 +61,11 @@ i18n
       en: {
         translation: enMessages,
       },
+      es: {
+        translation: esMessages,
+      },
     },
-    fallbackLng: "en",
+    fallbackLng: "es",
     interpolation: {
       escapeValue: false,
     },

@@ -5,28 +5,28 @@ import { useTranslation } from "react-i18next";
 const AnimatedBackground: React.FC = () => {
   return (
     <>
-      {/* Dark Brunswick Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-hunter-green via-brunswick-green to-hunter-green bg-[length:400%_400%] animate-gradient" />
+      {/* Dark Obsidian Green Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0c1610] via-[#08110b] to-[#0c1610] bg-[length:400%_400%] animate-gradient" />
       
       {/* Ambient Grid Texture */}
-      <div className="absolute inset-0 dot-pattern opacity-[0.06]" />
+      <div className="absolute inset-0 dot-pattern opacity-[0.04]" />
       
       {/* Glowing Ambient Light Orbs */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-fern-green/20 rounded-full filter blur-3xl"
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-fern-green/10 rounded-full filter blur-3xl"
           animate={{ x: [0, 40, -30, 0], y: [0, -50, 30, 0], scale: [1, 1.15, 0.9, 1] }}
           transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-sage/15 rounded-full filter blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-sage/10 rounded-full filter blur-3xl"
           animate={{ x: [0, -50, 40, 0], y: [0, 40, -40, 0], scale: [1, 0.9, 1.1, 1] }}
           transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
         />
       </div>
 
       {/* Bottom Fade to section below */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-timberwolf to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a120d] to-transparent" />
     </>
   );
 };
@@ -185,7 +185,7 @@ export async function runAgenticWorkflow(task: ComplexTask) {
       initial={{ opacity: 0, y: 30, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.7, delay: 0.4 }}
-      className="w-full max-w-2xl mx-auto rounded-3xl bg-black/80 backdrop-blur-2xl border border-white/20 shadow-green-lg overflow-hidden text-left my-8"
+      className="w-full max-w-2xl mx-auto rounded-3xl bg-[#09100b] border border-white/20 shadow-green-lg overflow-hidden text-left my-7 relative z-10"
     >
       {/* IDE Header with Tabs */}
       <div className="px-2.5 sm:px-4 py-2.5 bg-white/10 border-b border-white/10 flex items-center justify-between gap-2 overflow-x-auto">
@@ -294,7 +294,7 @@ const Hero: React.FC = () => {
         {/* Primary Title — LinkedIn Value Statement */}
         <motion.h1
           variants={itemVariants}
-          className="font-display text-2xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-[1.15] mb-4 sm:mb-5 drop-shadow-md max-w-4xl w-full break-words"
+          className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.65rem] font-black tracking-tight text-white leading-[1.22] sm:leading-[1.18] mb-3 sm:mb-4 drop-shadow-md max-w-3xl w-full mx-auto [text-wrap:balance]"
         >
           {t('hero.title')}
         </motion.h1>
@@ -302,13 +302,13 @@ const Hero: React.FC = () => {
         {/* Decorative Line */}
         <motion.div
           variants={itemVariants}
-          className="w-16 sm:w-24 h-1 sm:h-1.5 bg-gradient-to-r from-transparent via-fern-green to-transparent rounded-full mb-4 sm:mb-6"
+          className="w-16 sm:w-20 h-1 bg-gradient-to-r from-transparent via-fern-green to-transparent rounded-full mb-3.5 sm:mb-4"
         />
 
         {/* Descriptor */}
         <motion.p
           variants={itemVariants}
-          className="text-xs sm:text-lg md:text-xl text-white/95 font-medium leading-relaxed max-w-2xl mb-4 drop-shadow-xs px-1"
+          className="text-xs sm:text-base md:text-lg text-white/90 font-medium leading-relaxed max-w-2xl mx-auto mb-3 [text-wrap:pretty] px-2"
         >
           {t('hero.descriptor')}
         </motion.p>
@@ -319,7 +319,7 @@ const Hero: React.FC = () => {
         {/* Stats */}
         <motion.div
           variants={itemVariants}
-          className="flex items-center justify-center gap-4 sm:gap-14 px-4 sm:px-8 py-3 sm:py-4 rounded-2xl bg-black/40 backdrop-blur-md border border-white/15 shadow-lg max-w-full"
+          className="flex items-center justify-center gap-4 sm:gap-14 px-4 sm:px-8 py-3 sm:py-4 rounded-2xl bg-[#0a120d] border border-white/15 shadow-lg max-w-full relative z-10"
         >
           <StatItem value={2} suffix="+" label={t('hero.statsYears')} delay={1.3} />
           <div className="w-px h-8 sm:h-10 bg-white/30" />

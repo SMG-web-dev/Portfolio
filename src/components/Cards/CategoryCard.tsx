@@ -25,19 +25,15 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category, index }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ y: -5 }}
-      className={`relative rounded-3xl p-6 sm:p-7 backdrop-blur-md transition-all duration-300 ${
+      className={`relative rounded-3xl p-6 sm:p-7 transition-all duration-300 ${
         isAICategory
-          ? "bg-gradient-to-br from-brunswick-green/90 to-hunter-green/90 border-2 border-fern-green/50 shadow-green-lg text-white"
-          : "bg-white/80 border border-white/50 shadow-card hover:shadow-card-hover text-brunswick-green"
+          ? "bg-gradient-to-br from-[#13251a] to-[#0c1811] border-2 border-fern-green/50 shadow-green-lg text-white"
+          : "bg-[#111e16] border border-white/10 shadow-card hover:shadow-card-hover hover:border-fern-green/40 text-white"
       }`}
     >
       {/* Category Header */}
       <div className="flex items-center justify-between mb-6">
-        <h3
-          className={`text-xl sm:text-2xl font-display font-bold ${
-            isAICategory ? "text-white" : "text-brunswick-green"
-          }`}
-        >
+        <h3 className="text-xl sm:text-2xl font-display font-black text-white">
           {t(category.name)}
         </h3>
       </div>

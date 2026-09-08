@@ -30,7 +30,7 @@ export const ProjectBentoCard: React.FC<ProjectBentoCardProps> = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.55, delay: index * 0.15 }}
-      className="group relative flex flex-col lg:flex-row lg:items-start lg:gap-8 xl:gap-10 w-full rounded-3xl bg-brunswick-green/90 border border-white/10 backdrop-blur-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 hover:border-fern-green/50 p-6 sm:p-7 lg:p-8"
+      className="group relative flex flex-col lg:flex-row lg:items-start lg:gap-8 xl:gap-10 w-full rounded-3xl bg-[#102016] border border-white/10 overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 hover:border-fern-green/50 p-6 sm:p-7 lg:p-8"
     >
       {/* Top Ambient Accent Glow Line on Hover */}
       <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-fern-green via-sage to-fern-green transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out z-20" />

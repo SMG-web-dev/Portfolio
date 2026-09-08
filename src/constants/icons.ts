@@ -50,6 +50,8 @@ export {
   FiMenu,
   FiX,
   FiDownload,
+  FiSun,
+  FiMoon,
 } from "react-icons/fi";
 
 export {

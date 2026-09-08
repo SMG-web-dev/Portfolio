@@ -120,5 +120,11 @@
     "projects": "Projets",
     "softSkills": "Compétences",
     "contact": "Contact"
+  },
+  "theme": {
+    "switchToLight": "Passer au mode clair",
+    "switchToDark": "Passer au mode sombre",
+    "lightMode": "Mode Clair",
+    "darkMode": "Mode Sombre"
   }
 }

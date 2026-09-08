@@ -11,11 +11,11 @@ const Experience: React.FC = () => {
   return (
     <section
       id="experience"
-      className="relative py-16 sm:py-24 overflow-hidden bg-[#0c150f]/75"
+      className="relative py-16 sm:py-24 overflow-hidden bg-timberwolf dark:bg-[#0c150f]/80 transition-colors duration-300"
     >
       {/* Background Subtle Gradient Accents */}
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-sage/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-fern-green/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 left-0 w-96 h-96 bg-sage/20 dark:bg-sage/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-fern-green/20 dark:bg-fern-green/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -26,12 +26,12 @@ const Experience: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 sm:mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-fern-green/20 text-sage border border-fern-green/30 font-bold text-xs tracking-widest uppercase mb-4 shadow-xs">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brunswick-green text-white dark:bg-fern-green/20 dark:text-sage dark:border dark:border-fern-green/30 font-bold text-xs tracking-widest uppercase mb-4 shadow-sm">
             <FaBriefcase size={13} />
             <span>{t("experience.journey")}</span>
           </div>
 
-          <h2 className="font-display text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+          <h2 className="font-display text-3xl sm:text-5xl font-black text-brunswick-green dark:text-white tracking-tight leading-tight">
             {t("experience.title")}
           </h2>
           <div className="w-20 h-1.5 bg-fern-green mx-auto rounded-full mt-4" />
@@ -46,43 +46,43 @@ const Experience: React.FC = () => {
           className="mb-10 sm:mb-14"
         >
           {/* Mobile View: Sleek Unified Glass Capsule (Compact & Ergonomic) */}
-          <div className="sm:hidden bg-[#111e16]/85 backdrop-blur-md border border-white/10 rounded-2xl shadow-card p-3">
-            <div className="grid grid-cols-3 divide-x divide-white/10 text-center">
+          <div className="sm:hidden bg-white/85 dark:bg-[#111e16]/85 backdrop-blur-md border border-white/70 dark:border-white/10 rounded-2xl shadow-sm p-3">
+            <div className="grid grid-cols-3 divide-x divide-brunswick-green/15 dark:divide-white/10 text-center">
               {/* Stat 1 */}
               <div className="flex flex-col items-center justify-center px-1">
-                <div className="w-7 h-7 rounded-full bg-fern-green/20 flex items-center justify-center mb-1 text-sage">
+                <div className="w-7 h-7 rounded-full bg-fern-green/20 flex items-center justify-center mb-1 text-fern-green dark:text-sage">
                   <FaBriefcase size={12} />
                 </div>
-                <span className="font-display font-black text-lg text-white leading-none">
+                <span className="font-display font-black text-lg text-brunswick-green dark:text-white leading-none">
                   {collaborations.length}
                 </span>
-                <span className="text-[10px] font-bold text-timberwolf/90 uppercase tracking-wide mt-1 text-center line-clamp-2 leading-tight">
+                <span className="text-[10px] font-bold text-brunswick-green/75 dark:text-timberwolf/90 uppercase tracking-wide mt-1 text-center line-clamp-2 leading-tight">
                   {t("experience.keyPositions")}
                 </span>
               </div>
 
               {/* Stat 2 */}
               <div className="flex flex-col items-center justify-center px-1">
-                <div className="w-7 h-7 rounded-full bg-fern-green/20 flex items-center justify-center mb-1 text-sage">
+                <div className="w-7 h-7 rounded-full bg-fern-green/20 flex items-center justify-center mb-1 text-fern-green dark:text-sage">
                   <FaRocket size={12} />
                 </div>
-                <span className="font-display font-black text-lg text-white leading-none">
+                <span className="font-display font-black text-lg text-brunswick-green dark:text-white leading-none">
                   8+
                 </span>
-                <span className="text-[10px] font-bold text-timberwolf/90 uppercase tracking-wide mt-1 text-center line-clamp-2 leading-tight">
+                <span className="text-[10px] font-bold text-brunswick-green/75 dark:text-timberwolf/90 uppercase tracking-wide mt-1 text-center line-clamp-2 leading-tight">
                   {t("experience.projectsDelivered")}
                 </span>
               </div>
 
               {/* Stat 3 */}
               <div className="flex flex-col items-center justify-center px-1">
-                <div className="w-7 h-7 rounded-full bg-fern-green/20 flex items-center justify-center mb-1 text-sage">
+                <div className="w-7 h-7 rounded-full bg-fern-green/20 flex items-center justify-center mb-1 text-fern-green dark:text-sage">
                   <FaBolt size={12} />
                 </div>
-                <span className="font-display font-black text-lg text-white leading-none">
+                <span className="font-display font-black text-lg text-brunswick-green dark:text-white leading-none">
                   100%
                 </span>
-                <span className="text-[10px] font-bold text-timberwolf/90 uppercase tracking-wide mt-1 text-center line-clamp-2 leading-tight">
+                <span className="text-[10px] font-bold text-brunswick-green/75 dark:text-timberwolf/90 uppercase tracking-wide mt-1 text-center line-clamp-2 leading-tight">
                   {t("experience.agileFocus")}
                 </span>
               </div>
@@ -91,34 +91,34 @@ const Experience: React.FC = () => {
 
           {/* Tablet & Desktop View: 3 Refined Glassmorphism Cards */}
           <div className="hidden sm:grid sm:grid-cols-3 gap-4">
-            <div className="bg-[#111e16]/85 hover:bg-[#15251b] transition-all duration-300 backdrop-blur-md border border-white/10 hover:border-fern-green/40 p-4 sm:p-5 rounded-2xl shadow-card hover:shadow-card-hover text-center flex flex-col items-center justify-center group hover:-translate-y-0.5">
-              <div className="w-10 h-10 rounded-xl bg-fern-green/20 group-hover:bg-fern-green/30 transition-colors flex items-center justify-center mb-2 text-sage">
+            <div className="bg-white/80 hover:bg-white/95 dark:bg-[#111e16]/85 dark:hover:bg-[#15251b] transition-all duration-300 backdrop-blur-md border border-white/60 dark:border-white/10 hover:border-fern-green/40 p-4 sm:p-5 rounded-2xl shadow-sm hover:shadow-md text-center flex flex-col items-center justify-center group hover:-translate-y-0.5">
+              <div className="w-10 h-10 rounded-xl bg-fern-green/10 dark:bg-fern-green/20 group-hover:bg-fern-green/20 transition-colors flex items-center justify-center mb-2 text-fern-green dark:text-sage">
                 <FaBriefcase size={18} />
               </div>
-              <span className="font-display font-black text-2xl lg:text-3xl text-white">
+              <span className="font-display font-black text-2xl lg:text-3xl text-brunswick-green dark:text-white">
                 {collaborations.length}
               </span>
-              <span className="text-xs font-bold text-timberwolf/90 uppercase tracking-wider mt-0.5">
+              <span className="text-xs font-bold text-brunswick-green/80 dark:text-timberwolf/90 uppercase tracking-wider mt-0.5">
                 {t("experience.keyPositions")}
               </span>
             </div>
 
-            <div className="bg-[#111e16]/85 hover:bg-[#15251b] transition-all duration-300 backdrop-blur-md border border-white/10 hover:border-fern-green/40 p-4 sm:p-5 rounded-2xl shadow-card hover:shadow-card-hover text-center flex flex-col items-center justify-center group hover:-translate-y-0.5">
-              <div className="w-10 h-10 rounded-xl bg-fern-green/20 group-hover:bg-fern-green/30 transition-colors flex items-center justify-center mb-2 text-sage">
+            <div className="bg-white/80 hover:bg-white/95 dark:bg-[#111e16]/85 dark:hover:bg-[#15251b] transition-all duration-300 backdrop-blur-md border border-white/60 dark:border-white/10 hover:border-fern-green/40 p-4 sm:p-5 rounded-2xl shadow-sm hover:shadow-md text-center flex flex-col items-center justify-center group hover:-translate-y-0.5">
+              <div className="w-10 h-10 rounded-xl bg-fern-green/10 dark:bg-fern-green/20 group-hover:bg-fern-green/20 transition-colors flex items-center justify-center mb-2 text-fern-green dark:text-sage">
                 <FaRocket size={18} />
               </div>
-              <span className="font-display font-black text-2xl lg:text-3xl text-white">8+</span>
-              <span className="text-xs font-bold text-timberwolf/90 uppercase tracking-wider mt-0.5">
+              <span className="font-display font-black text-2xl lg:text-3xl text-brunswick-green dark:text-white">8+</span>
+              <span className="text-xs font-bold text-brunswick-green/80 dark:text-timberwolf/90 uppercase tracking-wider mt-0.5">
                 {t("experience.projectsDelivered")}
               </span>
             </div>
 
-            <div className="bg-[#111e16]/85 hover:bg-[#15251b] transition-all duration-300 backdrop-blur-md border border-white/10 hover:border-fern-green/40 p-4 sm:p-5 rounded-2xl shadow-card hover:shadow-card-hover text-center flex flex-col items-center justify-center group hover:-translate-y-0.5">
-              <div className="w-10 h-10 rounded-xl bg-fern-green/20 group-hover:bg-fern-green/30 transition-colors flex items-center justify-center mb-2 text-sage">
+            <div className="bg-white/80 hover:bg-white/95 dark:bg-[#111e16]/85 dark:hover:bg-[#15251b] transition-all duration-300 backdrop-blur-md border border-white/60 dark:border-white/10 hover:border-fern-green/40 p-4 sm:p-5 rounded-2xl shadow-sm hover:shadow-md text-center flex flex-col items-center justify-center group hover:-translate-y-0.5">
+              <div className="w-10 h-10 rounded-xl bg-fern-green/10 dark:bg-fern-green/20 group-hover:bg-fern-green/20 transition-colors flex items-center justify-center mb-2 text-fern-green dark:text-sage">
                 <FaBolt size={18} />
               </div>
-              <span className="font-display font-black text-2xl lg:text-3xl text-white">100%</span>
-              <span className="text-xs font-bold text-timberwolf/90 uppercase tracking-wider mt-0.5">
+              <span className="font-display font-black text-2xl lg:text-3xl text-brunswick-green dark:text-white">100%</span>
+              <span className="text-xs font-bold text-brunswick-green/80 dark:text-timberwolf/90 uppercase tracking-wider mt-0.5">
                 {t("experience.agileFocus")}
               </span>
             </div>

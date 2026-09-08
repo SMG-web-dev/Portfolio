@@ -1,11 +1,12 @@
 import React, { useState, useEffect, startTransition, useRef } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiMenu, FiX, FaGithub, FaLinkedin } from "../../constants/icons";
+import { FiMenu, FiX, FaGithub, FaLinkedin, FiSun, FiMoon } from "../../constants/icons";
 import useScrollDirection from "./useScrollDirection";
 import { navbarItems } from "../../constants/navbarItems";
 import { useTranslation } from "react-i18next";
 import { useTranslationLoaded } from "../../i18n/i18n";
+import { useTheme } from "../../context/ThemeContext";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,6 +14,7 @@ const Header: React.FC = () => {
   const scrollDirection = useScrollDirection();
   const isTranslationLoaded = useTranslationLoaded();
   const { t } = useTranslation();
+  const { theme, toggleTheme } = useTheme();
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -66,7 +68,7 @@ const Header: React.FC = () => {
     >
       {/* Floating Notch / Capsule Navigation Pill - Perfectly Centered */}
       <nav
-        className="pointer-events-auto max-w-[calc(100vw-1.5rem)] sm:max-w-fit bg-brunswick-green/95 backdrop-blur-xl border border-white/20 shadow-green-glow rounded-full px-3.5 sm:px-6 py-2 sm:py-2.5 flex items-center gap-2.5 sm:gap-5 transition-all duration-300"
+        className="pointer-events-auto max-w-[calc(100vw-1.5rem)] sm:max-w-fit bg-brunswick-green/95 dark:bg-[#0c1610]/95 backdrop-blur-xl border border-white/20 shadow-green-glow rounded-full px-3.5 sm:px-6 py-2 sm:py-2.5 flex items-center gap-2.5 sm:gap-5 transition-all duration-300"
         aria-label="Main Navigation"
       >
         {/* Brand Logo & Name */}
@@ -116,8 +118,8 @@ const Header: React.FC = () => {
         {/* Vertical Divider */}
         <div className="w-px h-4 bg-white/30" />
 
-        {/* Social Links (Desktop) & Mobile Menu Toggle */}
-        <div className="flex items-center gap-2" ref={menuRef}>
+        {/* Social Links, Theme Toggle & Mobile Menu */}
+        <div className="flex items-center gap-1.5 sm:gap-2" ref={menuRef}>
           <a
             href="https://github.com/SMG-web-dev"
             target="_blank"
@@ -138,10 +140,47 @@ const Header: React.FC = () => {
             <FaLinkedin size={18} />
           </a>
 
+          {/* Animated Theme Toggle Button */}
+          <motion.button
+            type="button"
+            onClick={toggleTheme}
+            whileHover={{ scale: 1.15 }}
+            whileTap={{ scale: 0.88 }}
+            className="flex items-center justify-center text-white/90 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fern-green rounded-full p-1 relative"
+            aria-label={theme === "dark" ? t("theme.switchToLight") || "Cambiar a modo claro" : t("theme.switchToDark") || "Cambiar a modo oscuro"}
+            title={theme === "dark" ? t("theme.switchToLight") || "Modo Claro" : t("theme.switchToDark") || "Modo Oscuro"}
+          >
+            <AnimatePresence mode="wait" initial={false}>
+              {theme === "dark" ? (
+                <motion.span
+                  key="sun"
+                  initial={{ rotate: -90, scale: 0.6, opacity: 0 }}
+                  animate={{ rotate: 0, scale: 1, opacity: 1 }}
+                  exit={{ rotate: 90, scale: 0.6, opacity: 0 }}
+                  transition={{ duration: 0.22, ease: "easeOut" }}
+                  className="flex items-center justify-center"
+                >
+                  <FiSun size={18} />
+                </motion.span>
+              ) : (
+                <motion.span
+                  key="moon"
+                  initial={{ rotate: 90, scale: 0.6, opacity: 0 }}
+                  animate={{ rotate: 0, scale: 1, opacity: 1 }}
+                  exit={{ rotate: -90, scale: 0.6, opacity: 0 }}
+                  transition={{ duration: 0.22, ease: "easeOut" }}
+                  className="flex items-center justify-center"
+                >
+                  <FiMoon size={18} />
+                </motion.span>
+              )}
+            </AnimatePresence>
+          </motion.button>
+
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-1 text-white hover:text-sage focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fern-green rounded-full"
+            className="md:hidden p-1 text-white/90 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fern-green rounded-full"
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
           >
@@ -156,7 +195,7 @@ const Header: React.FC = () => {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 10 }}
                 transition={{ duration: 0.2 }}
-                className="absolute top-full right-0 mt-3 w-56 bg-brunswick-green rounded-2xl shadow-2xl border border-white/30 overflow-hidden p-2 opacity-100"
+                className="absolute top-full right-0 mt-3 w-56 bg-brunswick-green dark:bg-[#0c1610] rounded-2xl shadow-2xl border border-white/30 overflow-hidden p-2 opacity-100 text-white"
               >
                 <ul className="space-y-1">
                   {navbarItems.map((item) => (

@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="bg-[#070d09] text-white py-10 sm:py-14 border-t border-white/10 pb-safe-ios"
+      className="bg-brunswick-green dark:bg-[#070d09] text-white py-10 sm:py-14 border-t border-white/10 pb-safe-ios transition-colors duration-300"
     >
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">

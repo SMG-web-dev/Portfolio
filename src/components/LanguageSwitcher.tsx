@@ -13,7 +13,11 @@ const flagComponents: Record<string, React.ComponentType<{ size?: number; classN
   fr: FranceFlag,
 };
 
-function LanguageSwitcher() {
+interface LanguageSwitcherProps {
+  className?: string;
+}
+
+function LanguageSwitcher({ className = "" }: LanguageSwitcherProps) {
   const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -59,14 +63,14 @@ function LanguageSwitcher() {
   return (
     <div
       ref={dropdownRef}
-      className="fixed z-50 bottom-safe right-safe"
+      className={className || "fixed z-50 bottom-safe right-safe"}
     >
       <div className="relative">
         {/* Trigger Button */}
         <motion.button
           onClick={() => setIsOpen(!isOpen)}
           onKeyDown={handleKeyDownButton}
-          className="group relative flex items-center justify-center p-3 rounded-full bg-brunswick-green/90 backdrop-blur-xl border border-white/20 shadow-green hover:shadow-green-lg text-timberwolf hover:text-white transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fern-green focus-visible:ring-offset-2 focus-visible:ring-offset-brunswick-green"
+          className="group relative flex items-center justify-center p-3 rounded-full bg-brunswick-green/90 dark:bg-[#0c1610]/95 backdrop-blur-xl border border-white/20 shadow-green hover:shadow-green-lg text-timberwolf hover:text-white transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fern-green"
           aria-label="Select Language"
           aria-expanded={isOpen}
           aria-haspopup="listbox"
@@ -85,7 +89,7 @@ function LanguageSwitcher() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 10 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="absolute bottom-full mb-3 right-0 w-48 rounded-2xl shadow-2xl overflow-hidden bg-brunswick-green border border-white/30 p-2 opacity-100"
+              className="absolute bottom-full mb-3 right-0 w-48 rounded-2xl shadow-2xl overflow-hidden bg-brunswick-green dark:bg-[#0c1610] border border-white/30 p-2 opacity-100 z-50 text-white"
               role="listbox"
               aria-label="Languages"
             >

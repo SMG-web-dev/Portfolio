@@ -30,7 +30,7 @@ export const ProjectBentoCard: React.FC<ProjectBentoCardProps> = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.55, delay: index * 0.15 }}
-      className="group relative flex flex-col lg:flex-row lg:items-start lg:gap-8 xl:gap-10 w-full rounded-3xl bg-[#102016] border border-white/10 overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 hover:border-fern-green/50 p-6 sm:p-7 lg:p-8"
+      className="group relative flex flex-col lg:flex-row lg:items-start lg:gap-8 xl:gap-10 w-full rounded-3xl bg-hunter-green/80 border border-white/15 dark:bg-[#102016] dark:border-white/10 overflow-hidden shadow-card hover:shadow-glow-lg transition-all duration-500 hover:border-fern-green/50 p-6 sm:p-7 lg:p-8"
     >
       {/* Top Ambient Accent Glow Line on Hover */}
       <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-fern-green via-sage to-fern-green transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out z-20" />
@@ -39,7 +39,7 @@ export const ProjectBentoCard: React.FC<ProjectBentoCardProps> = ({
       <div className="w-full lg:w-[400px] xl:w-[460px] flex-shrink-0 flex flex-col gap-4">
         {/* Screenshot Container - strictly 16:10 widescreen proportion, never vertically stretched */}
         <div
-          className="relative w-full aspect-[16/9] sm:aspect-[16/10] rounded-2xl overflow-hidden bg-black/70 border border-white/10 shadow-md cursor-pointer group/img"
+          className="relative w-full aspect-[16/9] sm:aspect-[16/10] rounded-2xl overflow-hidden bg-black/40 border border-white/10 shadow-md cursor-pointer group/img"
           onClick={() => onSelect(project)}
         >
           <img
@@ -81,7 +81,7 @@ export const ProjectBentoCard: React.FC<ProjectBentoCardProps> = ({
 
         {/* Desktop Headline Metric Callout Box (under image on desktop) */}
         {headlineMetric && (
-          <div className="hidden lg:flex p-4 rounded-2xl bg-hunter-green/50 border border-white/10 items-center justify-between gap-4">
+          <div className="hidden lg:flex p-4 rounded-2xl bg-hunter-green/50 border border-white/10 dark:bg-hunter-green/50 dark:border-white/10 items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-fern-green/25 border border-fern-green/40 flex items-center justify-center text-sage flex-shrink-0">
                 <FaChartLine size={18} />
@@ -119,7 +119,7 @@ export const ProjectBentoCard: React.FC<ProjectBentoCardProps> = ({
           <div className="mb-4">
             <h3
               onClick={() => onSelect(project)}
-              className="text-2xl sm:text-3xl font-display font-bold text-white group-hover:text-sage transition-colors duration-300 cursor-pointer inline-block leading-tight"
+              className="text-2xl sm:text-3xl font-display font-bold text-white hover:text-sage transition-colors duration-300 cursor-pointer inline-block leading-tight"
             >
               {project.title}
             </h3>

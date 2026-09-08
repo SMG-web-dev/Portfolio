@@ -11,7 +11,7 @@ export const TechBadge: React.FC<TechBadgeProps> = ({ tech, size = "sm" }) => {
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-hunter-green/60 text-timberwolf font-medium transition-all duration-200 hover:border-fern-green/50 hover:bg-hunter-green/90 hover:text-white ${
+      className={`inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-hunter-green/60 text-timberwolf hover:border-fern-green/50 hover:bg-hunter-green/90 hover:text-white font-medium transition-all duration-200 ${
         size === "sm" ? "px-2.5 py-1 text-xs" : "px-3 py-1.5 text-sm"
       }`}
       title={tech}

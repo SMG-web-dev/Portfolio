@@ -1,13 +1,15 @@
 import React, { useEffect, useRef } from "react";
+import { useTheme } from "../context/ThemeContext";
 
 /**
  * AmbientCursorLight
- * Renders a subtle dark-green ambient spotlight following the cursor.
+ * Renders a subtle dark-green (or soft sage in light mode) ambient spotlight following the cursor.
  * Operates at z-0 in the background canvas, smoothly trailing the pointer via lerp interpolation.
- * Since cards have opaque dark backgrounds (z-10), the light is visible only on the page canvas (bg),
+ * Since cards have opaque backgrounds (z-10), the light is visible only on the page canvas (bg),
  * and never washes out or shows through the cards.
  */
 const AmbientCursorLight: React.FC = () => {
+  const { theme } = useTheme();
   const lightRef = useRef<HTMLDivElement>(null);
   const posRef = useRef({ x: -1000, y: -1000 });
   const targetRef = useRef({ x: -1000, y: -1000 });
@@ -15,7 +17,9 @@ const AmbientCursorLight: React.FC = () => {
   const rafRef = useRef<number | null>(null);
 
   useEffect(() => {
-    // Only run on devices with a pointer/mouse
+    // Only run in dark mode and on devices with a pointer/mouse
+    if (theme !== "dark") return;
+
     const mediaQuery = window.matchMedia("(pointer: fine)");
     if (!mediaQuery.matches) return;
 
@@ -87,7 +91,10 @@ const AmbientCursorLight: React.FC = () => {
         cancelAnimationFrame(rafRef.current);
       }
     };
-  }, []);
+  }, [theme]);
+
+  // Completely disabled in light mode
+  if (theme !== "dark") return null;
 
   return (
     <div
@@ -99,8 +106,7 @@ const AmbientCursorLight: React.FC = () => {
         className="absolute top-0 left-0 w-[650px] h-[650px] rounded-full pointer-events-none transition-opacity duration-700 ease-out will-change-transform"
         style={{
           opacity: 0,
-          background:
-            "radial-gradient(circle, rgba(46, 82, 53, 0.22) 0%, rgba(27, 59, 43, 0.12) 35%, rgba(10, 22, 14, 0.04) 65%, transparent 75%)",
+          background: "radial-gradient(circle, rgba(46, 82, 53, 0.22) 0%, rgba(27, 59, 43, 0.12) 35%, rgba(10, 22, 14, 0.04) 65%, transparent 75%)",
         }}
       />
     </div>

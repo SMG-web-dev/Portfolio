@@ -21,12 +21,8 @@ export default function TechStack() {
   return (
     <section
       id="techstack"
-      className="py-16 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-[#0a120d]/80 overflow-hidden relative"
+      className="py-16 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-sage/30 via-timberwolf to-sage/40 dark:from-[#0a120d] dark:via-[#0c150f] dark:to-[#0a120d] overflow-hidden relative transition-colors duration-300"
     >
-      {/* Background Subtle Gradient Accents */}
-      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-fern-green/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-sage/10 rounded-full blur-3xl pointer-events-none" />
-
       <div className="container mx-auto max-w-6xl relative z-10">
         {/* Header */}
         <motion.div
@@ -36,7 +32,7 @@ export default function TechStack() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-black text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-black text-brunswick-green dark:text-white mb-4">
             {t('techstack.title')}
           </h2>
           <div className="w-24 h-1.5 bg-fern-green mx-auto rounded-full opacity-80" />
@@ -56,8 +52,8 @@ export default function TechStack() {
               onClick={() => setSelectedFilter(tab.id)}
               className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fern-green ${
                 selectedFilter === tab.id
-                  ? "bg-fern-green text-white shadow-green"
-                  : "bg-black/40 text-white/80 hover:bg-black/60 hover:text-white border border-white/10"
+                  ? "bg-brunswick-green text-white shadow-green dark:bg-fern-green"
+                  : "bg-white/60 text-brunswick-green/80 hover:bg-white/90 hover:text-brunswick-green border border-white/50 dark:bg-black/40 dark:text-white/80 dark:hover:bg-black/60 dark:hover:text-white dark:border-white/10"
               }`}
             >
               {t(tab.labelKey)}

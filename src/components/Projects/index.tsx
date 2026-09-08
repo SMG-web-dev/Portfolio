@@ -62,7 +62,7 @@ const Projects: React.FC = () => {
   return (
     <section
       id="projects"
-      className="py-20 md:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0c150f]/80 via-[#0f1a13]/70 to-[#0a120d]/80 relative overflow-hidden"
+      className="py-20 md:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 bg-brunswick-green/95 dark:bg-gradient-to-b dark:from-[#0c150f]/80 dark:via-[#0f1a13]/70 dark:to-[#0a120d]/80 relative overflow-hidden transition-colors duration-300"
     >
       {/* Background Decorative Ambient Glows */}
       <div
@@ -89,7 +89,7 @@ const Projects: React.FC = () => {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-timberwolf mb-5 tracking-tight">
             {t("projects.title")}
           </h2>
-          <p className="text-timberwolf/80 text-base md:text-lg leading-relaxed mb-6 font-sans">
+          <p className="text-timberwolf/85 text-base md:text-lg leading-relaxed mb-6 font-sans">
             {t("projects.subtitle")}
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-sage to-transparent mx-auto rounded-full" />

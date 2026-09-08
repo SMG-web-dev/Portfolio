@@ -110,11 +110,7 @@ const SoftSkills: React.FC = () => {
   });
 
   return (
-    <section id="soft-skills" className="py-16 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-[#0c150f]/80 relative overflow-hidden">
-      {/* Background Subtle Gradient Accents */}
-      <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-fern-green/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-sage/10 rounded-full blur-3xl pointer-events-none" />
-
+    <section id="soft-skills" className="py-16 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-timberwolf via-sage/30 to-timberwolf dark:from-[#0a120d] dark:via-[#0c150f] dark:to-[#0a120d] relative overflow-hidden transition-colors duration-300">
       <div className="container mx-auto max-w-6xl relative z-10">
         {/* Section Header */}
         <motion.div
@@ -124,11 +120,11 @@ const SoftSkills: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="mb-14 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-black text-white inline-block relative mb-3">
+          <h2 className="text-4xl md:text-5xl font-display font-black text-brunswick-green dark:text-white inline-block relative mb-3">
             {t("softskills.title")}
             <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1.5 bg-fern-green rounded-full opacity-80" />
           </h2>
-          <p className="text-timberwolf/90 text-base md:text-lg max-w-2xl mx-auto mt-4 font-normal">
+          <p className="text-brunswick-green dark:text-timberwolf/90 text-base md:text-lg max-w-2xl mx-auto mt-4 font-semibold">
             {t("softskills.subtitle")}
           </p>
         </motion.div>
@@ -142,35 +138,35 @@ const SoftSkills: React.FC = () => {
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
               whileHover={{ y: -5 }}
-              className="bg-[#111e16] border border-white/10 hover:border-fern-green/40 rounded-3xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between group"
+              className="bg-white/90 backdrop-blur-md border border-white/60 dark:bg-[#111e16] dark:border-white/10 hover:border-fern-green/40 rounded-3xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="px-3 py-1 text-xs font-bold rounded-full bg-fern-green/20 text-sage border border-fern-green/30 shadow-xs">
+                  <span className="px-3 py-1 text-xs font-bold rounded-full bg-hunter-green text-white dark:bg-fern-green/20 dark:text-sage dark:border dark:border-fern-green/30 shadow-xs">
                     {t(pillar.badgeKey)}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-display font-black text-white mb-3">
+                <h3 className="text-xl font-display font-extrabold text-brunswick-green dark:text-white mb-3">
                   {t(pillar.titleKey)}
                 </h3>
 
-                <p className="text-white/85 font-normal text-sm leading-relaxed mb-6">
+                <p className="text-brunswick-green dark:text-white/85 font-medium text-sm leading-relaxed mb-6">
                   {t(pillar.descKey)}
                 </p>
               </div>
 
               {/* Sub-skills list */}
-              <div className="space-y-2.5 pt-4 border-t border-white/10">
+              <div className="space-y-2.5 pt-4 border-t border-brunswick-green/15 dark:border-white/10">
                 {pillar.skills.map((skill, sIdx) => (
                   <div
                     key={sIdx}
-                    className="flex items-center gap-3 p-2 rounded-xl bg-black/40 border border-white/5 group-hover:bg-black/60 transition-colors"
+                    className="flex items-center gap-3 p-2 rounded-xl bg-sage/20 hover:bg-sage/30 dark:bg-black/40 dark:border-white/5 dark:hover:bg-black/60 transition-colors"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-fern-green/20 flex items-center justify-center text-sage flex-shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-fern-green/20 flex items-center justify-center text-fern-green dark:text-sage flex-shrink-0">
                       <SoftSkillIcon icon={skill.icon} className="w-4 h-4" />
                     </div>
-                    <span className="text-xs sm:text-sm font-semibold text-white/90">
+                    <span className="text-xs sm:text-sm font-bold text-brunswick-green dark:text-white/90">
                       {t(skill.nameKey)}
                     </span>
                   </div>
@@ -185,13 +181,13 @@ const SoftSkills: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="bg-[#111e16]/80 backdrop-blur-md border border-white/10 rounded-3xl p-6 sm:p-8 shadow-card"
+          className="bg-white/80 backdrop-blur-md border border-white/50 dark:bg-[#111e16]/80 dark:border-white/10 rounded-3xl p-6 sm:p-8 shadow-card"
         >
           <div className="mb-6">
-            <h3 className="text-2xl font-display font-black text-white">
+            <h3 className="text-2xl font-display font-black text-brunswick-green dark:text-white">
               {t("softskills.languages.title")}
             </h3>
-            <p className="text-timberwolf/90 font-normal text-sm mt-1">
+            <p className="text-brunswick-green dark:text-timberwolf/90 font-semibold text-sm mt-1">
               {t("softskills.languages.subtitle")}
             </p>
           </div>
@@ -203,24 +199,24 @@ const SoftSkills: React.FC = () => {
               return (
                 <div
                   key={lang.code}
-                  className="p-4 rounded-2xl bg-black/40 border border-white/10 shadow-xs flex flex-col justify-between space-y-3"
+                  className="p-4 rounded-2xl bg-white/90 border border-white/60 dark:bg-black/40 dark:border-white/10 shadow-xs flex flex-col justify-between space-y-3"
                 >
                   <div className="flex items-center gap-3">
                     <FlagComp size={24} className="rounded-xs shadow-xs flex-shrink-0" />
                     <div>
-                      <h4 className="font-display font-extrabold text-white text-sm sm:text-base leading-tight">
+                      <h4 className="font-display font-extrabold text-brunswick-green dark:text-white text-sm sm:text-base leading-tight">
                         {t(lang.nameKey)}
                       </h4>
-                      <p className="text-xs font-semibold text-sage mt-0.5">
+                      <p className="text-xs font-bold text-fern-green dark:text-sage mt-0.5">
                         {t(lang.levelKey)}
                       </p>
                     </div>
                   </div>
 
                   {/* Animated Progress Bar */}
-                  <div className="w-full bg-white/10 rounded-full h-2 overflow-hidden">
+                  <div className="w-full bg-brunswick-green/10 dark:bg-white/10 rounded-full h-2 overflow-hidden">
                     <motion.div
-                      className="bg-gradient-to-r from-fern-green via-sage to-fern-green h-full rounded-full"
+                      className="bg-gradient-to-r from-fern-green to-hunter-green dark:from-fern-green dark:via-sage dark:to-fern-green h-full rounded-full"
                       initial={{ width: 0 }}
                       animate={inView ? { width: `${lang.percent}%` } : { width: 0 }}
                       transition={{ duration: 1, delay: 0.5 }}

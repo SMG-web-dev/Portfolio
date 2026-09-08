@@ -2,5 +2,8 @@
 User-agent: *
 Allow: /
 
-# Sitemap Index Location
+# Host
+Host: smg-dev.es
+
+# Sitemap Location
 Sitemap: https://smg-dev.es/sitemap.xml

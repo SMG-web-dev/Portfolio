@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://smg-dev.es/</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://smg-dev.es/es" />
@@ -12,5 +13,15 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://smg-dev.es/de" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://smg-dev.es/fr" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://smg-dev.es/" />
+    <image:image>
+      <image:loc>https://smg-dev.es/logo.webp</image:loc>
+      <image:title>SMG Dev — Sergio Manjón Logo</image:title>
+      <image:caption>Logotipo oficial de Sergio Manjón — Full-Stack Developer</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://smg-dev.es/og-image.jpg</image:loc>
+      <image:title>Sergio Manjón — Portfolio Full-Stack Developer</image:title>
+      <image:caption>Desarrollador Full-Stack especializado en Next.js, React, Node.js, PostgreSQL e Inteligencia Artificial</image:caption>
+    </image:image>
   </url>
 </urlset>

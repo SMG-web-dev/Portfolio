@@ -89,14 +89,14 @@ const CodeTerminal: React.FC = () => {
       name: "architecture.ts",
       code: `// Enterprise Full-Stack & Systems Architecture
 import { NextJS, React, TypeScript } from "@smg/core";
-import { Supabase, PostgreSQL } from "@smg/backend";
+import { PostgreSQL, Redis } from "@smg/backend";
 
 export class EngineeringEngine implements SeniorArchitect {
   private readonly stack = ["TypeScript", "Next.js", "PostgreSQL", "TailwindCSS"];
   
   public async buildProduct(goal: BusinessGoal): Promise<ScalableApp> {
     const system = await this.designSystem({ performance: 99, SEO: true });
-    const database = await Supabase.configureRLS({ security: "AAA" });
+    const database = await PostgreSQL.connectPool({ security: "AAA", ssl: true });
     
     return { status: "Delivered", impact: "Maximum Conversion" };
   }
@@ -105,14 +105,14 @@ export class EngineeringEngine implements SeniorArchitect {
         <div className="space-y-1">
           <div><span className="text-emerald-400/80">// Enterprise Full-Stack & Systems Architecture</span></div>
           <div><span className="text-purple-400 font-bold">import</span> <span className="text-white">{"{ NextJS, React, TypeScript }"}</span> <span className="text-purple-400 font-bold">from</span> <span className="text-green-300">"@smg/core"</span><span className="text-white">;</span></div>
-          <div><span className="text-purple-400 font-bold">import</span> <span className="text-white">{"{ Supabase, PostgreSQL }"}</span> <span className="text-purple-400 font-bold">from</span> <span className="text-green-300">"@smg/backend"</span><span className="text-white">;</span></div>
+          <div><span className="text-purple-400 font-bold">import</span> <span className="text-white">{"{ PostgreSQL, Redis }"}</span> <span className="text-purple-400 font-bold">from</span> <span className="text-green-300">"@smg/backend"</span><span className="text-white">;</span></div>
           <div className="h-2" />
           <div><span className="text-purple-400 font-bold">export class</span> <span className="text-yellow-300 font-bold">EngineeringEngine</span> <span className="text-purple-400 font-bold">implements</span> <span className="text-cyan-300 font-bold">SeniorArchitect</span> <span className="text-white">{"{"}</span></div>
           <div className="pl-4"><span className="text-purple-400 font-bold">private readonly</span> <span className="text-white">stack = [</span><span className="text-green-300">"TypeScript"</span>, <span className="text-green-300">"Next.js"</span>, <span className="text-green-300">"PostgreSQL"</span>, <span className="text-green-300">"TailwindCSS"</span><span className="text-white">];</span></div>
           <div className="h-2" />
           <div className="pl-4"><span className="text-purple-400 font-bold">public async</span> <span className="text-yellow-300 font-bold">buildProduct</span><span className="text-white">(goal: </span><span className="text-cyan-300 font-bold">BusinessGoal</span><span className="text-white">): </span><span className="text-cyan-300 font-bold">Promise</span><span className="text-white font-bold">&lt;</span><span className="text-cyan-300 font-bold">ScalableApp</span><span className="text-white font-bold">&gt;</span> <span className="text-white">{"{"}</span></div>
           <div className="pl-8"><span className="text-purple-400 font-bold">const</span> <span className="text-white">system = </span><span className="text-purple-400 font-bold">await</span> <span className="text-white">this.</span><span className="text-yellow-300">designSystem</span><span className="text-white">({"{"} performance: </span><span className="text-orange-300 font-bold">99</span><span className="text-white">, SEO: </span><span className="text-purple-400 font-bold">true</span> <span className="text-white">{"}"});</span></div>
-          <div className="pl-8"><span className="text-purple-400 font-bold">const</span> <span className="text-white">database = </span><span className="text-purple-400 font-bold">await</span> <span className="text-cyan-300">Supabase</span><span className="text-white">.</span><span className="text-yellow-300">configureRLS</span><span className="text-white">({"{"} security: </span><span className="text-green-300">"AAA"</span> <span className="text-white">{"}"});</span></div>
+          <div className="pl-8"><span className="text-purple-400 font-bold">const</span> <span className="text-white">database = </span><span className="text-purple-400 font-bold">await</span> <span className="text-cyan-300">PostgreSQL</span><span className="text-white">.</span><span className="text-yellow-300">connectPool</span><span className="text-white">({"{"} security: </span><span className="text-green-300">"AAA"</span><span className="text-white">, ssl: </span><span className="text-purple-400 font-bold">true</span> <span className="text-white">{"}"});</span></div>
           <div className="h-2" />
           <div className="pl-8"><span className="text-purple-400 font-bold">return</span> <span className="text-white">{"{"} status: </span><span className="text-green-300">"Delivered"</span><span className="text-white">, impact: </span><span className="text-green-300">"Maximum Conversion"</span> <span className="text-white">{"}"};</span></div>
           <div className="pl-4"><span className="text-white">{"}"}</span></div>
@@ -155,7 +155,7 @@ export async function runAgenticWorkflow(task: ComplexTask) {
   "role": "Full-Stack Developer",
   "experience": "2+ Years",
   "coreTech": ["TypeScript", "Next.js", "React", "Node.js", "TailwindCSS"],
-  "databases": ["PostgreSQL", "Supabase", "MySQL"],
+  "databases": ["PostgreSQL", "Redis", "MySQL"],
   "aiIntegration": ["MCP Protocol", "Google Ecosystem", "Meta AI", "Claude API"]
 }`,
       highlighted: (
@@ -164,7 +164,7 @@ export async function runAgenticWorkflow(task: ComplexTask) {
           <div className="pl-4"><span className="text-sage">"role"</span><span className="text-white">: </span><span className="text-green-300">"Full-Stack Developer"</span><span className="text-white">,</span></div>
           <div className="pl-4"><span className="text-sage">"experience"</span><span className="text-white">: </span><span className="text-green-300">"2+ Years"</span><span className="text-white">,</span></div>
           <div className="pl-4"><span className="text-sage">"coreTech"</span><span className="text-white">: [</span><span className="text-green-300">"TypeScript"</span>, <span className="text-green-300">"Next.js"</span>, <span className="text-green-300">"React"</span>, <span className="text-green-300">"Node.js"</span>, <span className="text-green-300">"TailwindCSS"</span><span className="text-white">],</span></div>
-          <div className="pl-4"><span className="text-sage">"databases"</span><span className="text-white">: [</span><span className="text-green-300">"PostgreSQL"</span>, <span className="text-green-300">"Supabase"</span>, <span className="text-green-300">"MySQL"</span><span className="text-white">],</span></div>
+          <div className="pl-4"><span className="text-sage">"databases"</span><span className="text-white">: [</span><span className="text-green-300">"PostgreSQL"</span>, <span className="text-green-300">"Redis"</span>, <span className="text-green-300">"MySQL"</span><span className="text-white">],</span></div>
           <div className="pl-4"><span className="text-sage">"aiIntegration"</span><span className="text-white">: [</span><span className="text-green-300">"MCP Protocol"</span>, <span className="text-green-300">"Google Ecosystem"</span>, <span className="text-green-300">"Meta AI"</span><span className="text-white">]</span></div>
           <div><span className="text-white font-bold">{"}"}</span></div>
         </div>

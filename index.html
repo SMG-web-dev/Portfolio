@@ -3,39 +3,144 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="manifest" href="/site.webmanifest" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#344e41" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#132a13" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#2d4a3e" />
+
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
   
   <!-- SEO Primary Meta Tags -->
-  <title>Sergio Manjón | Full-Stack Developer — Apps Web Escalables</title>
-  <meta name="title" content="Sergio Manjón | Full-Stack Developer — Apps Web Escalables" />
-  <meta name="description" content="Sergio Manjón — Full-Stack Developer especializado en construir aplicaciones web escalables con Next.js, React, Supabase e inteligencia artificial que convierten visitantes en clientes reales." />
-  <meta name="keywords" content="Sergio Manjón, Full-Stack Developer, Desarrollador Web, Next.js, React, Supabase, TypeScript, Stripe, Madrid, Portfolio" />
-  <meta name="author" content="Sergio Manjón" />
-  <meta name="robots" content="index, follow" />
+  <title>Sergio Manjón — Full-Stack Developer | Apps Web Escalables &amp; IA</title>
+  <meta name="title" content="Sergio Manjón — Full-Stack Developer | Apps Web Escalables &amp; IA" />
+  <meta name="description" content="Sergio Manjón (smg-dev) — Full-Stack Developer especializado en construir aplicaciones web escalables con Next.js, React, Node.js, PostgreSQL e inteligencia artificial que convierten visitantes en clientes reales." />
+  <meta name="keywords" content="Sergio Manjón, smg-dev, Full-Stack Developer, Software Engineer, Desarrollador Web, Next.js, React, TypeScript, Node.js, PostgreSQL, Stripe, Gemini IA, Three.js, Madrid, Sevilla, España, Portfolio" />
+  <meta name="author" content="Sergio Manjón García" />
+  <meta name="creator" content="Sergio Manjón García" />
+  <meta name="publisher" content="Sergio Manjón García" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="geo.region" content="ES-MD" />
+  <meta name="geo.placename" content="Madrid" />
   <meta name="google-site-verification" content="DXV-Oyo1xoM9w_w5lKu-7_rg-nt1_0B9cCKuxm22zmc" />
-  <link rel="canonical" href="https://smg-dev.es" />
+  <link rel="canonical" href="https://smg-dev.es/" />
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://smg-dev.es" />
-  <meta property="og:title" content="Sergio Manjón | Full-Stack Developer — Apps Web Escalables" />
-  <meta property="og:description" content="Desarrollador Full-Stack especializado en aplicaciones web de alto rendimiento, backends sólidos e integración de IA." />
-  <meta property="og:image" content="https://smg-dev.es/logo.webp" />
-  <meta property="og:site_name" content="Sergio Manjón Portfolio" />
+  <!-- Multilingual Hreflang Alternates -->
+  <link rel="alternate" hreflang="es" href="https://smg-dev.es/es" />
+  <link rel="alternate" hreflang="en" href="https://smg-dev.es/en" />
+  <link rel="alternate" hreflang="it" href="https://smg-dev.es/it" />
+  <link rel="alternate" hreflang="de" href="https://smg-dev.es/de" />
+  <link rel="alternate" hreflang="fr" href="https://smg-dev.es/fr" />
+  <link rel="alternate" hreflang="x-default" href="https://smg-dev.es/" />
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://smg-dev.es" />
-  <meta property="twitter:title" content="Sergio Manjón | Full-Stack Developer — Apps Web Escalables" />
-  <meta property="twitter:description" content="Desarrollador Full-Stack especializado en aplicaciones web de alto rendimiento, backends sólidos e integración de IA." />
-  <meta property="twitter:image" content="https://smg-dev.es/logo.webp" />
+  <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://smg-dev.es/" />
+  <meta property="og:site_name" content="SMG Dev — Sergio Manjón" />
+  <meta property="og:title" content="Sergio Manjón — Full-Stack Developer | Apps Web Escalables &amp; IA" />
+  <meta property="og:description" content="Sergio Manjón (smg-dev) — Desarrollador Full-Stack especializado en aplicaciones web de alto rendimiento, backends sólidos en Node.js/PostgreSQL e integración de IA en producción." />
+  <meta property="og:image" content="https://smg-dev.es/og-image.jpg" />
+  <meta property="og:image:secure_url" content="https://smg-dev.es/og-image.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="SMG Dev — Sergio Manjón Portfolio Full-Stack Developer" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="it_IT" />
 
-  <!-- Google Fonts: Outfit (display) + Inter (body) -->
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://smg-dev.es/" />
+  <meta name="twitter:title" content="Sergio Manjón — Full-Stack Developer | Apps Web Escalables &amp; IA" />
+  <meta name="twitter:description" content="Desarrollador Full-Stack especializado en aplicaciones web de alto rendimiento, backends sólidos en Node.js/PostgreSQL e integración de IA en producción." />
+  <meta name="twitter:image" content="https://smg-dev.es/og-image.jpg" />
+  <meta name="twitter:image:alt" content="SMG Dev — Sergio Manjón Portfolio Full-Stack Developer" />
+
+  <!-- Structured Data: Google Schema.org JSON-LD Graph -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://smg-dev.es/#person",
+        "name": "Sergio Manjón García",
+        "givenName": "Sergio",
+        "familyName": "Manjón García",
+        "additionalName": "SMG",
+        "alternateName": ["smg-dev", "Sergio Manjón"],
+        "jobTitle": "Full-Stack Web Developer & Software Engineer",
+        "description": "Full-Stack Developer especializado en construir aplicaciones web escalables con Next.js, React, Node.js, PostgreSQL e inteligencia artificial en producción.",
+        "url": "https://smg-dev.es/",
+        "image": "https://smg-dev.es/logo.webp",
+        "email": "mailto:dev@smg-dev.es",
+        "sameAs": [
+          "https://github.com/SMG-web-dev",
+          "https://www.linkedin.com/in/smg-web-dev/"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Madrid",
+          "addressRegion": "Comunidad de Madrid",
+          "addressCountry": "ES"
+        },
+        "knowsAbout": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Node.js",
+          "PostgreSQL",
+          "Java",
+          "Spring Boot",
+          "Tailwind CSS",
+          "Three.js",
+          "Google Gemini AI",
+          "Stripe",
+          "Docker",
+          "REST APIs",
+          "Web Performance",
+          "SEO Architecture",
+          "WCAG Accessibility"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://smg-dev.es/#website",
+        "url": "https://smg-dev.es/",
+        "name": "SMG Dev — Sergio Manjón",
+        "alternateName": ["smg-dev", "Sergio Manjón Portfolio"],
+        "description": "Portfolio profesional de Sergio Manjón — Full-Stack Developer especializado en Next.js, React, Node.js, PostgreSQL e IA.",
+        "inLanguage": ["es", "en", "it", "de", "fr"],
+        "publisher": {
+          "@id": "https://smg-dev.es/#person"
+        }
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://smg-dev.es/#profilepage",
+        "url": "https://smg-dev.es/",
+        "name": "Sergio Manjón — Full-Stack Developer | Apps Web Escalables & IA",
+        "mainEntity": {
+          "@id": "https://smg-dev.es/#person"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Performance Preconnects for Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 </head>
 

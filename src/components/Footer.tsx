@@ -18,7 +18,14 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           {/* Brand & Location */}
           <div className="space-y-1">
-            <div className="flex items-center justify-center md:justify-start gap-2">
+            <div className="flex items-center justify-center md:justify-start gap-2.5">
+              <img
+                src="/logo-icon.webp"
+                alt="SMG Dev Logo"
+                width="28"
+                height="28"
+                className="w-7 h-7 rounded-full border border-white/20 object-cover shadow-xs"
+              />
               <span className="font-display font-black text-xl text-white">
                 smg-dev
               </span>

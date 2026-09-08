@@ -78,11 +78,6 @@ const Header: React.FC = () => {
             className="flex items-center gap-2 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fern-green rounded-full"
             aria-label="Sergio Manjón - Scroll to top"
           >
-            <img
-              src="/logo.webp"
-              alt="Sergio Manjón Logo"
-              className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-white/30"
-            />
             <span className="font-display font-bold text-xs sm:text-base text-white hover:text-sage transition-colors">
               smg-dev
             </span>

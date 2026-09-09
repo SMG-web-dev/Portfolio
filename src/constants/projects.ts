@@ -360,8 +360,8 @@ export const featuredProjects: ProjectProps[] = [
     overview: {
       problem: "Los negocios locales de estética suelen tener páginas web anticuadas o plantillas prefabricadas que no transmiten la profesionalidad ni el estilo que ofrecen en su salón físico.",
       problemEn: "Local salons and studios often rely on outdated templates that fail to communicate the artistry, cleanliness, and style of their physical space.",
-      solution: "Una web con diseño editorial moderno, tipografía elegante y una experiencia 3D fluida que capta la atención del cliente al instante y facilita consultar precios y reservar cita.",
-      solutionEn: "An editorial web experience combining modern typography and an eye-catching 3D element that captivates visitors immediately while making pricing clear."
+      solution: "Una web con diseño editorial moderno, tipografía elegante y una experiencia 3D fluida que capta la atención del cliente al instante y facilita conocer los servicios y contactar directamente.",
+      solutionEn: "An editorial web experience combining modern typography and an eye-catching 3D element that captivates visitors immediately while showcasing services and enabling direct contact."
     },
     architecture: {
       summary: "Sitio web de alto rendimiento construido con Next.js, renderizado 3D optimizado y soporte completo para múltiples idiomas.",
@@ -412,8 +412,8 @@ export const featuredProjects: ProjectProps[] = [
         title: "Carta de Servicios Transparente y Atractiva",
         titleEn: "Transparent & Clean Service Menu",
         tag: "Conversión de Clientes",
-        description: "Presenta con claridad los cortes, peinados y tratamientos con precios detallados para generar confianza inmediata.",
-        descriptionEn: "Clearly communicates haircut, styling, and color treatments with transparent pricing to build trust.",
+        description: "Presenta con claridad los cortes, peinados y tratamientos disponibles para generar confianza inmediata y facilitar el contacto.",
+        descriptionEn: "Clearly communicates available haircut, styling, and color treatments to build trust and encourage direct contact.",
         bullets: [
           "Estructura visual limpia y fácil de consultar en cualquier tamaño de pantalla.",
           "Diseño bilingüe para atender a clientes que visitan la ciudad o no dominan el español.",
@@ -422,7 +422,7 @@ export const featuredProjects: ProjectProps[] = [
         bulletsEn: [
           "Clean visual layout that is effortless to scan on mobile screens.",
           "Bilingual toggle ensuring foreign visitors feel welcome.",
-          "Direct shortcuts to phone contact, salon map location, and bookings."
+          "Direct shortcuts to phone contact, salon map location, and quick inquiries."
         ]
       }
     ],
@@ -432,8 +432,8 @@ export const featuredProjects: ProjectProps[] = [
         titleEn: "Smart 3D Initialization for Instant Page Load",
         context: "Los gráficos 3D pueden hacer que una web tarde en abrirse en teléfonos más modestos.",
         contextEn: "Complex 3D graphics can delay initial page appearance on mobile connections.",
-        decision: "Hicimos que el texto y los precios aparezcan al instante, mientras el 3D se activa de forma suave en segundo plano.",
-        decisionEn: "Prioritized instant text and price rendering, allowing the 3D scene to gracefully fade in once ready.",
+        decision: "Hicimos que el texto y los servicios aparezcan al instante, mientras el 3D se activa de forma suave en segundo plano.",
+        decisionEn: "Prioritized instant text and service content rendering, allowing the 3D scene to gracefully fade in once ready.",
         tradeoff: "El elemento 3D tarda una fracción de segundo en iniciar, pero el cliente nunca espera frente a una pantalla vacía.",
         tradeoffEn: "The 3D element initializes moments later, but the visitor never experiences a blank waiting screen."
       }

@@ -23,25 +23,27 @@ function App() {
   return (
     <ThemeProvider>
       <Suspense fallback={<div className="min-h-screen bg-timberwolf dark:bg-[#0a120d]" />}>
-        <main className="safe-area-container bg-timberwolf text-brunswick-green dark:bg-[#0a120d] dark:text-white selection:bg-fern-green selection:text-white relative overflow-x-hidden min-h-screen transition-colors duration-300">
+        <div className="safe-area-container bg-timberwolf text-brunswick-green dark:bg-[#0a120d] dark:text-white selection:bg-fern-green selection:text-white relative overflow-x-hidden min-h-screen transition-colors duration-300">
           {/* Ambient subtle green light trailing cursor in background canvas */}
           <AmbientCursorLight />
 
           <div className="relative z-10">
             <Header />
-            <Hero />
-            <Suspense fallback={<LoadingFallback />}>
-              <Experience />
-            </Suspense>
-            <Suspense fallback={<LoadingFallback />}>
-              <Projects />
-            </Suspense>
-            <Suspense fallback={<LoadingFallback />}>
-              <TechStack />
-            </Suspense>
-            <Suspense fallback={<LoadingFallback />}>
-              <SoftSkills />
-            </Suspense>
+            <main id="main-content">
+              <Hero />
+              <Suspense fallback={<LoadingFallback />}>
+                <Experience />
+              </Suspense>
+              <Suspense fallback={<LoadingFallback />}>
+                <Projects />
+              </Suspense>
+              <Suspense fallback={<LoadingFallback />}>
+                <TechStack />
+              </Suspense>
+              <Suspense fallback={<LoadingFallback />}>
+                <SoftSkills />
+              </Suspense>
+            </main>
             <Footer />
 
             {/* Floating Language Switcher */}
@@ -49,7 +51,7 @@ function App() {
               <LanguageSwitcher />
             </div>
           </div>
-        </main>
+        </div>
       </Suspense>
     </ThemeProvider>
   );

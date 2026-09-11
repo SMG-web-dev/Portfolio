@@ -11,8 +11,11 @@ const Experience: React.FC = () => {
   return (
     <section
       id="experience"
-      className="relative py-16 sm:py-24 overflow-hidden bg-timberwolf dark:bg-[#0c150f]/80 transition-colors duration-300"
+      className="relative pt-12 sm:pt-16 pb-16 sm:pb-24 overflow-hidden bg-timberwolf dark:bg-[#0c150f]/80 transition-colors duration-300"
     >
+      {/* Top ambient blend extending from Hero transition */}
+      <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-fern-green/10 via-sage/5 to-transparent pointer-events-none" />
+
       {/* Background Subtle Gradient Accents */}
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-sage/20 dark:bg-sage/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-fern-green/20 dark:bg-fern-green/10 rounded-full blur-3xl pointer-events-none" />

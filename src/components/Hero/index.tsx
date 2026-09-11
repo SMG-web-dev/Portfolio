@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { Link as ScrollLink } from "react-scroll";
+import { FiChevronDown } from "../../constants/icons";
 
 const AnimatedBackground: React.FC = () => {
   return (
@@ -25,8 +27,28 @@ const AnimatedBackground: React.FC = () => {
         />
       </div>
 
-      {/* Bottom Fade to timberwolf (light) or obsidian (dark) */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-timberwolf dark:from-[#0a120d] to-transparent transition-colors duration-500" />
+      {/* Layered Smooth Gradient Blend to Next Section */}
+      <div className="absolute bottom-0 left-0 right-0 h-44 bg-gradient-to-b from-transparent via-brunswick-green/30 to-timberwolf/40 dark:via-[#08110b]/30 dark:to-[#0c150f]/50 pointer-events-none transition-colors duration-500" />
+
+      {/* Organic Curved Architectural Boundary with subtle laser accent */}
+      <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none z-10">
+        <svg
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          className="relative block w-full h-12 sm:h-16 lg:h-20"
+        >
+          <path
+            d="M0,0 C150,90 400,120 600,75 C800,30 1050,90 1200,45 L1200,120 L0,120 Z"
+            className="fill-timberwolf dark:fill-[#0c150f]/80 transition-colors duration-300"
+          />
+          <path
+            d="M0,0 C150,90 400,120 600,75 C800,30 1050,90 1200,45"
+            className="stroke-fern-green/40 dark:stroke-fern-green/30"
+            strokeWidth="1.5"
+            fill="none"
+          />
+        </svg>
+      </div>
     </>
   );
 };
@@ -72,8 +94,6 @@ const StatItem: React.FC<{ value: number; suffix: string; label: string; delay: 
   );
 };
 
-
-
 const Hero: React.FC = () => {
   const { t } = useTranslation();
 
@@ -93,7 +113,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-24 pb-12 sm:pb-16"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-24 pb-20 sm:pb-28"
     >
       <AnimatedBackground />
 
@@ -135,7 +155,7 @@ const Hero: React.FC = () => {
         {/* Descriptor */}
         <motion.p
           variants={itemVariants}
-          className="text-xs sm:text-base md:text-lg text-white/90 font-medium leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-10 [text-wrap:pretty] px-2 drop-shadow-xs"
+          className="text-xs sm:text-base md:text-lg text-white/90 font-medium leading-relaxed max-w-2xl mx-auto mb-7 sm:mb-9 [text-wrap:pretty] px-2 drop-shadow-xs"
         >
           {t('hero.descriptor')}
         </motion.p>
@@ -148,6 +168,39 @@ const Hero: React.FC = () => {
           <StatItem value={2} suffix="+" label={t('hero.statsYears')} delay={1.3} />
           <div className="w-px h-8 sm:h-10 bg-white/30" />
           <StatItem value={8} suffix="+" label={t('hero.statsProjects')} delay={1.5} />
+        </motion.div>
+
+        {/* Interactive Scroll Bridge to Experience Section */}
+        <motion.div
+          variants={itemVariants}
+          className="mt-7 sm:mt-9 flex flex-col items-center"
+        >
+          <ScrollLink
+            to="experience"
+            smooth={true}
+            duration={700}
+            offset={-20}
+            className="group cursor-pointer flex flex-col items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-fern-green rounded-full py-1 px-3 transition-transform hover:-translate-y-0.5"
+            aria-label={t('hero.explore')}
+          >
+            <span className="text-[11px] sm:text-xs font-extrabold uppercase tracking-widest text-white/80 group-hover:text-white transition-colors drop-shadow-xs">
+              {t('hero.explore')}
+            </span>
+            <div className="w-6 h-10 rounded-full border-2 border-white/30 group-hover:border-fern-green/80 bg-black/25 backdrop-blur-sm flex items-start justify-center p-1 transition-all shadow-green-glow">
+              <motion.div
+                className="w-1.5 h-2.5 rounded-full bg-fern-green"
+                animate={{ y: [0, 14, 0], opacity: [1, 0.4, 1] }}
+                transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+              />
+            </div>
+            <motion.div
+              animate={{ y: [0, 3, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              className="text-fern-green group-hover:text-white transition-colors -mt-1"
+            >
+              <FiChevronDown size={14} />
+            </motion.div>
+          </ScrollLink>
         </motion.div>
       </motion.div>
     </section>

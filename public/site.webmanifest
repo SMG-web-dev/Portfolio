@@ -29,7 +29,7 @@
   "start_url": "/",
   "background_color": "#09110d",
   "theme_color": "#2d4a3e",
-  "display": "standalone",
+  "display": "browser",
   "orientation": "portrait-primary",
   "categories": ["portfolio", "technology", "development"]
 }
